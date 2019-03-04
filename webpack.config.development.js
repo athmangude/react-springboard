@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
   entry: {
@@ -26,8 +27,19 @@ module.exports = {
         use: {
           loader: "html-loader"
         }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          "style-loader",
+          "css-loader"
+        ]
       }
     ]
+  },
+  output: {
+    filename: "bundle.js",
+    path: path.resolve(__dirname, 'dist')
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
