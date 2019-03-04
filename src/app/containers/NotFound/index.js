@@ -4,11 +4,11 @@ import './index.css';
 
 import usabilityImage from '../../../assets/images/usability.png';
 
-export default class Landing extends Component {
+export default class NotFound extends Component {
   render() {
     return (
       <div>
-        <img src={usabilityImage} style={{ width: '100%' }} />
+        <h1>Not Found</h1>
       </div>
     );
   }

@@ -10,7 +10,8 @@ module.exports = {
   devtool: "inline-source-map",
   devServer: {
     contentBase: './dist',
-    hot: true
+    hot: true,
+    historyApiFallback: true,
   },
   mode: "development",
   module: {
@@ -43,7 +44,8 @@ module.exports = {
   },
   output: {
     filename: "bundle.js",
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/'
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),

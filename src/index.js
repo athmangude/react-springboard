@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-import Landing from './app/containers/Landing'
+import Routes from './app/routes';
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <h1>Build something awesome now!</h1>
-        <Landing />
-      </div>
+      <Routes />
     );
   }
 }
