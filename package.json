@@ -1,0 +1,11 @@
+{
+  "name": "react-starter",
+  "version": "0.0.1",
+  "description": "A React JS starter project",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Athman Gude <athmangude@gmail.com>",
+  "license": "ISC"
+}
