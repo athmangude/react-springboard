@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 
 import thunkMiddleware from 'redux-thunk';
-import { routerMiddleware } from 'react-router-redux';
+import { routerMiddleware } from 'connected-react-router';
 
 import createReducer from './createReducer';
 
@@ -30,7 +30,7 @@ export default function configureStore(initialState = {}, history) {
   /* eslint-enable */
 
   const store = createStore(
-    createReducer(),
+    createReducer(history),
     initialState,
     composeEnhancers(...enhancers)
   );

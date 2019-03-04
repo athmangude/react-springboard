@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 
 import { Router, Route, Switch } from 'react-router-dom';
-import createBrowserHistory from 'history/createBrowserHistory';
-
-const createdBrowserHistory = createBrowserHistory();
 
 import MainLayout from './layouts/main';
 import Landing from './containers/Landing';
@@ -14,7 +11,6 @@ import NotFound from './containers/NotFound';
 export default class AppRoutes extends Component {
   render() {
     return (
-      <Router history={createdBrowserHistory}>
         <MainLayout>
           <Switch>
             <Route exact path="/" component={Landing} />
@@ -22,7 +18,6 @@ export default class AppRoutes extends Component {
             <Route component={NotFound} />
           </Switch>
         </MainLayout>
-      </Router>
     );
   }
 }
