@@ -55,5 +55,10 @@ module.exports = {
     }),
     new webpack.HotModuleReplacementPlugin(),
   ],
+  resolve: {
+    alias: {
+      Images: path.resolve(__dirname, "src/assets/images"),
+    }
+  },
   target: "web"
 };

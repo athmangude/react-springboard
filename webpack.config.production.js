@@ -42,5 +42,10 @@ module.exports = {
       filename: "./index.html"
     })
   ],
+  resolve: {
+    alias: {
+      Images: path.resolve(__dirname, "src/assets/images"),
+    }
+  },
   target: "web"
 };

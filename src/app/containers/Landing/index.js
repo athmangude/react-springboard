@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import './index.css';
 
-import usabilityImage from '../../../assets/images/usability.png';
+import usabilityImage from 'Images/usability.png';
 
 export default class Landing extends Component {
   render() {
