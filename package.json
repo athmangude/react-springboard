@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "build": "NODE_ENV=production webpack --config webpack.config.production.js",
+    "build": "rm -rf dist && NODE_ENV=production webpack --config webpack.config.production.js",
     "dev": "NODE_ENV=development webpack-dev-server --config webpack.config.development.js --hotOnly",
     "start-server": "yarn run build && http-server ./dist",
     "deploy-firebase": "yarn run build && firebase deploy --project react-pwa-springboard"

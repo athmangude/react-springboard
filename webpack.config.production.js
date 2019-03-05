@@ -40,12 +40,31 @@ module.exports = {
     ]
   },
   output: {
-    filename: "bundle.js",
+    filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, 'dist')
   },
   optimization: {
+    minimize: true,
     nodeEnv: 'production',
-    minimize: true
+    runtimeChunk: 'single',
+    splitChunks: {
+      chunks: 'all',
+      maxInitialRequests: Infinity,
+      minSize: 0,
+      // cacheGroups: {
+      //   vendor: {
+      //     test: /[\\/]node_modules[\\/]/,
+      //     name(module) {
+      //       // get the name. E.g. node_modules/packageName/not/this/part.js
+      //       // or node_modules/packageName
+      //       const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+      //
+      //       // npm package names are URL-safe, but some servers don't like @ symbols
+      //       return `npm.${packageName.replace('@', '')}`;
+      //     }
+      //   }
+      // }
+    }
   },
   plugins: [
     new SWPrecacheWebpackPlugin({
@@ -69,7 +88,8 @@ module.exports = {
     new CopyPlugin([
       { from: './src/assets', to: 'assets' },
       { from: './src/.htaccess' },
-      { from: './src/.conf' }
+      { from: './src/.conf' },
+      { from: './src/robots.txt' }
     ]),
     new ManifestPlugin({
       fileName: 'asset-manifest.json',
@@ -91,3 +111,5 @@ module.exports = {
   },
   target: "web"
 };
+
+// https://hackernoon.com/the-100-correct-way-to-split-your-chunks-with-webpack-f8a9df5b7758

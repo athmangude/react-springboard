@@ -47,7 +47,7 @@ module.exports = {
     ]
   },
   output: {
-    filename: "bundle.js",
+    filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
   },
@@ -73,7 +73,8 @@ module.exports = {
     new CopyPlugin([
       { from: './src/assets', to: 'assets' },
       { from: './src/.htaccess' },
-      { from: './src/.conf' }
+      { from: './src/.conf' },
+      { from: './src/robots.txt' }
     ]),
     new ManifestPlugin({
       fileName: 'asset-manifest.json',
