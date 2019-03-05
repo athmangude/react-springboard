@@ -7,8 +7,8 @@ export default class MainLayout extends Component {
   render() {
     return (
       <div>
-        <div style={{ height: 64, width: '100%', backgroundColor: 'teal' }}>
-          <Link to="/settings">Settings</Link>
+        <div style={{ height: 64, width: '100%', backgroundColor: 'teal', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', padding: 10 }}>
+          <Link to="/" style={{ color: '#fff', fontSize: 20, textDecoration: 'none', textTransform: 'uppercase', fontWeight: 'bold' }}>SpringBoard</Link>
         </div>
         <div style={{ height: 'calc(100vh - 64px)', width: '100%', overflow: 'auto' }}>
           {this.props.children}
