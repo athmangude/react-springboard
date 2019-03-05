@@ -1,19 +1,29 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import './main.css';
 
+import usabilityImage from 'Images/usability.png';
+
+@connect((state) => ({
+  ...state
+}), (dispatch) => ({
+
+}))
 export default class MainLayout extends Component {
   render() {
+    console.log(this.props);
     return (
-      <div style={{ width: '100%' }}>
-        <div style={{ height: 64, width: '100%', backgroundColor: '#008080', display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
-          <Link to="/" style={{ color: '#fff', fontSize: 20, textDecoration: 'none', textTransform: 'uppercase', fontWeight: 'bold', marginLeft: 10 }}>SpringBoard</Link>
-        </div>
-        <div style={{ height: 'calc(100vh - 64px)', width: '100%', overflow: 'auto' }}>
+      <main style={{ width: '100%' }}>
+        <aside style={{ height: 64, width: '100%', backgroundColor: '#008080', display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
+          <Link to="/" style={{ color: '#fff', fontSize: 25, textDecoration: 'none', textTransform: 'uppercase', fontWeight: 'bold', marginLeft: 10 }}>SpringBoard</Link>
+        </aside>
+        <section style={{ height: 'calc(100vh - 64px)', width: '100%', overflow: 'auto' }}>
           {this.props.children}
-        </div>
-      </div>
+        </section>
+      </main>
     )
   }
 }

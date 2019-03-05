@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
 import { Router } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
+import WebFont from 'webfontloader';
 
 import configureStore from './app/flux/configureStore';
 import Routes from './app/routes';
@@ -24,6 +25,12 @@ ReactDOM.render(
   </Provider>,
   mountPoint
 );
+
+WebFont.load({
+  google: {
+    families: ['Lato']
+  }
+});
 
 serviceWorkersManager.register();
 
