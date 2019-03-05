@@ -7,7 +7,8 @@
     "test": "test",
     "build": "NODE_ENV=production webpack --config webpack.config.production.js",
     "dev": "NODE_ENV=development webpack-dev-server --config webpack.config.development.js --hotOnly",
-    "start": "yarn run build && http-server ./dist"
+    "start-server": "yarn run build && http-server ./dist",
+    "deploy-firebase": "firebase deploy --project react-pwa-springboard"
   },
   "author": "Athman Gude <athmangude@gmail.com>",
   "license": "ISC",
