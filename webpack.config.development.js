@@ -8,7 +8,7 @@ module.exports = {
   entry: {
     app: "./src/index.js",
   },
-  devtool: "source-map",
+  devtool: "eval-source-map",
   devServer: {
     contentBase: './dist',
     hot: true,
@@ -49,6 +49,11 @@ module.exports = {
     publicPath: '/'
   },
   plugins: [
+    new CopyPlugin([
+      { from: './src/assets', to: 'assets' },
+      { from: './src/.htaccess' },
+      { from: './src/.conf' }
+    ]),
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
