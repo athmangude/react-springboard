@@ -6,10 +6,10 @@ import { Router } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
 
 import configureStore from './app/flux/configureStore';
+import Routes from './app/routes';
+import * as serviceWorkersManager from './serviceWorkersManager';
 
 const createdBrowserHistory = createBrowserHistory();
-
-import Routes from './app/routes';
 
 const initialState = {};
 const store = configureStore(initialState, createdBrowserHistory);
@@ -25,6 +25,10 @@ ReactDOM.render(
   mountPoint
 );
 
+serviceWorkersManager.register();
+
 if (module.hot) {
   module.hot.accept();
 }
+
+// https://scotch.io/tutorials/how-to-make-your-existing-react-app-progressive-in-10-minutes

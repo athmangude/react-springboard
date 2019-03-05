@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "build": "webpack --config webpack.config.production.js",
-    "dev": "webpack-dev-server --config webpack.config.development.js --hotOnly",
+    "build": "NODE_ENV=production webpack --config webpack.config.production.js",
+    "dev": "NODE_ENV=development webpack-dev-server --config webpack.config.development.js --hotOnly",
     "start": "yarn run build && http-server ./dist"
   },
   "author": "Athman Gude <athmangude@gmail.com>",
@@ -27,9 +27,11 @@
     "http-server": "^0.11.1",
     "path": "^0.12.7",
     "style-loader": "^0.23.1",
+    "sw-precache-webpack-plugin": "^0.11.5",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3",
-    "webpack-dev-server": "^3.2.1"
+    "webpack-dev-server": "^3.2.1",
+    "webpack-manifest-plugin": "^2.0.4"
   },
   "dependencies": {
     "connected-react-router": "^6.3.1",

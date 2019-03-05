@@ -15,9 +15,9 @@ export default class Landing extends Component {
   render() {
     console.log('[this.props]', this.props);
     return (
-      <div>
-        <img src={usabilityImage} style={{ width: '100%' }} />
-      </div>
+      <section>
+        <img alt="banner" src={usabilityImage} style={{ width: '100%' }} />
+      </section>
     );
   }
 }
