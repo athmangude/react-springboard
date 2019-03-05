@@ -49,9 +49,6 @@ module.exports = {
     publicPath: '/'
   },
   plugins: [
-    new CopyPlugin([
-      { from: './src/assets', to: 'assets' }
-    ]),
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       template: "./src/index.html",

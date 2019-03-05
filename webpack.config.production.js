@@ -40,8 +40,8 @@ module.exports = {
   plugins: [
     new CopyPlugin([
       { from: './src/assets', to: 'assets' },
-      { from: './src/.htaccess', to: '.htaccess' },
-      { from: './src/.conf', to: '.conf' }
+      { from: './src/.htaccess' },
+      { from: './src/.conf' }
     ]),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
