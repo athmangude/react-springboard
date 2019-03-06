@@ -22,7 +22,7 @@ export default class MainLayout extends Component {
   render() {
     console.log(this.props);
     return (
-      <ThemeProvider theme={themes.light}>
+      <ThemeProvider theme={themes.tealLime}>
         <MainLayoutWrapper style={{ width: '100%' }}>
           <aside className="main">
             <Link to="/" style={{ color: '#fff', fontSize: 25, textDecoration: 'none', textTransform: 'uppercase', fontWeight: 'bold', marginLeft: 10 }}>Spring Board</Link>

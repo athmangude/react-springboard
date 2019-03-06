@@ -1,7 +1,8 @@
 export default ({ theme }) => {
+  console.log('[theme]', theme);
   return `
     aside.main {
-      background-color: ${theme.darkPrimaryColor};
+      background-color: ${theme.primaryColor};
       height: 64px;
       width: 100%;
       display: flex;
@@ -14,8 +15,8 @@ export default ({ theme }) => {
       height: calc(100vh - 64px);
       width: 100%;
       overflow: auto;
-      background-color: ${theme.lightPrimaryColor};
-      color: ${theme.primaryTextColor};
+      background-color: ${theme.neutralColor};
+      color: ${theme.neutralTextColor};
     }
   `;
 }
