@@ -2,10 +2,16 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import styled, { ThemeProvider } from 'styled-components';
+
+import themes from '../../themes';
 
 import './main.css';
+import styles from './index.styles';
 
 import usabilityImage from 'Images/usability.png';
+
+const MainLayoutWrapper = styled.main`${styles}`;
 
 @connect((state) => ({
   ...state
@@ -16,14 +22,16 @@ export default class MainLayout extends Component {
   render() {
     console.log(this.props);
     return (
-      <main style={{ width: '100%' }}>
-        <aside style={{ height: 64, width: '100%', backgroundColor: '#008080', display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
-          <Link to="/" style={{ color: '#fff', fontSize: 25, textDecoration: 'none', textTransform: 'uppercase', fontWeight: 'bold', marginLeft: 10 }}>Spring Board</Link>
-        </aside>
-        <section style={{ height: 'calc(100vh - 64px)', width: '100%', overflow: 'auto' }}>
-          {this.props.children}
-        </section>
-      </main>
+      <ThemeProvider theme={themes.light}>
+        <MainLayoutWrapper style={{ width: '100%' }}>
+          <aside className="main">
+            <Link to="/" style={{ color: '#fff', fontSize: 25, textDecoration: 'none', textTransform: 'uppercase', fontWeight: 'bold', marginLeft: 10 }}>Spring Board</Link>
+          </aside>
+          <section className="main">
+            {this.props.children}
+          </section>
+        </MainLayoutWrapper>
+      </ThemeProvider>
     )
   }
 }

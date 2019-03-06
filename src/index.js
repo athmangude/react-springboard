@@ -10,6 +10,7 @@ import configureStore from './app/flux/configureStore';
 import Routes from './app/routes';
 import * as serviceWorkersManager from './serviceWorkersManager';
 
+
 const createdBrowserHistory = createBrowserHistory();
 
 const initialState = {};
@@ -39,3 +40,7 @@ if (module.hot) {
 }
 
 // https://scotch.io/tutorials/how-to-make-your-existing-react-app-progressive-in-10-minutes
+// https://survivejs.com/webpack/building/bundle-splitting/
+
+// chrome://flags/#enable-desktop-pwas
+// chrome://flags#enable-app-banners
