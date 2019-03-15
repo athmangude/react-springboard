@@ -12,6 +12,10 @@ import './index.css';
 
 }))
 export default class Landing extends Component {
+  state = {
+    counter: 0,
+  }
+
   render() {
     return (
       <section style={{ margin: 10 }}>
