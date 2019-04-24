@@ -3,10 +3,9 @@ import ReactDOM from 'react-dom';
 import WebFont from 'webfontloader';
 import App from './app';
 
-
+import * as ServiceWorkersManager from './serviceWorkersManager';
 
 const mountPoint = document.getElementById("app");
-
 
 ReactDOM.render(
   <App />,
@@ -15,11 +14,11 @@ ReactDOM.render(
 
 WebFont.load({
   google: {
-    families: ['Lato']
+    families: ['Lato'],
   }
 });
 
-serviceWorkersManager.register();
+ServiceWorkersManager.register();
 
 // if (module.hot) {
 //   module.hot.accept();
