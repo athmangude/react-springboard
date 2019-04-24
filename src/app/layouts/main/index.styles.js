@@ -1,5 +1,4 @@
 export default ({ theme }) => {
-  console.log('[theme]', theme);
   return `
     aside.main {
       background-color: ${theme.primaryColor};
