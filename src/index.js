@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import WebFont from 'webfontloader';
 import App from './app';
 
-import * as ServiceWorkersManager from './serviceWorkersManager';
+import * as ServiceWorkersManager from './service-workers';
 
 const mountPoint = document.getElementById("app");
 
