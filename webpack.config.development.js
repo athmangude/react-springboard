@@ -74,6 +74,7 @@ module.exports = {
     }),
     new CopyPlugin([
       { from: './src/assets', to: 'assets' },
+      { from: './src/service-workers', to: 'service-workers' },
       { from: './src/.htaccess' },
       { from: './src/.conf' },
       { from: './src/robots.txt' }
@@ -96,6 +97,10 @@ module.exports = {
   resolve: {
     alias: {
       Images: path.resolve(__dirname, "src/assets/images"),
+      SharedComponents: path.resolve(__dirname, "src/app/components"),
+      Flux: path.resolve(__dirname, "src/app/flux"),
+      Config: path.resolve(__dirname, "src/config"),
+      Utils: path.resolve(__dirname, "src/app/utils"),
     }
   },
   target: "web"
