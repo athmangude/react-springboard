@@ -4,23 +4,15 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
 import { Router } from 'react-router-dom';
-import createBrowserHistory from 'history/createBrowserHistory';
 
-import configureStore from './flux/configureStore';
 import Routes from './routes';
-
-
-const createdBrowserHistory = createBrowserHistory();
-
-const initialState = {};
-const store = configureStore(initialState, createdBrowserHistory);
 
 const mountPoint = document.getElementById("app");
 
 
-const App = () => (
+const App = ({ store, history }) => (
   <Provider store={store}>
-    <ConnectedRouter history={createdBrowserHistory}>
+    <ConnectedRouter history={history}>
       <Routes />
     </ConnectedRouter>
   </Provider>
