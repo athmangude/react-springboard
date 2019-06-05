@@ -24,7 +24,7 @@ export default function configureStore(initialState = {}, history) {
       ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
         // TODO Try to remove when `react-router-redux` is out of beta, LOCATION_CHANGE should not be fired more than once after hot reloading
         // Prevent recomputing reducers for `replaceReducer`
-        shouldHotReload: false,
+        shouldHotReload: true,
       })
       : compose;
   /* eslint-enable */
@@ -40,11 +40,11 @@ export default function configureStore(initialState = {}, history) {
 
   // Make reducers hot reloadable, see http://mxs.is/googmo
   /* istanbul ignore next */
-  // if (module.hot) {
-  //   module.hot.accept('./createReducer', () => {
-  //     store.replaceReducer(createReducer(store.injectedReducers));
-  //   });
-  // }
+  if (module.hot) {
+    module.hot.accept('./createReducer', () => {
+      store.replaceReducer(createReducer(store.injectedReducers));
+    });
+  }
 
   return store;
 }
