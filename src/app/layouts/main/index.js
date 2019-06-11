@@ -85,3 +85,5 @@ export default class MainLayout extends Component {
     )
   }
 }
+
+// https://developers.google.com/web/fundamentals/app-install-banners/
