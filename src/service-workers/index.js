@@ -12,7 +12,8 @@ const APP_CACHE = 'app-cache';
 
 // register the pre-cache service worker to cahce static assets
 export function register () { // Register the service worker
-  if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
+  // if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
+  if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       const swUrl = 'precache-service-worker.js';
       navigator.serviceWorker.register(swUrl).then(registration => {
