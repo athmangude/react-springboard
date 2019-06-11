@@ -67,7 +67,7 @@ export default class MainLayout extends Component {
           <aside className="main" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <Link to="/" style={{ color: '#fff', fontSize: 25, textDecoration: 'none', textTransform: 'uppercase', fontWeight: 'bold', marginLeft: 10 }}>Spring Board</Link>
             {
-              app.hasBeforeInstallPromptBeenFired ? (
+              app.hasBeforeInstallPromptBeenFired && !(window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true) ? (
                 <button
                   style={{ margin: '0 10px', padding: 10, borderRadius: 18, outline: 'none', fontWeight: 'bold' }}
                   onClick={this.onInstallButtonClicked}
