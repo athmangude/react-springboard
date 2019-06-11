@@ -2,13 +2,13 @@ import * as ItemActionTypes from './constants';
 
 export function addItems(items) {
   return {
-    action: ItemActionTypes.ADD_ITEMS,
+    type: ItemActionTypes.ADD_ITEMS,
     payload: items,
   }
 }
 
 export function removeItems removeItems() {
   return {
-    action: ItemActionTypes.REMOVE_ITEMS,
+    type: ItemActionTypes.REMOVE_ITEMS,
   }
 }
