@@ -21,7 +21,7 @@ const MainLayoutWrapper = styled.main`${styles}`;
 }))
 export default class MainLayout extends Component {
   render() {
-    const theme = themes.tealLime;
+    const theme = themes.dark;
     return (
       <ThemeProvider theme={theme}>
         <MainLayoutWrapper style={{ width: '100%' }}>
