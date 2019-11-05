@@ -1,0 +1,37 @@
+.hide-scroll-bar::-webkit-scrollbar {
+  display: none;
+}
+
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.chart-container .card-action {
+  color: #808285;
+}
+.chart-container .card-action:hover {
+  background-color: #d9d9d9 !important;
+  color: #3d4553 !important;
+  cursor: pointer;
+}
+
+.chart-container .card-action.active:hover {
+  background-color: #33597f !important;
+  color: #f9fafc !important;
+}
+
+.chart-container .drop-down-container .ui.pointing.dropdown > .menu {
+  left: -60px;
+  top: 60%;
+}
+
+@media print {    
+  .no-print, .no-print *{
+    display: none !important;
+  }
+}

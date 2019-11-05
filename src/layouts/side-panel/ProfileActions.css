@@ -1,0 +1,11 @@
+.side-panel > footer > .title > .profile-wrap > .profile-menu > div.menu.transition.visible {
+  border-radius: 0 !important;
+  left: 55px !important;
+  margin: 0 !important;
+}
+
+.ui.left.pointing.upward.dropdown:not(.top):not(.bottom) .menu:after {
+  background-color: var(--cool-blue);
+  box-shadow: -1px -1px 0px 0px #33597f !important;
+  left: -3px;
+}

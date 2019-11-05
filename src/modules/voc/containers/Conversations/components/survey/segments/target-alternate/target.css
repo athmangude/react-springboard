@@ -1,0 +1,18 @@
+.target-segment input.input {
+  border: none !important;
+  outline: none !important;
+}
+
+.target-segment input.input:focus {
+  outline: none !important;
+  border: none !important;
+}
+
+.target-segment .ui.input input[type="text"] {
+  border: none !important;
+}
+
+.target-segment .view-more-target-options:hover {
+  background-color: #f9fafc;
+  cursor: pointer;
+}

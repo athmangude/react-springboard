@@ -1,0 +1,11 @@
+@keyframes comeIn {
+  0% { transform: scale(.5); opacity: 0; }
+  75% { transform: scale(1.03); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+#landing .xmasonry .xblock {
+  animation: comeIn ease 0.5s;
+  animation-iteration-count: 1;
+  transition: left .3s ease, top .3s ease;
+}

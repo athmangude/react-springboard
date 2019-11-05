@@ -1,0 +1,28 @@
+svg text.blink {
+  animation: blink 2s ease-out;
+}
+
+svg text {
+  font-family: 'Open Sans';
+  font-weight: 600;
+  fill: #a0a0a0;
+}
+
+/* @keyframes blink {
+  0% {
+    text-shadow: 0 0 1px rgba(226, 25, 45, 0);
+  }
+  20% {
+    fill: rgba(226, 25, 45, 1);
+    text-shadow: -5px -5px 1px rgba(226, 25, 45, 0.8), 5px -5px 1px rgba(226, 25, 45, 0.8), 5px 5px 1px rgba(226, 25, 45, 0.8), -5px 5px 1px rgba(226, 25, 45, 0.8);
+
+    ;
+  }
+  30% {
+    fill: rgba(226, 25, 45, 1);
+    text-shadow: -5px -5px 1px rgba(226, 25, 45, 0.8), 5px -5px 1px rgba(226, 25, 45, 0.8), 5px 5px 1px rgba(226, 25, 45, 0.8), -5px 5px 1px rgba(226, 25, 45, 0.8);
+  }
+  100% {
+    text-shadow: 0 0 1px rgba(226, 25, 45, 0);
+  }
+} */

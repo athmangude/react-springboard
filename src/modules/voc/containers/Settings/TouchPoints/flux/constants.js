@@ -1,0 +1,1 @@
+export const SET_TOUCH_POINTS = 'SET_TOUCH_POINTS';

@@ -1,0 +1,9 @@
+.validation-rules .add-validation-rule:hover {
+  background-color: #fafafa;
+  cursor: pointer;
+  color: #808285;
+}
+
+.validation-rules .add-validation-rule:active, .validation-rules .add-validation-rule:focus {
+  outline: none;
+}

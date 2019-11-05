@@ -1,0 +1,13 @@
+.title-segment input.input {
+  border: none !important;
+  outline: none !important;
+}
+
+.title-segment input.input:focus {
+  outline: none !important;
+  border: none !important;
+}
+
+.title-segment .ui.input input[type="text"] {
+  border: none !important;
+}

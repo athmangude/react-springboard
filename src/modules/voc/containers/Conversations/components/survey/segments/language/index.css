@@ -1,0 +1,41 @@
+.language-segment .language-dropdown .field {
+  width: 100% !important;
+}
+
+.language-segment .language-dropdown .field > div[name="audience"] {
+  display: flex;
+  align-items: center;
+}
+
+.language-segment .language-dropdown .field > div[name="audience"] > i {
+  top: 14px !important;
+}
+
+.language-segment .language-dropdown .field > div[name="audience"] > input {
+  top: 7px;
+}
+
+.input-range__slider {
+  border: solid 1px #4a4f57;
+  background-color: #FFF;
+}
+
+.input-range__track--active {
+  background-color: #4a4f57;
+}
+
+.ui.form .field.custom-field > .selection.dropdown {
+  padding-top: 17px !important;
+}
+
+.ui.form .field.custom-field > .selection.dropdown > .dropdown.icon {
+  padding-top: 17px !important;
+}
+
+.menu.transition.visible {
+  border-radius: 0 !important;
+}
+
+.ui.form .field.custom-form-field {
+  margin: 4px 0 0 20px !important;
+}

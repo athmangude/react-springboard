@@ -1,0 +1,11 @@
+.ui.form .field.full-width-input-field {
+  width: 100% !important;
+}
+
+.ui.input.full-width-input-field input {
+  border-radius: 0 !important;
+}
+
+.field .ui.input input {
+  border-radius: 0 !important;
+}

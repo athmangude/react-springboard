@@ -1,0 +1,10 @@
+.cs-touchpoints .menu {
+  height: 150px;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
+
+.cs-touchpoints .menu::-webkit-scrollbar {
+  display: none;
+}

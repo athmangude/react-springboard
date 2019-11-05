@@ -1,0 +1,20 @@
+/* .input-range__label-container .custom-range-value {
+  position: absolute;
+  top: 40px;
+  left: -9px;
+  font-size: 14px;
+  color: #808285;
+}
+
+.input-range__label .input-range__label--max, .input-range__label .input-range__label--min {
+  display: none !important;
+} */
+
+.aod-report-age-filter .input-range__track .input-range__track--active {
+  height: 8px;
+  top: -2px;
+}
+
+.aod-report-age-filter .input-range__slider {
+  top: -4px
+}

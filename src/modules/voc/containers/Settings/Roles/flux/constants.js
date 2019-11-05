@@ -1,0 +1,2 @@
+export const ADD_ROLES = 'ADD_ROLES';
+export const SET_LOGGED_IN_USER_ROLE = 'SET_LOGGED_IN_USER_ROLE';

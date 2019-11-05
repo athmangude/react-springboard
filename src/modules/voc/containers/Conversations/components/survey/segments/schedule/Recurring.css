@@ -1,0 +1,24 @@
+.schedule-day-picker .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+  border-radius: 0 !important;
+  background-color: #4a4f57 !important;
+}
+
+.schedule-day-picker .DayPicker:not(.DayPicker--interactionDisabled) .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
+  border-radius: 0 !important;
+  background-color: transparent !important;
+  cursor: auto !important;
+}
+
+.schedule-day-picker .DayPicker-Day--today {
+  color: #DB2828 !important;
+}
+
+.schedule-day-picker .DayPickerInput {
+  margin: 10px 3px;
+  width: 107px;
+}
+
+.schedule-day-picker .DayPickerInput input {
+  text-align: center;
+  padding: 5px !important;
+}

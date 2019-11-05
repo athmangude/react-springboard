@@ -1,0 +1,14 @@
+.button:hover {
+  background-color: #F0F0F0 !important;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.wide-conversation-list-item .link:hover {
+  color: #4a4f57 !important;
+}
+
+.wide-conversation-list-item .circular-progress-bar .CircularProgressbar-text {
+  fill: #000000de;
+  font-size: 25px;
+}
