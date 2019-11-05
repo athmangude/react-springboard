@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { Icon, Dropdown } from 'semantic-ui-react';
 import QRCode from 'qrcode.react';
 
-import * as authenticationActions from 'Modules/voc/containers/Authentication/flux/actions';
+import * as authenticationActions from 'Modules/shopping/containers/Authentication/flux/actions';
 
 import './ProfileActions.css';
 

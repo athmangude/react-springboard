@@ -10,8 +10,8 @@ import Spinner from 'react-spinner-material';
 
 import ProfileActions from './ProfileActions';
 import IncognitoHeader from './IncognitoHeader';
-import * as homeFeedActions from 'Modules/voc/containers/Home/flux/actions';
-import * as collaboratorsActions from 'Modules/voc/containers/Settings/Collaborators/flux/actions';
+import * as homeFeedActions from 'Modules/shopping/containers/Home/flux/actions';
+import * as collaboratorsActions from 'Modules/shopping/containers/Settings/Collaborators/flux/actions';
 
 import ActivityHandler from 'Utils/ActivityHandler';
 

@@ -7,11 +7,11 @@ import { Icon, Dropdown } from 'semantic-ui-react/dist/commonjs';
 
 import { extractInitials } from 'Utils/UtilFunctions';
 
-import * as authenticationActions from 'Modules/voc/containers/Authentication/flux/actions';
-import * as homeActions from 'Modules/voc/containers/Home/flux/actions';
-import * as liveChatActions from 'Modules/voc/containers/Convo/flux/actions';
-import * as csReportActions from 'Modules/voc/containers/Reports/CS/flux/actions';
-import * as aodReportActions from 'Modules/voc/containers/Reports/AOD/flux/actions';
+import * as authenticationActions from 'Modules/shopping/containers/Authentication/flux/actions';
+import * as homeActions from 'Modules/shopping/containers/Home/flux/actions';
+import * as liveChatActions from 'Modules/shopping/containers/Convo/flux/actions';
+import * as csReportActions from 'Modules/shopping/containers/Reports/CS/flux/actions';
+import * as aodReportActions from 'Modules/shopping/containers/Reports/AOD/flux/actions';
 
 import './ProfileActions.css';
 

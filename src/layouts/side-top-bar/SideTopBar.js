@@ -11,7 +11,7 @@ import SideBar from './side-bar/SideBar';
 import mSurveyLogo from 'Images/white-logo.svg';
 
 import sideBarLinks from './side-bar/SideBarLinks';
-import SideBarActivityLog from 'Modules/voc/containers/ActivityLog/SideBarActivityLog';
+import SideBarActivityLog from 'Modules/shopping/containers/ActivityLog/SideBarActivityLog';
 
 import styles from './SideBarWrapperStyles';
 const SideBarWrapper = styled.div`${styles}`;

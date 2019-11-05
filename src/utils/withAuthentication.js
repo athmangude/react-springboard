@@ -7,13 +7,9 @@ import { Redirect } from "react-router";
 import Intercom from "react-intercom";
 import sha256 from "js-sha256";
 import * as EventHandler from "./EventHandler";
-import * as alertActions from "Modules/voc/containers/App/Alerts/flux/actions";
+import * as alertActions from "Modules/shopping/containers/App/Alerts/flux/actions";
 
-import * as authenticationActions from "Modules/voc/containers/Authentication/flux/actions";
-import * as configurationActions from "Modules/voc/containers/Configurations/flux/actions";
-import * as rolesActions from "Modules/voc/containers/Settings/Roles/flux/actions";
-import * as collaboratorsActions from "Modules/voc/containers/Settings/Collaborators/flux/actions";
-import * as accountActions from "Modules/voc/containers/Settings/Account/flux/actions";
+import * as authenticationActions from "Modules/shopping/containers/Authentication/flux/actions";
 
 import ErrorHandler from "./error-page/index";
 
@@ -37,14 +33,7 @@ export default function withAuthentication(WrappedComponent) {
       collaborators: state.collaborators
     }),
     dispatch => ({
-      authenticationActions: bindActionCreators(
-        authenticationActions,
-        dispatch
-      ),
-      configurationActions: bindActionCreators(configurationActions, dispatch),
-      collaboratorsActions: bindActionCreators(collaboratorsActions, dispatch),
-      rolesActions: bindActionCreators(rolesActions, dispatch),
-      accountActions: bindActionCreators(accountActions, dispatch),
+      authenticationActions: bindActionCreators(authenticationActions, dispatch),
       alertActions: bindActionCreators(alertActions, dispatch)
     })
   )
@@ -54,13 +43,6 @@ export default function withAuthentication(WrappedComponent) {
       location: PropTypes.object.isRequired,
       match: PropTypes.object.isRequired,
       alertActions: PropTypes.object.isRequired,
-      configurations: PropTypes.object.isRequired,
-      collaborators: PropTypes.array,
-      roles: PropTypes.object,
-      collaboratorsActions: PropTypes.object.isRequired,
-      rolesActions: PropTypes.object.isRequired,
-      configurationActions: PropTypes.object.isRequired,
-      accountActions: PropTypes.object.isRequired
     };
 
     static contextTypes = {
@@ -87,15 +69,6 @@ export default function withAuthentication(WrappedComponent) {
 
     componentDidMount() {
       // fetch configurations if they have not already been fetched
-      const { configurations } = this.props;
-      if (
-        (!configurations.fetchedConfigs ||
-          configurations.errorLoadingConfigs) &&
-        !configurations.loading
-      ) {
-        this.fetchAccountConfigurations();
-        this.fetchRoles();
-      }
       window.addEventListener("resize", this.onUpdateDimensions);
     }
 

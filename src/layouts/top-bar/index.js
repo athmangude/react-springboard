@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ContainerDimensions from 'react-container-dimensions';
 import { Container } from 'react-grid-system';
-import Alerts from 'Modules/voc/containers/App/Alerts';
+import Alerts from 'Modules/shopping/containers/App/Alerts';
 
 import Header from './header';
 import HeaderMinimal from './HeaderMinimal';

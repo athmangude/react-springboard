@@ -10,7 +10,7 @@ import Switch from 'react-switch';
 
 import AppInstallButton from './AppInstallButton';
 
-import * as AppActions from 'Modules/voc/containers/App/flux/actions';
+import * as AppActions from 'Modules/shopping/containers/App/flux/actions';
 
 import HelpMenuLauncher from './HelpMenuLauncher';
 
@@ -69,39 +69,10 @@ const SideNavigation = (props, context) => {
                 sideBarLinks.map((sidebarLink) => {
                   if (sidebarLink.app === 'settings') {
                     return null;
-                  } else if(sidebarLink.app === 'customers' && !configurations.features.customerAnalytics) {
-                    return null;
-                  }else if (sidebarLink.app === 'analytics' && !configurations.features.customerAnalytics) {
-                    return null;
                   }
                   return (<SideNavigationLink authentication={props.authentication} sideBarLink={sidebarLink} />);
                 })
               }
-              {/* {
-                configurations.features.customerAnalytics ? (
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', position: 'absolute', bottom: 70, left: 20 }}>
-                    <Switch
-                      checked={configurations.demoMode}
-                      onChange={onToggleDemoMode}
-                      onColor={lightPrimaryColor}
-                      onHandleColor={primaryColor}
-                      handleDiameter={15}
-                      uncheckedIcon={false}
-                      checkedIcon={false}
-                      boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
-                      activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
-                      height={10}
-                      width={24}
-                      className="react-switch"
-                      id="material-switch"
-                    />
-                    <span>&nbsp;&nbsp;</span>
-                    <span style={{ textTransform: 'capitalize' }}>
-                      Demo Mode
-                    </span>
-                  </div>
-                ) : null
-              } */}
               {
                 app.hasBeforeInstallPromptBeenFired && !(window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true) ? (
                   <AppInstallButton onInstallButtonClicked={onInstallButtonClicked} />

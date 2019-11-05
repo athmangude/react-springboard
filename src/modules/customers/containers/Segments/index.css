@@ -1,7 +1,0 @@
-.segments-scrollable-view::-webkit-scrollbar {
-  display: none;
-}
-
-div:focus, button:focus, textarea:focus, input:focus {
-  outline: none;
-}

@@ -12,13 +12,13 @@ import IndustryThemes from 'Modules/administration/containers/IndustryThemes/Loa
 import Metrics from 'Modules/administration/containers/Metrics/Loadable';
 import Telcos from 'Modules/administration/containers/Telcos/Loadable';
 import ParticipantHistory from 'Modules/administration/containers/ParticipantHistory/Loadable';
-import NotFoundPage from 'Modules/voc/containers/NotFoundPage/Loadable';
+import NotFoundPage from 'Modules/shopping/containers/NotFoundPage/Loadable';
 
 // General utility components
 import 'semantic-ui-css/semantic.css';
 import ReactGA from 'react-ga';
 import mixpanel from 'mixpanel-browser';
-import 'Modules/voc/containers/App/index.css';
+import 'Modules/shopping/containers/App/index.css';
 
 // // import run and initialize amplitiude tracker
 import amplitudeTracker from 'Utils/trackers/amplitude';

@@ -9,7 +9,7 @@ import styled from "styled-components";
 
 import ComponentMenu from "./components/ComponentMenu";
 import SideNavigation from "./components/side-navigation";
-import Alerts from "Modules/voc/containers/App/Alerts";
+import Alerts from "Modules/shopping/containers/App/Alerts";
 
 import * as adminAuthenticationActions from "Modules/administration/containers/Authentication/flux/actions";
 import * as accountsActions from "Modules/administration/containers/Accounts/flux/actions";

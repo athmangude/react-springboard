@@ -95,60 +95,36 @@ export default [{
   paths: ['/settings'],
   showActivityLog: false,
   sublinks: [{
-    label: 'Account',
-    path: '/settings/account',
+    label: 'Item',
+    path: '/settings/item',
     level: 0,
   }, {
-    label: 'Audiences',
-    path: '/settings/audiences',
+    label: 'Item',
+    path: '/settings/item',
     level: 0,
   }, {
-    label: 'Collaborators',
-    path: '/settings/collaborators',
+    label: 'Item',
+    path: '/settings/item',
     level: 0,
   }, {
-    label: 'Profile',
-    path: '/settings/me',
+    label: 'Item',
+    path: '/settings/item',
     level: 0,
   }, {
-    label: 'Touch Points',
-    path: '/settings/touch-points',
+    label: 'Item',
+    path: '/settings/item',
     level: 0,
   }, {
-    label: 'Incentives Usage',
-    path: '/settings/incentives-usage',
+    label: 'Item',
+    path: '/settings/item',
     level: 0,
   }, {
-    label: 'Web Hooks',
-    path: '/settings/web-hook-events',
+    label: 'Item',
+    path: '/settings/item',
     level: 0,
   }, {
-    label: 'Reminders',
-    path: '/settings/reminders',
-    level: 0,
-  }, {
-    label: 'Reinvites',
-    path: '/settings/reinvites',
-    level: 0,
-  }, {
-    label: 'Delays',
-    path: '/settings/delays',
-    level: 0,
-  }, {
-    label: 'Subscriptions',
-    path: '/settings/subscriptions',
-    level: 0,
-  }, {
-    label: 'Business Numbers',
-    path: '/settings/business-numbers',
-    level: 0,
-  }, {
-    label: 'Payments',
-    path: '/settings/payments',
-    level: 0,
-  }, {
-    label: 'DND',
-    path: '/settings/dnd-lists',
+    label: 'Item',
+    path: '/settings/item',
     level: 0,
   }],
 }];

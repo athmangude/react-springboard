@@ -1,1 +1,0 @@
-export const SET_PAYMENT_TYPES = 'SET_PAYMENT_TYPES';

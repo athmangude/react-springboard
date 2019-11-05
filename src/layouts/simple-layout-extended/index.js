@@ -11,14 +11,13 @@ import SidePanel from "./components/SidePanel";
 import AccountDropDown from "./components/account-dropdown";
 import SideNavigation from "./components/side-navigation";
 import sidebarLinks from "./components/side-navigation/SideBarLinks";
-import Alerts from "Modules/voc/containers/App/Alerts";
+import Alerts from "Modules/shopping/containers/App/Alerts";
 import IconButton from "SharedComponents/icon-button";
 
 import * as adminAuthenticationActions from "Modules/administration/containers/Authentication/flux/actions";
 import * as accountsActions from "Modules/administration/containers/Accounts/flux/actions";
-import * as appActions from "Modules/voc/containers/App/flux/actions";
-import * as authenticationActions from "Modules/voc/containers/Authentication/flux/actions";
-import * as configurationActions from "Modules/voc/containers/Configurations/flux/actions";
+import * as appActions from "Modules/shopping/containers/App/flux/actions";
+import * as authenticationActions from "Modules/shopping/containers/Authentication/flux/actions";
 
 import RightDrawer from "./components/right-drawer";
 import BottomNavigation from "./components/bottom-navigation";
@@ -57,7 +56,6 @@ const SimpleLayoutExtendedWrapper = styled.div`
   accountsActions: bindActionCreators(accountsActions, dispatch),
   appActions: bindActionCreators(appActions, dispatch),
   authenticationActions: bindActionCreators(authenticationActions, dispatch),
-  configurationActions: bindActionCreators(configurationActions, dispatch),
   dispatch,
 }))
 
