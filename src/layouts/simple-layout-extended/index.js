@@ -15,7 +15,7 @@ import Alerts from "Modules/shopping/containers/App/Alerts";
 import IconButton from "SharedComponents/icon-button";
 
 import * as adminAuthenticationActions from "Modules/administration/containers/Authentication/flux/actions";
-import * as accountsActions from "Modules/administration/containers/Accounts/flux/actions";
+import * as accountsActions from "Modules/administration/containers/Home/flux/actions";
 import * as appActions from "Modules/shopping/containers/App/flux/actions";
 import * as authenticationActions from "Modules/shopping/containers/Authentication/flux/actions";
 
