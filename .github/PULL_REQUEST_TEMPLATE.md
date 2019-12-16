@@ -1,4 +1,4 @@
-## mSurvey Front-end
+## Springboard Front-end
 
 Thank you for contributing! Please take a moment to review our [**contributing guidelines**](https://github.com/athmangude/spring-board/blob/master/.github/CONTRIBUTING.md)
 to make the process easy and effective for everyone involved.

@@ -19,7 +19,7 @@ const Response = (props) => {
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', width: 'calc(100% - 80px)' }}>
         <div>
-          <b>Michael Moore | </b><b style={{ color: '#6d6e71' }}>mSurvey</b>
+          <b>Michael Moore | </b><b style={{ color: '#6d6e71' }}>Springboard</b>
         </div>
         <span style={{ fontWeight: 600, fontSize: 11, color: '#808285' }}>{moment(response.createDate).format('MMM. Do, YYYY | hh:mm a')}</span>
         <p style={{ color: '#808285', fontSize: 11, margin: '10px 0' }}>{response.message}</p>

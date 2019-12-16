@@ -153,7 +153,7 @@ class SignIn extends PureComponent {
                             </div>
                             <div className="field">
                               <PasswordToggleTextInput name="password" placeholder="Password" type="password" value={this.state.password} onChange={this.handleChange} onKeyDown={this.onKeyDown} />
-                              <label htmlFor="submit" style={{ color: '#808285', fontSize: 12, fontWeight: 100, margin: '10px 0' }}>By clicking Sign In I agree to the <a target="_blank" href="https://msurvey.co/terms" style={{ color: primaryColor, display: 'inline' }}>Terms of Service</a> and <a target="_blank" href="https://msurvey.co/privacy-policy" style={{ color: primaryColor, display: 'inline' }}>Privacy Policy</a>.</label>
+                              <label htmlFor="submit" style={{ color: '#808285', fontSize: 12, fontWeight: 100, margin: '10px 0' }}>By clicking Sign In I agree to the <a target="_blank" href="/terms" style={{ color: primaryColor, display: 'inline' }}>Terms of Service</a> and <a target="_blank" href="/privacy-policy" style={{ color: primaryColor, display: 'inline' }}>Privacy Policy</a>.</label>
                             </div>
                           </div>
                           <div className="ui error message"></div>
@@ -162,7 +162,7 @@ class SignIn extends PureComponent {
                         <br />
                         <p><a href="#" onClick={this.onGoToForgotPassword} style={{ color: primaryColor }}>Forgot password?</a></p>
                         {/*
-                        <p style={{ fontSize: 12, textAlign: 'center' }}>Dont have an account? Contact us at <a href="mailto:support@msurvey.co.ke" style={{ color: primaryColor }}>support@msurvey.co.ke.</a></p>
+                        <p style={{ fontSize: 12, textAlign: 'center' }}>Dont have an account? Contact us at <a href="mailto:support@springboard.com" style={{ color: primaryColor }}>support@springboard.com.</a></p>
                         */}
                         {/* <p style={{ fontSize: 12, textAlign: 'center' }}>Dont have an account?&nbsp;<a onClick={this.onGoToSignUp} href="#" style={{ color: primaryColor, display: 'inline' }}>Sign Up</a></p> */}
 
@@ -187,7 +187,7 @@ class SignIn extends PureComponent {
                           </div>
                           <div className="field">
                             <PasswordToggleTextInput name="password" placeholder="Password" type="password" value={this.state.password} onChange={this.handleChange} onKeyDown={this.onKeyDown} />
-                            <label htmlFor="submit" style={{ color: '#808285', fontSize: 12, fontWeight: 100, margin: '10px 0' }}>By clicking Sign In I agree to the <a href="https://msurvey.co/terms" style={{ color: primaryColor, display: 'inline' }}>Terms of Service</a> and <a href="https://msurvey.co/privacy-policy" style={{ color: primaryColor, display: 'inline' }}>Privacy Policy</a>.</label>
+                            <label htmlFor="submit" style={{ color: '#808285', fontSize: 12, fontWeight: 100, margin: '10px 0' }}>By clicking Sign In I agree to the <a href="/terms" style={{ color: primaryColor, display: 'inline' }}>Terms of Service</a> and <a href="/privacy-policy" style={{ color: primaryColor, display: 'inline' }}>Privacy Policy</a>.</label>
                           </div>
                         </div>
                         <div className="ui error message"></div>
@@ -196,7 +196,7 @@ class SignIn extends PureComponent {
                       <br />
                       <p><a href="#" onClick={this.onGoToForgotPassword} style={{ color: primaryColor }}>Forgot password?</a></p>
                       {/*
-                      <p style={{ fontSize: 12, textAlign: 'center' }}>Dont have an account? Contact us at <a href="mailto:support@msurvey.co.ke" style={{ color: primaryColor }}>support@msurvey.co.ke.</a></p>
+                      <p style={{ fontSize: 12, textAlign: 'center' }}>Dont have an account? Contact us at <a href="mailto:support@springboard.com" style={{ color: primaryColor }}>support@springboard.com.</a></p>
                       */}
                       {/* <p style={{ fontSize: 12, textAlign: 'center' }}>Dont have an account?&nbsp;<a onClick={this.onGoToSignUp} href="#" style={{ color: primaryColor, display: 'inline' }}>Sign Up</a></p> */}
 

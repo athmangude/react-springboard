@@ -27,7 +27,7 @@ const config = {
   },
   production: {
     api: {
-      url: 'https://bridge.msurvey.co/api/0.1.0',
+      url: 'http://localhost:4041/api/0.1.0',
     },
     socket: {
       url: 'http://localhost:4041/api/0.1.0',

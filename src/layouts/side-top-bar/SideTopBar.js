@@ -8,7 +8,7 @@ import styled from 'styled-components';
 import AccountDropDown from './account-dropdown';
 
 import SideBar from './side-bar/SideBar';
-import mSurveyLogo from 'Images/white-logo.svg';
+import logo from 'Images/white-logo.svg';
 
 import sideBarLinks from './side-bar/SideBarLinks';
 import SideBarActivityLog from 'Modules/shopping/containers/ActivityLog/SideBarActivityLog';
@@ -84,7 +84,7 @@ export default class SideTopBar extends Component {
       <div style={{ width: '100vw', height: '100vh', display: 'flex', flexDirection: 'column' }}>
         <div style={{ width: '100vw', height: 64, display: 'flex', flexDirection: 'row', zIndex: 2 }}>
           <div className="logo-container" style={{ width: 64, height: 62, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#2574a6' }}>
-            <img alt="msurvey-logo" src={logo} className="msurvey-logo" />
+            <img alt="logo" src={logo} className="logo" />
           </div>
           <div style={{ height: 64, backgroundColor: '#FFF', display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: 'calc(100vw - 68px)', borderBottom: 'solid 1px #edecec94' }}>
             <span style={{ margin: '0 10px', fontSize: 20 }}>

@@ -16,7 +16,7 @@ const ProfileActions = (props, context) => {
       text: (
         <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'row', margin: '-11px -16px', padding: '3px 5px', backgroundColor: '#33597f', color: '#FFF !important', cursor: 'default' }}>
           <div style={{ marginRight: 5 }}>
-            <QRCode value="https://www.qa-ui.msurvey.co.ke" size={25} bgColor="#33597f" fgColor="#FFF" />
+            <QRCode value="https://twitter.com/athmangude" size={25} bgColor="#33597f" fgColor="#FFF" />
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', color: '#FFF' }}>
             <span style={{ color: '#FFF', fontWeight: 100, fontSize: 8 }}>{props.user}</span>

@@ -3,7 +3,7 @@ import { Container, Row } from 'react-grid-system';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import mSurveyLogo from 'Images/white-logo.svg';
+import logo from 'Images/white-logo.svg';
 
 const IncognitoHeader = ({ onLinkClicked }) => (
   <div className="top-navigation-bar" style={{ height: 60, backgroundColor: '#33597f', position: 'sticky', top: 0, width: '100%', zIndex: 9999999 }}>

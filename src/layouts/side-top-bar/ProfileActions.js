@@ -19,11 +19,6 @@ const ProfileActions = (props, context) => {
       key: 'user',
       text: (
         <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'row', margin: '-11px -16px', padding: '10px 10px', backgroundColor: '#fff', color: '#FFF !important', cursor: 'default', borderTopRightRadius: 8, borderTopLeftRadius: 8 }}>
-          {/*
-          <div style={{ marginRight: 5 }}>
-            <QRCode value="https://www.qa-ui.msurvey.co.ke" size={25} bgColor="#33597f" fgColor="#FFF" />
-          </div>
-          */}
           <div style={{ display: 'flex', flexDirection: 'column', color: '#FFF' }}>
             <span style={{ color: '#58595b', fontWeight: 100, fontSize: 14, textTransform: 'capitalize' }}>{props.user}</span>
             <span style={{ color: '#58595b', fontWeight: 100, fontSize: 10, textTransform: 'capitalize' }}>{props.account}</span>
@@ -56,38 +51,7 @@ const ProfileActions = (props, context) => {
       }
     },
   })));
-    // {
-    //   key: 'stars',
-    //   text: (
-    //     <div>
-    //       <Icon name="star" />Your Stars
-    //     </div>
-    //   ),
-    // },
-    // {
-    //   key: 'explore',
-    //   text: (
-    //     <div>
-    //       <Icon name="search" />Explore
-    //     </div>
-    //   ),
-    // },
-    // {
-    //   key: 'integrations',
-    //   text: (
-    //     <div>
-    //       <Icon name="plug" />Integrations
-    //     </div>
-    //   ),
-    // },
-    // {
-    //   key: 'help',
-    //   text: (
-    //     <div>
-    //       <Icon name="help circle" />Help
-    //     </div>
-    //   ),
-    // },
+  
   options = options.concat([
     {
       key: 'activityLog',

@@ -25,11 +25,6 @@ const ProfileActions = (props, context) => {
             display: 'flex', alignItems: 'center', flexDirection: 'row', margin: '-11px -16px', padding: '10px 10px', backgroundColor: '#fff', color: '#FFF !important', cursor: 'default', borderTopRightRadius: 8, borderTopLeftRadius: 8,
           }}
         >
-          {/*
-          <div style={{ marginRight: 5 }}>
-            <QRCode value="https://www.qa-ui.msurvey.co.ke" size={25} bgColor="#33597f" fgColor="#FFF" />
-          </div>
-          */}
           <div style={{ display: 'flex', flexDirection: 'column', color: '#FFF' }}>
             <span
               style={{

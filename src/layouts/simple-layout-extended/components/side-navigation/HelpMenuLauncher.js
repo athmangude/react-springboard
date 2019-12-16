@@ -93,7 +93,7 @@ export default class HelpMenuLauncher extends Component {
               style={{ color: "inherit" }}
             >
               <button type="button" className="menu-item mini">
-                Twitter – @mSurvey
+                Twitter – @athmangude
               </button>
             </a>
             <hr />

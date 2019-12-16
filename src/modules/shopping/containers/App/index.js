@@ -73,15 +73,6 @@ amplitudeTracker();
 ReactGA.initialize('UA-119798927-1');
 mixpanel.init('63e080a7a844910225211ccc2964ee5f');
 
-// axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
-// axios.defaults.headers.common['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains';
-// axios.defaults.headers.common['X-Content-Type-Options'] = 'nosniff';
-// axios.defaults.headers.common['X-Frame-Options'] = 'SAMEORIGIN';
-// axios.defaults.headers.common['X-XSS-Protection'] = '1; mode=block';
-// axios.defaults.headers.common['Referrer-Policy'] = 'origin';
-// axios.defaults.headers.common['Content-Security-Policy'] = "default-src 'none'; connect-src 'self' bridge.msurvey.co staging-bridge.msurvey.co new-platform-qa.s3.amazonaws.com api.mixpanel.com api.amplitude.com api-iam.intercom.io wss://nexus-websocket-a.intercom.io wss://nexus-websocket-b.intercom.io www.google-analytics.com js.intercomcdn.com ronnienyaga.report-uri.com cdn.report-uri.com; font-src 'self' code.ionicframework.com fonts.gstatic.com fonts.googleapis.com js.intercomcdn.com cdnjs.cloudflare.com material.io data:; frame-src widget.intercom.io; img-src 'self' www.google-analytics.com data:; manifest-src 'self'; script-src 'self' 'unsafe-eval' cdn.amplitude.com js.intercomcdn.com widget.intercom.io www.google-analytics.com www.gstatic.com cdnjs.cloudflare.com cdn.report-uri.com; style-src 'self' 'unsafe-inline' code.ionicframework.com cdnjs.cloudflare.com fonts.googleapis.com; upgrade-insecure-requests";
-
-
 export default function App() {
   return (
     <div

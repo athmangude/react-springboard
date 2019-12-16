@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import './header.css';
-import mSurveyLogo from 'Images/white-logo.svg';
+import logo from 'Images/white-logo.svg';
 
 const AppHeader = (props) => props.authentication.user ?
   (

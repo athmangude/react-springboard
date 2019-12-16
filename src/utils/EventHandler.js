@@ -36,16 +36,6 @@ export function trackEvent(event) {
     return;
   }
 
-  if (window.localStorage.getItem("user")) {
-    const user = JSON.parse(window.localStorage.getItem("user"));
-
-    // TODO: don't collect data from mSurvey users
-    if (user && user.user.username === "bitnami") {
-      // don't log bitnami
-      return;
-    }
-  }
-
   trackToMixpanel(event);
   trackToIntercom(event);
   trackToGoogleAnalytics(event);

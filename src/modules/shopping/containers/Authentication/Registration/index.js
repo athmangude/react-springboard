@@ -263,7 +263,7 @@ class Registration extends Component {
                                       <input type="password" name="confirmationPassword" placeholder="Confirmation Password" value={this.state.user.confirmationPassword} onChange={this.handleChangePassword} style={{ borderRadius: 0, borderTop: 'none', borderRight: 'none', borderLeft: 'none', borderBottom: '1px solid #D8D8D8', padding: '10px 5px' }} />
                                     </div>
                                     <MwambaFormError name="confirmationPassword" value={this.state.user.confirmationPassword} rules={['required']} updateFormState={this.updateFormState} />
-                                    <label htmlFor="submit" style={{ color: '#808285', fontSize: 12, fontWeight: 100, margin: '10px 0' }}>By signing up I agree to the <a target="_blank" href="https://msurvey.co/terms" style={{ color: '#BF2A2B', display: 'inline' }}>Terms of Service</a> and <a target="_blank" href="https://msurvey.co/privacy-policy" style={{ color: '#BF2A2B', display: 'inline' }}>Privacy Policy</a>.</label>
+                                    <label htmlFor="submit" style={{ color: '#808285', fontSize: 12, fontWeight: 100, margin: '10px 0' }}>By signing up I agree to the <a target="_blank" href="/terms" style={{ color: '#BF2A2B', display: 'inline' }}>Terms of Service</a> and <a target="_blank" href="/privacy-policy" style={{ color: '#BF2A2B', display: 'inline' }}>Privacy Policy</a>.</label>
                                   </div>
                                 </div>
                                 <div className="ui error message"></div>

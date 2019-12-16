@@ -163,7 +163,7 @@ To build for on-premise deployment
 
 > ```
 > ERROR in ./app/images/login_bg.jpg
-> Module build failed: Error: spawn /Users/athmangude/Workspace/mSurvey/mwamba-ui/node_modules/jpegtran-bin/vendor/jpegtran > ENOENT
+> Module build failed: Error: spawn /Users/athmangude/Workspace/OpenSource/react-springboard/node_modules/jpegtran-bin/vendor/jpegtran > ENOENT
 >     at Process.ChildProcess._handle.onexit (internal/child_process.js:229:19)
 >     at onErrorNT (internal/child_process.js:406:16)
 >     at process._tickCallback (internal/process/next_tick.js:63:19)

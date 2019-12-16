@@ -16,7 +16,7 @@ import * as collaboratorsActions from 'Modules/shopping/containers/Settings/Coll
 import ActivityHandler from 'Utils/ActivityHandler';
 
 import './header.css';
-import mSurveyLogo from 'Images/white-logo.svg';
+import logo from 'Images/white-logo.svg';
 
 class AppHeaderMinimal extends Component {
   constructor(props) {
