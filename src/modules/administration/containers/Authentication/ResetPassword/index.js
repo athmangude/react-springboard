@@ -182,7 +182,7 @@ class ResetPassword extends Component {
           meta={[
             {
               name: "description",
-              content: "Reset password page for Ajua administration platform"
+              content: "Reset password page for Springboard admin"
             }
           ]}
         />

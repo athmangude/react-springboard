@@ -49,7 +49,7 @@ export default class HelpMenuLauncher extends Component {
         {isMenuOpen ? (
           <div className="menu" ref={this.container}>
             <a
-              href="https://helpdesk.msurvey.co"
+              href="https://helpdesk.springboard.com"
               target="_blank"
               style={{ color: "inherit" }}
             >
@@ -70,7 +70,7 @@ export default class HelpMenuLauncher extends Component {
             </button>
             <hr />
             <a
-              href="https://msurvey.co/careers"
+              href="https://springboard.com/careers"
               target="_blank"
               style={{ color: "inherit" }}
             >
@@ -79,7 +79,7 @@ export default class HelpMenuLauncher extends Component {
               </button>
             </a>
             <a
-              href="https://msurvey.co/terms"
+              href="https://springboard.com/terms"
               target="_blank"
               style={{ color: "inherit" }}
             >
@@ -88,16 +88,7 @@ export default class HelpMenuLauncher extends Component {
               </button>
             </a>
             <a
-              href="https://medium.com/msurvey-pulse"
-              target="_blank"
-              style={{ color: "inherit" }}
-            >
-              <button type="button" className="menu-item mini">
-                Blog
-              </button>
-            </a>
-            <a
-              href="https://twitter.com/mSurvey"
+              href="https://twitter.com/springboard"
               target="_blank"
               style={{ color: "inherit" }}
             >

@@ -119,7 +119,7 @@ class ForgotPassword extends Component {
           meta={[
             {
               name: "description",
-              content: "Forgot password page for Ajua administration platform"
+              content: "Forgot password page for Springboard admin"
             }
           ]}
         />

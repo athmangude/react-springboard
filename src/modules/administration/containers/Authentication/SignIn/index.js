@@ -139,7 +139,7 @@ class SignIn extends Component {
           meta={[
             {
               name: "description",
-              content: "Sign in page for Ajua admin platform"
+              content: "Sign in page for Spring board admin"
             }
           ]}
         />
