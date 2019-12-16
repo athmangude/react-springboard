@@ -6,10 +6,10 @@ import ReactGA from "react-ga";
 // import itemsReducer from 'Modules/main/flux/items/reducer';
 // import appReducer from 'Modules/main/flux/app/reducer';
 
-import globalReducer from "Modules/main//containers/App/reducer";
-import languageProviderReducer from "Modules/main//containers/LanguageProvider/reducer";
-import appReducer from "Modules/main//containers/App/flux/reducer";
-import alertsReducer from "Modules/main//containers/App/Alerts/flux/reducer";
+import globalReducer from "Modules/main/containers/App/reducer";
+import languageProviderReducer from "Modules/main/containers/LanguageProvider/reducer";
+import appReducer from "Modules/main/containers/App/flux/reducer";
+import alertsReducer from "Modules/main/containers/App/Alerts/flux/reducer";
 
 /**
  * Admin Reducers will come here

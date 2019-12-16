@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { Redirect } from "react-router";
 import * as EventHandler from "./EventHandler";
-import * as alertActions from "Modules/main//containers/App/Alerts/flux/actions";
+import * as alertActions from "Modules/main/containers/App/Alerts/flux/actions";
 
 import * as adminAuthenticationActions from "Modules/administration/containers/Authentication/flux/actions";
 

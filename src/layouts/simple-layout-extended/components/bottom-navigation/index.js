@@ -55,13 +55,6 @@ export default class MyBottomNavigation extends Component {
         }
         {
           NavigationLinks.map((sidebarLink) => {
-            if (sidebarLink.app === 'settings') {
-              return null;
-            } else if(sidebarLink.app === 'customers' && !configurations.features.customerAnalytics) {
-              return null;
-            }else if (sidebarLink.app === 'analytics' && !configurations.features.customerAnalytics) {
-              return null;
-            }
             const active = !!sidebarLink.paths.find((aPath) => (router.route.match.path.substring(1).includes(aPath.substring(1)) && aPath.substring(1).length) || (aPath === '/' && router.route.match.path === '/'));
             return (
               <BottomNavigationAction

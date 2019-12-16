@@ -6,7 +6,7 @@ import styled from "styled-components";
 // import 'sanitize.css/sanitize.css';
 import "normalize.css/normalize.css";
 
-import * as AppActions from "Modules/main//flux/app/actions";
+import * as AppActions from "Modules/main/flux/app/actions";
 
 import "./main.css";
 import styles from "./index.css";
