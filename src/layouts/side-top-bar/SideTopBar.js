@@ -11,7 +11,7 @@ import SideBar from './side-bar/SideBar';
 import logo from 'Images/white-logo.svg';
 
 import sideBarLinks from './side-bar/SideBarLinks';
-import SideBarActivityLog from 'Modules/shopping/containers/ActivityLog/SideBarActivityLog';
+import SideBarActivityLog from 'Modules/main/containers/ActivityLog/SideBarActivityLog';
 
 import styles from './SideBarWrapperStyles';
 const SideBarWrapper = styled.div`${styles}`;

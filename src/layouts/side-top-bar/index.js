@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 
-import Alerts from 'Modules/shopping/containers/App/Alerts';
+import Alerts from 'Modules/main/containers/App/Alerts';
 import * as EventHandler from 'Utils/EventHandler';
 
-import * as appActions from 'Modules/shopping/containers/App/flux/actions';
-import * as authenticationActions from 'Modules/shopping/containers/Authentication/flux/actions';
+import * as appActions from 'Modules/main/containers/App/flux/actions';
+import * as authenticationActions from 'Modules/main/containers/Authentication/flux/actions';
 
 import SideTopBar from './SideTopBar';
 

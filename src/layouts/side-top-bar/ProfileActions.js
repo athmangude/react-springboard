@@ -5,11 +5,11 @@ import { bindActionCreators } from 'redux';
 import { Icon, Dropdown } from 'semantic-ui-react/dist/commonjs';
 // import QRCode from 'qrcode.react';
 
-import * as authenticationActions from 'Modules/shopping/containers/Authentication/flux/actions';
-import * as homeActions from 'Modules/shopping/containers/Home/flux/actions';
-import * as liveChatActions from 'Modules/shopping/containers/Convo/flux/actions';
-import * as csReportActions from 'Modules/shopping/containers/Reports/CS/flux/actions';
-import * as aodReportActions from 'Modules/shopping/containers/Reports/AOD/flux/actions';
+import * as authenticationActions from 'Modules/main/containers/Authentication/flux/actions';
+import * as homeActions from 'Modules/main/containers/Home/flux/actions';
+import * as liveChatActions from 'Modules/main/containers/Convo/flux/actions';
+import * as csReportActions from 'Modules/main/containers/Reports/CS/flux/actions';
+import * as aodReportActions from 'Modules/main/containers/Reports/AOD/flux/actions';
 
 import './ProfileActions.css';
 

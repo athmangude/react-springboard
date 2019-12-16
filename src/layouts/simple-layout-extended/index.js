@@ -11,13 +11,13 @@ import SidePanel from "./components/SidePanel";
 import AccountDropDown from "./components/account-dropdown";
 import SideNavigation from "./components/side-navigation";
 import sidebarLinks from "./components/side-navigation/SideBarLinks";
-import Alerts from "Modules/shopping/containers/App/Alerts";
+import Alerts from "Modules/main//containers/App/Alerts";
 import IconButton from "SharedComponents/icon-button";
 
 import * as adminAuthenticationActions from "Modules/administration/containers/Authentication/flux/actions";
 import * as accountsActions from "Modules/administration/containers/Home/flux/actions";
-import * as appActions from "Modules/shopping/containers/App/flux/actions";
-import * as authenticationActions from "Modules/shopping/containers/Authentication/flux/actions";
+import * as appActions from "Modules/main//containers/App/flux/actions";
+import * as authenticationActions from "Modules/main//containers/Authentication/flux/actions";
 
 import RightDrawer from "./components/right-drawer";
 import BottomNavigation from "./components/bottom-navigation";

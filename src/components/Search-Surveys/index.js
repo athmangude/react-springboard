@@ -7,7 +7,7 @@ import { observer } from 'mobx-react';
 import { bindActionCreators } from 'redux';
 
 // import * as conversationActions from './flux/actions';
-import * as conversationActions from 'Modules/shopping/containers/Conversations/flux/actions';
+import * as conversationActions from 'Modules/main/containers/Conversations/flux/actions';
 
 const WAIT_INTERVAL = 750;
 

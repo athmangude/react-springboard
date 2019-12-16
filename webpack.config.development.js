@@ -9,7 +9,7 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    app: ['@babel/polyfill', './src/modules/shopping/index.js'],
+    app: ['@babel/polyfill', './src/modules/main/index.js'],
   },
   node: {
     fs: 'empty',

@@ -10,7 +10,7 @@ import Switch from 'react-switch';
 
 import AppInstallButton from './AppInstallButton';
 
-import * as AppActions from 'Modules/shopping/containers/App/flux/actions';
+import * as AppActions from 'Modules/main/containers/App/flux/actions';
 
 import HelpMenuLauncher from './HelpMenuLauncher';
 

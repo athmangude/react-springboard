@@ -10,8 +10,8 @@ import moment from 'moment';
 
 import ProfileActions from './ProfileActions';
 import IncognitoHeaderMinimal from './IncognitoHeaderMinimal';
-import * as homeFeedActions from 'Modules/shopping/containers/Home/patch/actions';
-import * as collaboratorsActions from 'Modules/shopping/containers/Settings/Collaborators/flux/actions';
+import * as homeFeedActions from 'Modules/main/containers/Home/patch/actions';
+import * as collaboratorsActions from 'Modules/main/containers/Settings/Collaborators/flux/actions';
 
 import ActivityHandler from 'Utils/ActivityHandler';
 

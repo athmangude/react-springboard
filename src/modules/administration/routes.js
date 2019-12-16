@@ -7,13 +7,13 @@ import Home from 'Modules/administration/containers/Home/Loadable';
 import AdminSignIn from 'Modules/administration/containers/Authentication/SignIn/Loadable';
 import AdministrationForgotPassword from 'Modules/administration/containers/Authentication/ForgotPassword/Loadable';
 import AdministrationResetPassword from 'Modules/administration/containers/Authentication/ResetPassword/Loadable';
-import NotFoundPage from 'Modules/shopping/containers/NotFoundPage/Loadable';
+import NotFoundPage from 'Modules/main/containers/NotFoundPage/Loadable';
 
 // General utility components
 import 'semantic-ui-css/semantic.css';
 import ReactGA from 'react-ga';
 import mixpanel from 'mixpanel-browser';
-import 'Modules/shopping/containers/App/index.css';
+import 'Modules/main/containers/App/index.css';
 
 // // import run and initialize amplitiude tracker
 import amplitudeTracker from 'Utils/trackers/amplitude';

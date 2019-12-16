@@ -8,7 +8,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-  entry: ['@babel/polyfill', './src/modules/shopping/index.js'],
+  entry: ['@babel/polyfill', './src/modules/main/index.js'],
   devtool: 'source-map',
   mode: 'production',
   node: {

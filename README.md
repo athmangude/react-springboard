@@ -138,10 +138,10 @@ Here is an example of the `production` property on the object that will be used 
 ```
 production: {
     api: {
-      url: 'https://bridge-location.company.com/api/0.1.0', // Brige API url root
+      url: 'https://bridge-location.springboard.com/api/0.1.0', // Brige API url root
     },
     socket: {
-      url: 'https://bridge-location.company.com', // websocket connection for realtime updates
+      url: 'https://bridge-location.springboard.com', // websocket connection for realtime updates
     },
     metrics: {
       url: 'https://metrics-server-location.compnay.com', // endpoint for metrics server

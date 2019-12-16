@@ -7,9 +7,9 @@ import { Redirect } from "react-router";
 import Intercom from "react-intercom";
 import sha256 from "js-sha256";
 import * as EventHandler from "./EventHandler";
-import * as alertActions from "Modules/shopping/containers/App/Alerts/flux/actions";
+import * as alertActions from "Modules/main//containers/App/Alerts/flux/actions";
 
-import * as authenticationActions from "Modules/shopping/containers/Authentication/flux/actions";
+import * as authenticationActions from "Modules/main//containers/Authentication/flux/actions";
 
 import ErrorHandler from "./error-page/index";
 

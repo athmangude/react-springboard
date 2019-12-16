@@ -4,8 +4,8 @@ import ReactGA from "react-ga";
 import mixpanel from "mixpanel-browser";
 
 import config from 'Config';
-import configureStore from "Modules/shopping/flux/configureStore";
-import * as authenticationActions from "Modules/shopping/containers/Authentication/flux/actions";
+import configureStore from "Modules/main//flux/configureStore";
+import * as authenticationActions from "Modules/main//containers/Authentication/flux/actions";
 import * as adminAuthenticationActions from "Modules/administration/containers/Authentication/flux/actions";
 
 export function handleException(exception) {

@@ -3,13 +3,13 @@ import { connectRouter } from "connected-react-router";
 import { LOCATION_CHANGE } from "react-router-redux";
 import ReactGA from "react-ga";
 
-// import itemsReducer from 'Modules/shopping/flux/items/reducer';
-// import appReducer from 'Modules/shopping/flux/app/reducer';
+// import itemsReducer from 'Modules/main/flux/items/reducer';
+// import appReducer from 'Modules/main/flux/app/reducer';
 
-import globalReducer from "Modules/shopping/containers/App/reducer";
-import languageProviderReducer from "Modules/shopping/containers/LanguageProvider/reducer";
-import appReducer from "Modules/shopping/containers/App/flux/reducer";
-import alertsReducer from "Modules/shopping/containers/App/Alerts/flux/reducer";
+import globalReducer from "Modules/main//containers/App/reducer";
+import languageProviderReducer from "Modules/main//containers/LanguageProvider/reducer";
+import appReducer from "Modules/main//containers/App/flux/reducer";
+import alertsReducer from "Modules/main//containers/App/Alerts/flux/reducer";
 
 /**
  * Admin Reducers will come here

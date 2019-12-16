@@ -2,7 +2,7 @@
 import { IntercomAPI } from 'react-intercom';
 import ReactGA from 'react-ga';
 
-import * as authenticationActions from 'Modules/shopping/containers/Authentication/flux/actions';
+import * as authenticationActions from 'Modules/main/containers/Authentication/flux/actions';
 import * as adminAuthenticationActions from 'Modules/administration/containers/Authentication/flux/actions';
 
 class ActivityHandler {
