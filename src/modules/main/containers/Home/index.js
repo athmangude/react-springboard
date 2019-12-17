@@ -7,8 +7,8 @@ import SimpleLayoutExtended from "Layouts/simple-layout-extended";
 export default () => {
   return (
     <SimpleLayoutExtended>
-      <div>
-        Build something amazing!
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
+        <h1>Build something amazing!</h1>
       </div>
     </SimpleLayoutExtended>
   );
