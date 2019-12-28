@@ -1,9 +1,9 @@
-export default () => `
-  .action-button {
-    background-color: none;
+export default ({ theme, hoverColor, backgroundColor }) => {
+  return `
+    background-color: ${backgroundColor || 'transparent'};
 
     &:hover {
-      background-color: #d9d9d9 !important;
+      background-color: ${hoverColor || theme.palette.grey['400']} !important;
     }
-  }
-`;
+  `;
+};

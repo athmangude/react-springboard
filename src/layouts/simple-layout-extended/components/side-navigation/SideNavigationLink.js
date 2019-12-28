@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import styled from 'styled-components';
+import { withRouter } from 'react-router';
 
 import IconButton from 'SharedComponents/icon-button';
 
@@ -10,7 +11,7 @@ import styles from './SideNavigationLink.css';
 
 const SideNavigationLinkWrapper = styled.div`${styles}`;
 
-export default class SideNavigationLink extends Component {
+class SideNavigationLink extends Component {
   static contextTypes = {
     router: PropTypes.object.isRequired,
   }
@@ -34,42 +35,64 @@ export default class SideNavigationLink extends Component {
   }
 
   render() {
-
-    const { authentication } = this.props;
+    console.log('[props]', this.props);
+    const { isExpanded } = this.state;
+    const { authentication, sideBarLink, history } = this.props;
 
     return (
       <SideNavigationLinkWrapper>
-        <Link
-          to={this.props.sideBarLink.paths[0]}
-          onClick={this.onToggleMenu}
-          className={classNames('side-navigation-link', 'wide', { active: !!this.props.sideBarLink.paths.find((path) => (this.context.router.route.match.path.substring(1).includes(path.substring(1)) && path.substring(1).length) || (path === '/' && this.context.router.route.match.path === '/')) })}
-          style={{
-
-          }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <i className="material-icons" style={{ fontSize: 20, margin: '0 10px' }}>{this.props.sideBarLink.icon}</i>
-            <span>{this.props.sideBarLink.label}</span>
-          </div>
-          {
-            Object.keys(this.props.sideBarLink).includes('sublinks') ? (
-              <IconButton
-                icon={this.state.isExpanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
-                onClick={this.onToggleMenu}
-                style={{
-                  zIndex: 2, alignSelf: 'center', margin: 0, padding: 0,
-                }}
-              />
-            ) : null
-          }
-        </Link>
+        {
+          'sublinks' in sideBarLink ? (
+            <div
+              to={sideBarLink.paths[0]}
+              onClick={() => !isExpanded ? this.onToggleMenu() : history.push(sideBarLink.paths[0])}
+              className={classNames('side-navigation-link', 'wide', { active: !!this.props.sideBarLink.paths.find((path) => (this.context.router.route.match.path.substring(1).includes(path.substring(1)) && path.substring(1).length) || (path === '/' && this.context.router.route.match.path === '/')) })}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <i className="material-icons" onClick={(event) => { event.stopPropagation(); this.onToggleMenu() }} style={{ fontSize: 20, margin: '0 10px' }}>{this.props.sideBarLink.icon}</i>
+                <span>{this.props.sideBarLink.label}</span>
+              </div>
+              {
+                Object.keys(this.props.sideBarLink).includes('sublinks') ? (
+                  <IconButton
+                    icon={this.state.isExpanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
+                    onClick={this.onToggleMenu}
+                    style={{
+                      zIndex: 2, alignSelf: 'center', margin: 0, padding: 0,
+                    }}
+                  />
+                ) : null
+              }
+            </div>
+          ) : (
+            <Link
+              to = {sideBarLink.paths[0]}
+              onClick={this.onToggleMenu}
+              className={classNames('side-navigation-link', 'wide', { active: !!this.props.sideBarLink.paths.find((path) => (this.context.router.route.match.path.substring(1).includes(path.substring(1)) && path.substring(1).length) || (path === '/' && this.context.router.route.match.path === '/')) })}
+            >
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <i className="material-icons" style={{ fontSize: 20, margin: '0 10px' }}>{this.props.sideBarLink.icon}</i>
+                <span>{this.props.sideBarLink.label}</span>
+              </div>
+              {
+                Object.keys(this.props.sideBarLink).includes('sublinks') ? (
+                  <IconButton
+                    icon={this.state.isExpanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
+                    onClick={this.onToggleMenu}
+                    style={{
+                      zIndex: 2, alignSelf: 'center', margin: 0, padding: 0,
+                    }}
+                  />
+                ) : null
+              }
+            </Link>
+          )
+        }
         {
           Object.keys(this.props.sideBarLink).includes('sublinks') && this.state.isExpanded ? (
             <div>
               {
                 this.props.sideBarLink.sublinks.map((sublink) => {
-                  if (sublink.label === 'Demographics' && authentication.user['x-account-id'] === 5) return null;
-                  
                   return (
                     <Link
                       to={sublink.path}
@@ -91,3 +114,5 @@ export default class SideNavigationLink extends Component {
     );
   }
 }
+
+export default withRouter(SideNavigationLink)

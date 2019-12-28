@@ -4,6 +4,7 @@ export default ({ theme }) => {
     height: 100%;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 
     .side-navigation-link {
       background-color: #fff;

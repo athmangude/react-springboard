@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 import Home from "Modules/main/containers/Home/Loadable";
 import Audiences from "Modules/main/containers/Settings/Audiences/Loadable";
 import NotFoundPage from "Modules/main/containers/NotFoundPage/Loadable";
+import SignIn from 'Modules/main/containers/authentication/SignIn';
 import ProtectedRoute from 'Utils/ProtectedRoute';
 
 // General utility components
@@ -39,7 +40,7 @@ export default class AppRoutes extends Component {
         </Helmet>
         <Switch>
           <ProtectedRoute exact path="/" component={Home} />
-          <Route exact path="/settings" component={Audiences} />
+          <Route exact path="/sign-in" component={SignIn} />
           <Route path="" component={NotFoundPage} />
         </Switch>
       </MainLayout>

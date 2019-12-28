@@ -3,15 +3,11 @@ import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const ProtectedRoute = ({ component: Component, ...rest }) => {
-    console.log('[rest]', rest);
     return (
         <Route
             {...rest}
             render={(props) => {
                 if (rest.authentication.user) {
-                    return (
-                        <Component {...props} />
-                    );
                     return (
                         <Redirect
                             to={{ pathname: "/sign-in" }}

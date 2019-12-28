@@ -5,12 +5,12 @@ import { ConnectedRouter } from 'connected-react-router';
 import { ThemeProvider } from 'styled-components';
 import PropTypes from 'prop-types';
 
-import themes from 'SharedComponents/themes';
+import theme from './theme';
 
 import Routes from './routes';
 
 const App = ({ store, history }) => (
-  <ThemeProvider theme={themes.light}>
+  <ThemeProvider theme={theme}>
     <Provider store={store}>
       <ConnectedRouter history={history}>
         <Routes />

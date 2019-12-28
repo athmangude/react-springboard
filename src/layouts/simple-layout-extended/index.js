@@ -288,10 +288,7 @@ export default class SimpleLayoutExtended extends Component {
                         : logoSymbolOnly
                     }
                     height={40}
-                    style={{
-                      margin:
-                        windowDimensions.width > 768 ? "5px 0px 0px" : "10px"
-                    }}
+                    style={{ margin: 10 }}
                     alt="logo"
                   />
                 </Link>
@@ -313,10 +310,6 @@ export default class SimpleLayoutExtended extends Component {
               </div>
               <div
                 style={{
-                  // width:
-                  //   windowDimensions.width > 768
-                  //     ? `calc(100% - 260px)`
-                  //     : `calc(100% - 110px)`,
                   width: "100%",
                   margin: "10px 10px",
                   position: "relative"
@@ -339,7 +332,7 @@ export default class SimpleLayoutExtended extends Component {
                     large
                     icon="settings"
                     style={{ margin: 10, color: "#000" }}
-                    onClick={() => router.history.push("/settings")}
+                    onClick={() => router.history.push('/settings')}
                   />
                 ) : null}
                 {authentication.user !== null ? (

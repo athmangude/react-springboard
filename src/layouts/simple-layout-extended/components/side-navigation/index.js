@@ -41,7 +41,6 @@ const SideNavigation = (props, context) => {
   }
 
   if (windowWidth > 768 && activeApp.fullWidthMenu) {
-    console.log();
     // return a large menu on large screens
     return (
       <div
@@ -81,16 +80,6 @@ const SideNavigation = (props, context) => {
             </div>
           )
         }
-        {
-          // sideBarLinks.find((linkGroup) => linkGroup.app === 'settings').map((sideBarLink) => (
-          //   <SideNavigationLink sideBarLink={sideBarLink} />
-          // ))
-        }
-        {
-          // sideBarLinks.map((sideBarLink) => (
-          //   <SideNavigationLink sideBarLink={sideBarLink} />
-          // ))
-        }
         <HelpMenuLauncher />
       </div>
     );
@@ -114,9 +103,8 @@ const SideNavigation = (props, context) => {
         sideBarLinks.map((sidebarLink) => {
           if (sidebarLink.app === 'settings') {
             return null;
-          } else if (sidebarLink.app === 'analytics' && !configurations.features.customerAnalytics) {
-            return null;
           }
+          
           return (
             <Link
               to={sidebarLink.paths[0]}
