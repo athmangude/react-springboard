@@ -35,7 +35,6 @@ class SideNavigationLink extends Component {
   }
 
   render() {
-    console.log('[props]', this.props);
     const { isExpanded } = this.state;
     const { authentication, sideBarLink, history } = this.props;
 

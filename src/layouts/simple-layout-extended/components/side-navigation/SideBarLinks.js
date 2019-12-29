@@ -66,16 +66,16 @@ export default [{
   showRightDrawer: false,
   fullWidthMenu: true,
   sublinks: [{
-    label: 'Item',
-    path: '/settings/item',
+    label: 'Item1',
+    path: '/settings/item1',
     level: 0,
   }, {
-    label: 'Item',
-    path: '/settings/item',
+    label: 'Item2',
+    path: '/settings/item2',
     level: 0,
   }, {
-    label: 'Item',
-    path: '/settings/item',
+    label: 'Item3',
+    path: '/settings/item3',
     level: 0,
   }],
 },

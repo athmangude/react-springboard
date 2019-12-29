@@ -1,9 +1,7 @@
-export default ({ theme, hoverColor, backgroundColor }) => {
-  return `
-    background-color: ${backgroundColor || 'transparent'};
+export default ({ theme, hoverColor, backgroundColor }) => `
+  background-color: ${backgroundColor || 'transparent'};
 
-    &:hover {
-      background-color: ${hoverColor || theme.palette.grey['400']} !important;
-    }
-  `;
-};
+  &:hover {
+    background-color: ${hoverColor || theme.palette.grey['400']} !important;
+  }
+`;

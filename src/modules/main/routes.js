@@ -7,6 +7,7 @@ import Audiences from "Modules/main/containers/Settings/Audiences/Loadable";
 import NotFoundPage from "Modules/main/containers/NotFoundPage/Loadable";
 import SignIn from 'Modules/main/containers/authentication/SignIn';
 import ProtectedRoute from 'Utils/ProtectedRoute';
+import DisprotectedRoute from 'Utils/DisprotectedRoute';
 
 // General utility components
 import "semantic-ui-css/semantic.css";
@@ -40,7 +41,7 @@ export default class AppRoutes extends Component {
         </Helmet>
         <Switch>
           <ProtectedRoute exact path="/" component={Home} />
-          <Route exact path="/sign-in" component={SignIn} />
+          <DisprotectedRoute exact path="/sign-in" component={SignIn} />
           <Route path="" component={NotFoundPage} />
         </Switch>
       </MainLayout>
