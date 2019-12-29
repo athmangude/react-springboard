@@ -6,6 +6,7 @@ import Home from "Modules/main/containers/Home/Loadable";
 import Audiences from "Modules/main/containers/Settings/Audiences/Loadable";
 import NotFoundPage from "Modules/main/containers/NotFoundPage/Loadable";
 import SignIn from 'Modules/main/containers/authentication/SignIn';
+import NewQuestionnaire from 'Modules/main/containers/Questionnaires/NewQuestionnaire';
 import ProtectedRoute from 'Utils/ProtectedRoute';
 import DisprotectedRoute from 'Utils/DisprotectedRoute';
 
@@ -41,6 +42,7 @@ export default class AppRoutes extends Component {
         </Helmet>
         <Switch>
           <ProtectedRoute exact path="/" component={Home} />
+          <Route exact path="/questionnaires/new" component={NewQuestionnaire} />
           <DisprotectedRoute exact path="/sign-in" component={SignIn} />
           <Route path="" component={NotFoundPage} />
         </Switch>
