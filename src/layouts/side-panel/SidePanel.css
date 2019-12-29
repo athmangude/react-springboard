@@ -1,0 +1,66 @@
+.side-panel nav ul {
+  display: flex;
+  flex-direction: column;
+}
+.side-panel nav ul li {
+  margin: 1em 0;
+}
+.side-panel nav ul li a {
+  flex: 1;
+}
+.side-panel nav ul li a span {
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: -0px;
+  text-align: center;
+  color: #487db3;
+  color: var(--cool-blue);
+  display: block;
+}
+.side-panel nav ul li a i {
+  line-height: 1;
+  vertical-align: middle;
+  font-size: 2.0rem!important;
+  text-align: -webkit-center;
+  width: 100%;
+}
+.side-panel header {
+    height: 70px;
+    border-bottom: 1px solid white;
+}
+.side-panel header .title {
+  text-align: center;
+  padding-top: 0.5em;
+}
+
+.side-panel > footer{
+  position: absolute;
+  bottom: 1rem;
+  width: 100%;
+}
+.side-panel > footer > div.title {
+  text-align: center;
+  width: 100%;
+}
+.side-panel > footer > .title > .profile-wrap > .profile-menu > div.menu.transition.visible {
+  left: 4.5em;
+  margin-bottom: -3em;
+  background-color: var(--cool-blue);
+}
+.side-panel > footer > .title > .profile-wrap > .profile-menu > div.menu > .item  {
+  font-family: Lato;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1.22;
+  letter-spacing: 0.4px;
+  text-align: left;
+  color: #ffffff;
+
+}
+.side-panel > footer > .title > .profile-wrap > .profile-menu > i.dropdown.icon {
+  display: none;
+}
+.notify-wrap{
+  margin-right: 2em;
+}

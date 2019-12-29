@@ -1,0 +1,82 @@
+export default [{
+  app: 'home',
+  label: 'Home',
+  icon: 'home',
+  paths: ['/'],
+  showRightDrawer: true,
+  fullWidthMenu: true,
+}, {
+  app: 'stores',
+  label: 'Stores',
+  icon: 'store',
+  paths: ['/stores'],
+  showRightDrawer: true,
+  fullWidthMenu: true,
+}, {
+  app: 'inventory',
+  label: 'Inventory',
+  icon: 'repeat',
+  paths: ['/inventory'],
+  showRightDrawer: false,
+  fullWidthMenu: true,
+  sublinks: [{
+    label: 'Item1',
+    path: '/inventory/item1',
+    level: 0,
+    sublinks: [{
+      icon: 'view_stream',
+      label: 'Subitem1',
+      path: '/inventory/item1/subitem1',
+      level: 1,
+    }],
+  }, {
+    icon: 'menu',
+    label: 'Item2',
+    path: '/inventory/item2',
+    level: 0,
+    sublinks: [{
+      icon: 'view_stream',
+      label: 'Customers',
+      path: '/customers',
+      level: 1,
+    }],
+  }, {
+    icon: 'show_chart',
+    label: 'Spend',
+    path: '/analytics/spend',
+    level: 0,
+    sublinks: [{
+      icon: 'view_stream',
+      label: 'Customers',
+      path: '/customers',
+      level: 1,
+    }],
+  }, {
+    icon: 'map',
+    label: 'Demographics',
+    path: '/analytics/demographic',
+    level: 0,
+  }],
+},
+{
+  app: 'settings',
+  label: 'Settings',
+  icon: 'settings',
+  paths: ['/settings'],
+  showRightDrawer: false,
+  fullWidthMenu: true,
+  sublinks: [{
+    label: 'Item1',
+    path: '/settings/item1',
+    level: 0,
+  }, {
+    label: 'Item2',
+    path: '/settings/item2',
+    level: 0,
+  }, {
+    label: 'Item3',
+    path: '/settings/item3',
+    level: 0,
+  }],
+},
+];

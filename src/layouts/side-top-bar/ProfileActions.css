@@ -1,0 +1,29 @@
+.top-bar-profile-actions-dropdown-menu .side-panel > footer > .title > .profile-wrap > .profile-menu > div.menu.transition.visible {
+  border-radius: 0 !important;
+  left: 55px !important;
+  margin: 0 !important;
+}
+
+.top-bar-profile-actions-dropdown-menu .ui.left.pointing.upward.dropdown:not(.top):not(.bottom) .menu:after {
+  background-color: var(--cool-blue);
+  box-shadow: -1px -1px 0px 0px #33597f !important;
+  left: -3px;
+}
+
+.top-bar-profile-actions-dropdown-menu .ui.pointing.dropdown > .menu {
+  margin-top: 18px;
+}
+
+.top-bar-profile-actions-dropdown-menu .ui.pointing.dropdown > .menu:after {
+  background: #5b7a98;
+}
+
+.top-bar-profile-actions-dropdown-menu .ui.dropdown .menu {
+  right: 5px !important;
+  left: unset;
+  top: -13px !important;
+  border: none;
+  border-radius: 5px !important;
+  max-height: 400px;
+  overflow: auto;
+}

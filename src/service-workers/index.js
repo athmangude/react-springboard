@@ -15,7 +15,7 @@ export function register () { // Register the service worker
   // if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      const swUrl = 'precache-service-worker.js';
+      const swUrl = '/precache-service-worker.js';
       navigator.serviceWorker.register(swUrl).then(registration => {
         registration.onupdatefound = () => {
           const installingWorker = registration.installing;
@@ -42,7 +42,7 @@ export function register () { // Register the service worker
       });
 
       // register the data servuce worker to cache data assets
-      navigator.serviceWorker.register('service-workers/data-service-worker.js').then((registration) => {
+      navigator.serviceWorker.register('/service-workers/data-service-worker.js').then((registration) => {
         registration.onupdatefound = () => {
           const installingWorker = registration.installing;
           installingWorker.onstatechange = () => {

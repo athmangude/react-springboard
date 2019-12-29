@@ -9,49 +9,62 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    app: "./src/index.js",
+    app: ['@babel/polyfill', './src/modules/main/index.js'],
   },
-  devtool: "eval-source-map",
+  node: {
+    fs: 'empty',
+  },
+  devtool: 'eval-source-map',
   devServer: {
     contentBase: './dist',
     hot: true,
     historyApiFallback: true,
     host: '0.0.0.0',
     port: 3000,
+    inline: true,
   },
-  mode: "development",
+  mode: 'development',
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
-        }
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.html$/,
         use: {
-          loader: "html-loader"
-        }
+          loader: 'html-loader',
+        },
       },
       {
         test: /\.css$/,
-        use: [
-          "style-loader",
-          "css-loader"
-        ]
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(png|svg|jpg|gif)/,
-        use: "file-loader"
-      }
-    ]
+        use: 'file-loader',
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/',
+            },
+          },
+        ],
+      },
+    ],
   },
   output: {
-    filename: "[name].[hash].js",
+    filename: '[name].[hash].js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/'
+    publicPath: '/',
   },
   plugins: [
     new SWPrecacheWebpackPlugin({
@@ -77,31 +90,35 @@ module.exports = {
       { from: './src/service-workers', to: 'service-workers' },
       { from: './src/.htaccess' },
       { from: './src/.conf' },
-      { from: './src/robots.txt' }
+      { from: './src/robots.txt' },
     ]),
     new ManifestPlugin({
       fileName: 'asset-manifest.json',
     }),
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
-      filename: "./index.html"
+      template: './src/index.html',
+      filename: './index.html',
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
       },
-    })
+    }),
   ],
   resolve: {
     alias: {
-      Images: path.resolve(__dirname, "src/assets/images"),
-      SharedComponents: path.resolve(__dirname, "src/app/components"),
-      Flux: path.resolve(__dirname, "src/app/flux"),
-      Config: path.resolve(__dirname, "src/config"),
-      Utils: path.resolve(__dirname, "src/app/utils"),
-    }
+      Images: path.resolve(__dirname, 'src/assets/images'),
+      SharedComponents: path.resolve(__dirname, 'src/components'),
+      Config: path.resolve(__dirname, 'src/config'),
+      Utils: path.resolve(__dirname, 'src/utils'),
+      Fonts: path.resolve(__dirname, 'src/app/assets/fonts'),
+      Src: path.resolve(__dirname, 'src'),
+      Modules: path.resolve(__dirname, 'src/modules'),
+      Layouts: path.resolve(__dirname, 'src/layouts'),
+      Root: path.resolve(__dirname, ''),
+    },
   },
-  target: "web"
+  target: 'web',
 };

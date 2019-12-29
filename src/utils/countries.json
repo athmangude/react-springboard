@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "name": "Kenya",
+    "code": "KE",
+    "currencyName": null,
+    "currencyCode": "KES",
+    "createDate": 1518739200000,
+    "active": true,
+    "regionName": null
+  },
+  {
+    "id": 2,
+    "name": "Zambia",
+    "code": "ZM",
+    "currencyName": null,
+    "currencyCode": "Zsh",
+    "createDate": 1518739200000,
+    "active": true,
+    "regionName": null
+  },
+  {
+    "id": 3,
+    "name": "Rwanda",
+    "code": "RW",
+    "currencyName": null,
+    "currencyCode": "RWF",
+    "createDate": 1518739200000,
+    "active": true,
+    "regionName": null
+  },
+  {
+    "id": 4,
+    "name": "Panama",
+    "code": "PA",
+    "currencyName": null,
+    "currencyCode": "PAB",
+    "createDate": 1518739200000,
+    "active": true,
+    "regionName": null
+  },
+  {
+    "id": 5,
+    "name": "Nicaragua",
+    "code": "NI",
+    "currencyName": null,
+    "currencyCode": "NIO",
+    "createDate": 1518739200000,
+    "active": true,
+    "regionName": null
+  },
+  {
+    "id": 6,
+    "name": "Guatemala",
+    "code": "GT",
+    "currencyName": null,
+    "currencyCode": "GTQ",
+    "createDate": 1518739200000,
+    "active": true,
+    "regionName": null
+  },
+  {
+    "id": 7,
+    "name": "El Salvador",
+    "code": "SV",
+    "currencyName": null,
+    "currencyCode": "USD",
+    "createDate": 1518739200000,
+    "active": true,
+    "regionName": null
+  },
+  {
+    "id": 8,
+    "name": "Tanzania",
+    "code": "TZ",
+    "currencyName": null,
+    "currencyCode": "TZS",
+    "createDate": 1518739200000,
+    "active": true,
+    "regionName": null
+  },
+  {
+    "id": 9,
+    "name": "Haiti",
+    "code": "HT",
+    "currencyName": null,
+    "currencyCode": "HTD",
+    "createDate": 1518739200000,
+    "active": true,
+    "regionName": null
+  },
+  {
+    "id": 10,
+    "name": "Nigeria",
+    "code": "NG",
+    "currencyName": null,
+    "currencyCode": "NGN",
+    "createDate": 1518739200000,
+    "active": true,
+    "regionName": null
+  },
+  {
+    "id": 11,
+    "name": "Mauritius",
+    "code": "MU",
+    "currencyName": null,
+    "currencyCode": " MUR",
+    "createDate": 1518739200000,
+    "active": true,
+    "regionName": null
+  },
+  {
+    "id": 12,
+    "name": "Ghana",
+    "code": "GH",
+    "currencyName": null,
+    "currencyCode": "GHS",
+    "createDate": 1518739200000,
+    "active": true,
+    "regionName": null
+  },
+  {
+    "id": 13,
+    "name": "South Africa",
+    "code": "ZA",
+    "currencyName": null,
+    "currencyCode": "ZAR",
+    "createDate": 1518739200000,
+    "active": true,
+    "regionName": null
+  },
+  {
+    "id": 14,
+    "name": "Uganda",
+    "code": "UG",
+    "currencyName": null,
+    "currencyCode": "UGX",
+    "createDate": 1518739200000,
+    "active": true,
+    "regionName": null
+  },
+  {
+    "id": 15,
+    "name": "Jamaica",
+    "code": "JM",
+    "currencyName": null,
+    "currencyCode": "JMD",
+    "createDate": 1518739200000,
+    "active": true,
+    "regionName": null
+  },
+  {
+    "id": 16,
+    "name": "Philippines",
+    "code": "PH",
+    "currencyName": null,
+    "currencyCode": "PHP",
+    "createDate": 1518739200000,
+    "active": true,
+    "regionName": null
+  },
+  {
+    "id": 17,
+    "name": "Barbados",
+    "code": "BB",
+    "currencyName": null,
+    "currencyCode": "BBD",
+    "createDate": 1518739200000,
+    "active": true,
+    "regionName": null
+  },
+  {
+    "id": 18,
+    "name": "United Kingdom",
+    "code": "UK",
+    "currencyName": null,
+    "currencyCode": "GBP",
+    "createDate": 1518739200000,
+    "active": true,
+    "regionName": null
+  },
+  {
+    "id": 19,
+    "name": "United States",
+    "code": "US",
+    "currencyName": null,
+    "currencyCode": "USD",
+    "createDate": 1518739200000,
+    "active": true,
+    "regionName": null
+  },
+  {
+    "id": 20,
+    "name": "Trinidad and Tobago",
+    "code": "TT",
+    "currencyName": null,
+    "currencyCode": "TTD",
+    "createDate": 1518739200000,
+    "active": true,
+    "regionName": null
+  }
+]

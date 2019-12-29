@@ -1,7 +1,7 @@
 {
-  "name": "SpringBoard",
+  "name": "Spring Board",
   "short_name": "SB",
-  "theme_color": "#008080",
+  "theme_color": "#002366",
   "background_color": "#ffffff",
   "display": "standalone",
   "Scope": "/",

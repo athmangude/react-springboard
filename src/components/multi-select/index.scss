@@ -1,0 +1,14 @@
+.mwamba-multi-select {
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+  }
+
+  .menu {
+    .option {
+      &:hover {
+        background-color: #d9d9d9;
+      }
+    }
+  }
+}

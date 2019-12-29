@@ -1,0 +1,35 @@
+.search-custom input {
+  border-radius: 0 !important;
+  background-color: #3d4553 !important;
+  border: solid 1px #808285 !important;
+  color: white !important;
+  height: 40px;
+  width: 300px;
+  padding: 0 10px;
+}
+
+.search-custom i {
+  color: white !important;
+}
+
+.white-on-hover {
+  color: #d9d9d9;
+}
+
+.white-on-hover:hover {
+  color: #fff !important;
+}
+
+.red-on-hover {
+  color: #4a4f57;
+}
+
+.red-on-hover:hover {
+  color: #4a4f57 !important;
+}
+
+.top-navigation-bar .menu-item-with-dropdown-menu.ui.dropdown .menu {
+  border-top: none;
+  left: -65px !important;
+  top: 45px;
+}
