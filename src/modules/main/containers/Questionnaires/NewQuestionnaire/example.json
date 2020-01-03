@@ -1,0 +1,31 @@
+{
+  "title": "Akiba ya Roho",
+  "questions": [
+    {
+      "question": "What is the name of the patient?",
+      "description": "Enter the name of the patient",
+      "inputType": "TEXT",
+      "tag": "patientName",
+      "label": "Patient Name",
+      "validationRules": [
+        {
+          "required": true,
+          "message": "This field is required"
+        }
+      ]
+    },
+    {
+      "question": "What is the age of the patient?",
+      "description": "Enter the age of the patient",
+      "inputType": "NUMBER",
+      "tag": "patientAge",
+      "label": "Patient Age",
+      "validationRules": [
+        {
+          "required": true,
+          "message": "This field is required"
+        }
+      ]
+    }
+  ]
+}
