@@ -1,3 +1,4 @@
+/* eslint-disable no-return-assign */
 /* eslint-disable react/require-default-props */
 /* eslint-disable react/forbid-prop-types */
 import React from 'react';
@@ -16,7 +17,7 @@ const CheckboxInput = ({ tag, label, onChange, answer, validationRules, options 
   let value;
   if (!answer) {
     value = {};
-    options.forEach((option) => value[option.value] = false);
+    options.forEach(option => value[option.value] = false);
   } else {
     value = answer;
   }

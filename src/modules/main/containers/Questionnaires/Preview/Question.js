@@ -1,10 +1,11 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import styles from './Question.css';
-import { Text, Number, Radio, Checkbox } from './input-types';
+import { Text, Number, Radio, Checkbox, Slider, DatePicker } from './input-types';
 
 const QuestionWrapper = styled.div`${styles}`;
 
@@ -47,6 +48,19 @@ const Question = ({ question, onChange, answer }) => {
             validationRules={question.validationRules}
             options={question.options}
           />
+        ) : question.inputType === 'SLIDER' ? (
+          <Slider
+            tag={question.tag}
+            label={question.label}
+            onChange={onChange}
+            answer={answer}
+            validationRules={question.validationRules}
+            min={question.min}
+            max={question.max}
+            step={question.step}
+          />
+        ) : question.inputType === 'DATE' ? (
+          <DatePicker />
         ) : null
       }
     </QuestionWrapper>

@@ -74,6 +74,23 @@
           "value": "friend"
         }
       ]
+    },
+    {
+      "question": "What's the temperature of patient?",
+      "description": "Enter the temperature reading of the baby",
+      "inputType": "SLIDER",
+      "tag": "temperature",
+      "label": "Temperature",
+      "min": 20,
+      "max": 45,
+      "step": 1
+    },
+    {
+      "question": "What's the patient's date of birth?",
+      "description": "Select the patient's date of birth",
+      "inputType": "DATE",
+      "tag": "dob",
+      "label": "Date of Birth"
     }
   ]
 }
