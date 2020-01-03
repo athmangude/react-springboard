@@ -7,19 +7,20 @@ export default ({ theme }) => {
     justify-content: space-between;
 
     >.editor-container {
-      flex-grow: 1.5;
+      flex-grow: 2;
       display: flex;
+      height: 100%;
       .editor {
-        
+        height: 100% !important;
+        width: 100% !important;
       }
     }
 
     >.preview {
-      flex-grow: 1;
+      flex-grow: 0.5;
       display: flex;
       padding: 10px;
       height: 100%;
-      // border-left: solid 2px ${theme.palette.grey['300']};
       box-shadow: -3px 0 3px ${theme.palette.grey['300']};
       overflow: auto;
     }
