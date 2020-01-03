@@ -60,7 +60,13 @@ const Question = ({ question, onChange, answer }) => {
             step={question.step}
           />
         ) : question.inputType === 'DATE' ? (
-          <DatePicker />
+          <DatePicker
+            tag={question.tag}
+            label={question.label}
+            onChange={onChange}
+            answer={answer}
+            validationRules={question.validationRules}
+          />
         ) : null
       }
     </QuestionWrapper>

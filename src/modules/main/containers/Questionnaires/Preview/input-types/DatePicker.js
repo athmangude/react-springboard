@@ -3,47 +3,39 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import TextField from '@material-ui/core/TextField';
-import { KeyboardDatePicker } from '@material-ui/pickers';
+import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
+import DateFnsUtils from '@date-io/date-fns';
 
 import styles from './Text.css';
 
-const TextWrapper = styled(TextField)`${styles}`;
+const KeyboardDatePickerWrapper = styled(KeyboardDatePicker)`${styles}`;
 
-const TextInput = ({ tag, label, onChange, answer, validationRules }) => {
+const DatePicker = ({ tag, label, onChange, answer, validationRules }) => {
   return (
-    <KeyboardDatePicker
-      name={tag}
-      margin="normal"
-      id="date-picker-dialog"
-      variant="inline"
-      label={label}
-      format="dd/MM/yyyy"
-      value={answer}
-      onChange={event => onChange(tag, event.target.value)}
-      KeyboardButtonProps={{
-        'aria-label': 'change date',
-      }}
-    />
+    <MuiPickersUtilsProvider utils={DateFnsUtils}>
+      <KeyboardDatePickerWrapper
+        name={tag}
+        margin="normal"
+        id="date-picker-dialog"
+        variant="inline"
+        label={label}
+        format="dd/MM/yyyy"
+        value={answer}
+        onChange={date => onChange(tag, date)}
+        KeyboardButtonProps={{
+          'aria-label': 'change date',
+        }}
+      />
+    </MuiPickersUtilsProvider>
   );
+};
 
-  return (
-    <TextWrapper
-      name={tag}
-      type="text"
-      value={answer}
-      label={label}
-      variant="outlined"
-      onChange={event => onChange(tag, event.target.value)}
-    />
-  );
-}
-
-TextInput.propTypes = {
+DatePicker.propTypes = {
   answer: PropTypes.string,
+  tag: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   validationRules: PropTypes.array.isRequired,
   label: PropTypes.string.isRequired,
 };
 
-export default TextInput;
+export default DatePicker;
