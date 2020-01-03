@@ -51,13 +51,13 @@ const SimpleLayoutExtendedWrapper = styled.div`
   configurations: state.configurations,
   authentication: state.authentication,
 }),
-(dispatch) => ({
-  adminAuthenticationActions: bindActionCreators(adminAuthenticationActions, dispatch),
-  accountsActions: bindActionCreators(accountsActions, dispatch),
-  appActions: bindActionCreators(appActions, dispatch),
-  authenticationActions: bindActionCreators(authenticationActions, dispatch),
-  dispatch,
-}))
+  (dispatch) => ({
+    adminAuthenticationActions: bindActionCreators(adminAuthenticationActions, dispatch),
+    accountsActions: bindActionCreators(accountsActions, dispatch),
+    appActions: bindActionCreators(appActions, dispatch),
+    authenticationActions: bindActionCreators(authenticationActions, dispatch),
+    dispatch,
+  }))
 
 export default class SimpleLayoutExtended extends Component {
   static contextTypes = {
@@ -210,7 +210,7 @@ export default class SimpleLayoutExtended extends Component {
             path => router.route.match.path.indexOf(path) > -1
           )
       );
-    const showActionBar = customActionBar || actions || pagination;
+    const showActionBar = customActionBar || actions || pagination || tabs;
 
     const hideRightDrawer = windowDimensions.width <= 1024;
 
@@ -220,13 +220,7 @@ export default class SimpleLayoutExtended extends Component {
 
     return (
       <SimpleLayoutExtendedWrapper
-        style={{
-          width: "100%",
-          display: "flex",
-          position: "relative",
-          overflow: "hidden",
-          maxWidth: 1920
-        }}
+        style={{ width: "100%", display: "flex", position: "relative", overflow: "hidden", maxWidth: 1920 }}
       >
         <div
           style={{
@@ -238,48 +232,18 @@ export default class SimpleLayoutExtended extends Component {
         >
           <div
             className="side-bar"
-            style={{
-              display: "flex",
-              width: "100%",
-              alignItems: "center",
-              justifyContent: "center",
-              flexDirection: "column",
-              position: "relative",
-              zIndex: 0
-            }}
+            style={{ display: "flex", width: "100%", alignItems: "center", justifyContent: "center", flexDirection: "column", position: "relative", zIndex: 0 }}
           >
             <Alerts />
             <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                height: 64,
-                borderBottom: "solid 1px #d9d9d9",
-                width: "100%",
-                position: "absolute",
-                top: 0,
-                left: 0,
-                backgroundColor: "#fff",
-                zIndex: 3
-              }}
+              style={{ display: "flex", alignItems: "center", justifyContent: "center", height: 64, borderBottom: "solid 1px #d9d9d9", width: "100%", position: "absolute", top: 0, left: 0, backgroundColor: "#fff", zIndex: 3 }}
             >
               <div
-                style={{
-                  width: windowDimensions.width > 768 ? 200 : 50,
-                  height: "100%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "flex-start"
-                }}
+                style={{ width: windowDimensions.width > 768 ? 200 : 50, height: "100%", display: "flex", alignItems: "center", justifyContent: "flex-start" }}
               >
                 <Link
                   to="/"
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "flex-start"
-                  }}
+                  style={{ display: "flex", alignItems: "center", justifyContent: "flex-start" }}
                 >
                   <img
                     src={
@@ -294,83 +258,57 @@ export default class SimpleLayoutExtended extends Component {
                 </Link>
                 {windowDimensions.width > 768 ? (
                   <span
-                    style={{
-                      fontSize: 20,
-                      fontWeight: "500",
-                      whiteSpace: "nowrap",
-                      overflow: "hidden",
-                      textOverflow: "ellipsis",
-                      lineHeight: 2.5,
-                      textTransform: "capitalize"
-                    }}
+                    style={{ fontSize: 20, fontWeight: "500", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", lineHeight: 2.5, textTransform: "capitalize" }}
                   >
                     {routeTitle || activeApp.label}
                   </span>
                 ) : null}
               </div>
               <div
-                style={{
-                  width: "100%",
-                  margin: "10px 10px",
-                  position: "relative"
-                }}
+                style={{ width: "100%", margin: "10px 10px", position: "relative" }}
               >
                 {searchBar}
               </div>
               <div
-                style={{
-                  height: "100%",
-                  width: 114,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "flex-end",
-                  padding: "0 10px 0"
-                }}
+                style={{ height: "100%", width: 114, display: "flex", alignItems: "center", justifyContent: "flex-end", padding: "0 10px 0" }}
               >
-                {windowDimensions.width > 768 ? (
-                  <IconButton
-                    large
-                    icon="settings"
-                    style={{ margin: 10, color: "#000" }}
-                    onClick={() => router.history.push('/settings')}
-                  />
-                ) : null}
-                {authentication.user !== null ? (
-                  <AccountDropDown
-                    {...this.props}
-                    windowDimensions={windowDimensions}
-                  />
-                ) : null}
-                {windowDimensions.width <= 1024 && rightDrawerComponent ? (
-                  <div
-                    style={{
-                      width: 64,
-                      height: 64,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center"
-                    }}
-                  >
+                {
+                  windowDimensions.width > 768 ? (
                     <IconButton
-                      icon={
-                        isRightDrawerDrawn ? "chevron_right" : "chevron_left"
-                      }
+                      large
+                      icon="settings"
                       style={{ margin: 10, color: "#000" }}
-                      onClick={this.onToggleRightDrawer}
+                      onClick={() => router.history.push('/settings')}
                     />
-                  </div>
-                ) : null}
+                  ) : null
+                }
+                {
+                  authentication.user !== null ? (
+                    <AccountDropDown
+                      {...this.props}
+                      windowDimensions={windowDimensions}
+                    />
+                  ) : null
+                }
+                {
+                  windowDimensions.width <= 1024 && rightDrawerComponent ? (
+                    <div
+                      style={{ width: 64, height: 64, display: "flex", alignItems: "center", justifyContent: "center" }}
+                    >
+                      <IconButton
+                        icon={
+                          isRightDrawerDrawn ? "chevron_right" : "chevron_left"
+                        }
+                        style={{ margin: 10, color: "#000" }}
+                        onClick={this.onToggleRightDrawer}
+                      />
+                    </div>
+                  ) : null
+                }
               </div>
             </div>
             <div
-              style={{
-                width: "100%",
-                display: "flex",
-                flexDirection: "row",
-                height: "calc(100vh - 64px",
-                marginTop: 64,
-                backgroundColor: "#fff"
-              }}
+              style={{ width: "100%", display: "flex", flexDirection: "row", height: "calc(100vh - 64px", marginTop: 64, backgroundColor: "#fff" }}
             >
               {
                 windowDimensions.width > 768 ? (
@@ -391,20 +329,16 @@ export default class SimpleLayoutExtended extends Component {
                         >
                           {customActionBar}
                         </div>
-                      ) : actions || pagination || tabs ? (
+                      ) : showActionBar ? (
                         <div
                           className="hide-scrollbars"
-                          style={{
-                            height: 48, width: '100%', overflow: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#fff', borderBottom: 'solid 1px #d9d9d9', zIndex: 0,
-                          }}
+                          style={{ height: 48, width: '100%', overflow: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', backgroundColor: '#fff', borderBottom: 'solid 1px #d9d9d9', zIndex: 0, }}
                         >
                           <div>
                             {tabs}
                           </div>
                           <div
-                            style={{
-                              display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center',
-                            }}
+                            style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', }}
                           >
                             {actions}
                             {pagination}
@@ -415,107 +349,44 @@ export default class SimpleLayoutExtended extends Component {
                     <div style={{ height: showActionBar ? 'calc(100vh - 112px)' : '100%', overflow: 'auto' }}>
                       {childrenWithProps}
                     </div>
-                  ) : actions || pagination || tabs ? (
+                  </div>
+                ) : (
                     <div
-                      className="hide-scrollbars"
-                      style={{
-                        height: 48,
-                        width: "100%",
-                        overflow: "auto",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                        backgroundColor: "#fff",
-                        borderBottom: "solid 1px #d9d9d9",
-                        zIndex: 0
-                      }}
+                      style={{ height: "100%", overflow: "auto", width: "100%" }}
                     >
-                      <div>{tabs}</div>
+                      {
+                        customActionBar ? (
+                          <div style={{ height: 48, width: "100%", margin: 0, padding: 0, display: "flex", alignItems: "center", justifyContent: "space-between", backgroundColor: "#fff", borderBottom: "solid 1px #d9d9d9", zIndex: 0 }}>
+                            {customActionBar}
+                          </div>
+                        ) : showActionBar ? (
+                          <div
+                            className="hide-scrollbars"
+                            style={{ height: 48, width: "100%", overflow: "auto", display: "flex", alignItems: "center", justifyContent: "space-between", backgroundColor: "#fff", borderBottom: "solid 1px #d9d9d9", zIndex: 0 }}
+                          >
+                            <div>{tabs}</div>
+                            <div
+                              style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center" }}
+                            >
+                              {actions}
+                              {pagination}
+                            </div>
+                          </div>
+                        ) : null
+                      }
                       <div
                         style={{
-                          display: "flex",
-                          flexDirection: "row",
-                          justifyContent: "center",
-                          alignItems: "center"
+                          height: showActionBar
+                            ? "calc(100vh - 112px - 58px)"
+                            : "calc(100% - 58px)",
+                          overflow: "auto"
                         }}
                       >
-                        {actions}
-                        {pagination}
+                        {childrenWithProps}
                       </div>
+                      <BottomNavigation configurations={configurations} />
                     </div>
-                  ) : null}
-                  <div
-                    style={{
-                      height: showActionBar ? "calc(100vh - 112px)" : "100%",
-                      overflow: "auto"
-                    }}
-                  >
-                    {childrenWithProps}
-                  </div>
-                </div>
-              ) : (
-                <div
-                  style={{ height: "100%", overflow: "auto", width: "100%" }}
-                >
-                  {customActionBar ? (
-                    <div
-                      style={{
-                        height: 48,
-                        width: "100%",
-                        margin: 0,
-                        padding: 0,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                        backgroundColor: "#fff",
-                        borderBottom: "solid 1px #d9d9d9",
-                        zIndex: 0
-                      }}
-                    >
-                      {customActionBar}
-                    </div>
-                  ) : actions || pagination || tabs ? (
-                    <div
-                      className="hide-scrollbars"
-                      style={{
-                        height: 48,
-                        width: "100%",
-                        overflow: "auto",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                        backgroundColor: "#fff",
-                        borderBottom: "solid 1px #d9d9d9",
-                        zIndex: 0
-                      }}
-                    >
-                      <div>{tabs}</div>
-                      <div
-                        style={{
-                          display: "flex",
-                          flexDirection: "row",
-                          justifyContent: "center",
-                          alignItems: "center"
-                        }}
-                      >
-                        {actions}
-                        {pagination}
-                      </div>
-                    </div>
-                  ) : null}
-                  <div
-                    style={{
-                      height: showActionBar
-                        ? "calc(100vh - 112px - 58px)"
-                        : "calc(100% - 58px)",
-                      overflow: "auto"
-                    }}
-                  >
-                    {childrenWithProps}
-                  </div>
-                  <BottomNavigation configurations={configurations} />
-                </div>
-              )}
+                  )}
             </div>
           </div>
         </div>
