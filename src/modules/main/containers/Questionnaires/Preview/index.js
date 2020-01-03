@@ -31,7 +31,7 @@ const Preview = ({ committedEditorValue }) => {
 };
 
 Preview.propTypes = {
-  committedEditorValue: PropTypes.object.isRequired,
+  committedEditorValue: PropTypes.string.isRequired,
 };
 
 export default Preview;

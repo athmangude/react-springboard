@@ -26,6 +26,54 @@
           "message": "This field is required"
         }
       ]
+    },
+    {
+      "question": "What is the gender of the patient?",
+      "description": "Select the gender of the patient",
+      "inputType": "RADIO",
+      "tag": "patientGender",
+      "label": "Patient Gender",
+      "options": [
+        {
+          "label": "Male",
+          "value": "male"
+        },
+        {
+          "label": "Female",
+          "value": "female"
+        },
+        {
+          "label": "Undisclosed",
+          "value": "undisclosed"
+        }
+      ],
+      "validationRules": [
+        {
+          "required": true,
+          "message": "This field is required"
+        }
+      ]
+    },
+    {
+      "question": "How did you learn about Access Afya?",
+      "description": "Select all options about how the patient learnt about Access Afya",
+      "inputType": "CHECKBOX",
+      "tag": "learntAboutAA",
+      "label": "How they learnt about Access Afya",
+      "options": [
+        {
+          "label": "Posters & Flyers",
+          "value": "posters_and_flyers"
+        },
+        {
+          "label": "Radio",
+          "value": "radio"
+        },
+        {
+          "label": "Friend",
+          "value": "friend"
+        }
+      ]
     }
   ]
 }

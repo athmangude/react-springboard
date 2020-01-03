@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import styles from './Question.css';
-import { Text } from './input-types';
+import { Text, Number, Radio, Checkbox } from './input-types';
 
 const QuestionWrapper = styled.div`${styles}`;
 
@@ -20,6 +20,32 @@ const Question = ({ question, onChange, answer }) => {
             onChange={onChange}
             answer={answer}
             validationRules={question.validationRules}
+          />
+        ) : question.inputType === 'NUMBER' ? (
+          <Number
+            tag={question.tag}
+            label={question.label}
+            onChange={onChange}
+            answer={answer}
+            validationRules={question.validationRules}
+          />
+        ) : question.inputType === 'RADIO' ? (
+          <Radio
+            tag={question.tag}
+            label={question.label}
+            onChange={onChange}
+            answer={answer}
+            validationRules={question.validationRules}
+            options={question.options}
+          />
+        ) : question.inputType === 'CHECKBOX' ? (
+          <Checkbox
+            tag={question.tag}
+            label={question.label}
+            onChange={onChange}
+            answer={answer}
+            validationRules={question.validationRules}
+            options={question.options}
           />
         ) : null
       }
