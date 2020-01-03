@@ -17,9 +17,11 @@ export default ({ theme }) => {
     >.preview {
       flex-grow: 1;
       display: flex;
-      border-left: solid 2px ${theme.palette.grey.A700};
       padding: 10px;
       height: 100%;
+      // border-left: solid 2px ${theme.palette.grey['300']};
+      box-shadow: -3px 0 3px ${theme.palette.grey['300']};
+      overflow: auto;
     }
-  `;
+`;
 };
