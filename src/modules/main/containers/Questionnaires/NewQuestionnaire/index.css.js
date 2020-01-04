@@ -23,7 +23,7 @@ export default ({ theme }) => {
         justify-content: flex-start;
 
         &>.button {
-          margin: 10px;
+          margin: 0 10px;
         }
       }
     }

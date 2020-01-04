@@ -94,7 +94,7 @@ export default class NewQuestionnaire extends Component {
                         />
                         <div className="editor-controls">
                             <Button className="button" variant="outlined" color="primary" onClick={this.onValidate}>Validate</Button>
-                            <Button className="button" variant="outlined" color="primary" onClick={this.onValidateAndPreview}>Validate and Preview</Button>
+                            <Button className="button" variant="outlined" color="primary" onClick={this.onValidateAndPreview}>Validate&nbsp;and&nbsp;Preview</Button>
                         </div>
                     </div>
                     <div className="preview">
