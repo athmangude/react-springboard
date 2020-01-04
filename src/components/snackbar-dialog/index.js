@@ -24,7 +24,7 @@ const variantIcon = {
 };
 
 
-const MySnackbar = ({ className, message, onClose, title, variant, open, ...other }) => {
+const MySnackbar = ({ className, message, onClose, title, variant, open, adornment, ...other }) => {
   const Icon = variantIcon[variant];
   const theme = useTheme();
 
@@ -53,6 +53,13 @@ const MySnackbar = ({ className, message, onClose, title, variant, open, ...othe
                 ) : null
               }
               <span className="message">{message}</span>
+              {
+                adornment ? (
+                  <code className="adornment-container">
+                    {adornment}
+                  </code>
+                ) : null
+              }
             </div>
           </div>
         )}

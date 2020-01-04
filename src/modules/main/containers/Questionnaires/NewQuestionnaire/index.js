@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
 import AceEditor from "react-ace";
 
+import jsonlint from 'Utils/jsonlint';
+
 import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/theme-terminal";
 
@@ -28,6 +30,7 @@ export default class NewQuestionnaire extends Component {
             snackbarDialogMessage: '',
             snackbarDialogVariant: 'info',
             snackbarDialogTitle: '',
+            adornment: null,
         }
     }
 
@@ -38,13 +41,14 @@ export default class NewQuestionnaire extends Component {
     onValidate = () => {
         const { editorValue } = this.state;
         try {
-            JSON.parse(editorValue);
+            jsonlint().parse(editorValue);
 
             this.setState({
                 isSnackbarDialogOpen: true,
                 snackbarDialogTitle: 'Valid JSON',
                 snackbarDialogMessage: 'The JSON in the editor has passed syntactic correctness checks and verified to be valid.',
                 snackbarDialogVariant: 'success',
+                adornment: null,
             });
 
             return true;
@@ -55,6 +59,7 @@ export default class NewQuestionnaire extends Component {
                 snackbarDialogTitle: 'Invalid JSON',
                 snackbarDialogMessage: 'The JSON in the editor has NOT passed syntactic correctness checks.',
                 snackbarDialogVariant: 'error',
+                adornment: exception.message,
             });
 
             return false;
@@ -74,7 +79,7 @@ export default class NewQuestionnaire extends Component {
     }
 
     render() {
-        const { editorValue, committedEditorValue, isSnackbarDialogOpen, snackbarDialogMessage, snackbarDialogVariant, snackbarDialogTitle } = this.state;
+        const { editorValue, committedEditorValue, isSnackbarDialogOpen, snackbarDialogMessage, snackbarDialogVariant, snackbarDialogTitle, adornment } = this.state;
 
         return (
             <SimpleLayoutExtended>
@@ -108,6 +113,7 @@ export default class NewQuestionnaire extends Component {
                     onClose={this.onCloseSnackbar}
                     title={snackbarDialogTitle}
                     open={isSnackbarDialogOpen}
+                    adornment={adornment}
                 />
             </SimpleLayoutExtended>
         );

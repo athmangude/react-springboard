@@ -1,5 +1,8 @@
 export default ({ theme }) => {
   return `
+    display: flex;
+    flex-direction: column;
+
     &.MuiSnackbarContent-root {
       display: flex;
       flex-direction: column !important;
@@ -22,6 +25,12 @@ export default ({ theme }) => {
 
           .message {
 
+          }
+
+          .adornment-container {
+            margin: 10px 0;
+            background-color: ${theme.palette.grey['300']};
+            padding: 10px;
           }
         }
 

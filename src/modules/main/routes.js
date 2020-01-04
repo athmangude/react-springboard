@@ -17,12 +17,12 @@ import mixpanel from "mixpanel-browser";
 import "Modules/main/containers/App/index.css";
 
 // // import run and initialize amplitiude tracker
-import amplitudeTracker from "Utils/trackers/amplitude";
+// import amplitudeTracker from "Utils/trackers/amplitude";
+// amplitudeTracker();
+// window.amplitude.getInstance().init("35b2070f5fb36d5a0c1ddd94bcd55d9e");
 
 import MainLayout from "Layouts/main";
 
-amplitudeTracker();
-window.amplitude.getInstance().init("35b2070f5fb36d5a0c1ddd94bcd55d9e");
 
 ReactGA.initialize("UA-119798927-1");
 mixpanel.init("63e080a7a844910225211ccc2964ee5f");
