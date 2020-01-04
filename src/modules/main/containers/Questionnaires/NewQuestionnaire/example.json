@@ -95,11 +95,11 @@
       ]
     },
     {
-      "question": "How did the patient learn about Access Afya?",
-      "description": "Select all options about how the patient learnt about Access Afya",
+      "question": "How did the patient learn about AA?",
+      "description": "Select all options about how the patient learnt about AA",
       "inputType": "CHECKBOX",
       "tag": "learntAboutAA",
-      "label": "How they learnt about Access Afya",
+      "label": "How they learnt about AA",
       "options": [
         {
           "label": "Posters & Flyers",
