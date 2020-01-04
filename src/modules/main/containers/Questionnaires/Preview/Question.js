@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 /* eslint-disable no-nested-ternary */
 /* eslint-disable react/forbid-prop-types */
 import React from 'react';
@@ -58,6 +59,7 @@ const Question = ({ question, onChange, answer }) => {
             min={question.min}
             max={question.max}
             step={question.step}
+            defaultValue={question.defaultValue}
           />
         ) : question.inputType === 'DATE' ? (
           <DatePicker
@@ -70,13 +72,18 @@ const Question = ({ question, onChange, answer }) => {
         ) : null
       }
     </QuestionWrapper>
-  )
-}
+  );
+};
 
 Question.propTypes = {
   question: PropTypes.object.isRequired,
   onChange: PropTypes.func.isRequired,
-  answer: PropTypes.string.isRequired, // this could not be a string in some cases and might be a number, a file, array etc.
-}
+  answer: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.object,
+    PropTypes.array,
+  ]),
+};
 
 export default Question;

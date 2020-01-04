@@ -9,12 +9,12 @@ import styles from './Text.css';
 
 const SliderWrapper = styled(Slider)`${styles}`;
 
-const SliderInput = ({ tag, label, onChange, answer, validationRules, min, max, step, marks }) => {
+const SliderInput = ({ tag, label, onChange, defaultValue, answer, validationRules, min, max, step, marks }) => {
   return (
     <SliderWrapper
       name={tag}
       type="text"
-      defaultValue={answer}
+      defaultValue={answer || defaultValue}
       label={label}
       marks
       min={min}
@@ -37,6 +37,7 @@ SliderInput.propTypes = {
   min: PropTypes.number.isRequired,
   max: PropTypes.number.isRequired,
   step: PropTypes.number.isRequired,
+  defaultValue: PropTypes.number.isRequired,
 };
 
 export default SliderInput;

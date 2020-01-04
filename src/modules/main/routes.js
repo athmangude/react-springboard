@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet";
 import Home from "Modules/main/containers/Home/Loadable";
 import Audiences from "Modules/main/containers/Settings/Audiences/Loadable";
 import NotFoundPage from "Modules/main/containers/NotFoundPage/Loadable";
-import SignIn from 'Modules/main/containers/authentication/SignIn';
+import SignIn from 'Modules/main/containers/Authentication/SignIn';
 import NewQuestionnaire from 'Modules/main/containers/Questionnaires/NewQuestionnaire';
 import ProtectedRoute from 'Utils/ProtectedRoute';
 import DisprotectedRoute from 'Utils/DisprotectedRoute';

@@ -71,9 +71,6 @@ export default class SimpleLayoutExtended extends Component {
   static propTypes = {
     adminAuthenticationActions: PropTypes.object.isRequired,
     accountsActions: PropTypes.object.isRequired,
-    activityLogs: PropTypes.array.isRequired,
-    collaborators: PropTypes.array.isRequired,
-    EventHandler: PropTypes.object.isRequired,
     children: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.node),
       PropTypes.node

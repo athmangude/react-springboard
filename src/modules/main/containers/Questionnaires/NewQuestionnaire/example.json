@@ -113,6 +113,12 @@
           "label": "Friend",
           "value": "friend"
         }
+      ],
+      "validationRules": [
+        {
+          "required": true,
+          "message": "This field is required"
+        }
       ]
     },
     {
@@ -123,14 +129,27 @@
       "label": "Temperature",
       "min": 20,
       "max": 45,
-      "step": 1
+      "step": 1,
+      "defaultValue": 37,
+      "validationRules": [
+        {
+          "required": true,
+          "message": "This field is required"
+        }
+      ]
     },
     {
       "question": "What's the patient's date of birth?",
       "description": "Select the patient's date of birth",
       "inputType": "DATE",
       "tag": "dob",
-      "label": "Date of Birth"
+      "label": "Date of Birth",
+      "validationRules": [
+        {
+          "required": true,
+          "message": "This field is required"
+        }
+      ]
     },
     {
       "question": "What is closest AA clinic from the patient?",

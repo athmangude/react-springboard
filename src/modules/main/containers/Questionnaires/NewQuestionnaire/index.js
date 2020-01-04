@@ -25,9 +25,9 @@ export default class NewQuestionnaire extends Component {
             editorValue: formattedEditorValue,
             committedEditorValue: formattedEditorValue,
             isSnackbarDialogOpen: false,
-            snackbarDialogMessage: null,
+            snackbarDialogMessage: '',
             snackbarDialogVariant: 'info',
-            snackbarDialogTitle: null,
+            snackbarDialogTitle: '',
         }
     }
 

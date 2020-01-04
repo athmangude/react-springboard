@@ -1,5 +1,4 @@
-export default function (props) {
-  const { isBottomSheetOpen } = props;
+export default function ({ isbottomsheetopen }) {
   return `
     width: 100%;
     height: 48px;
@@ -13,7 +12,7 @@ export default function (props) {
     bottom: 0;
 
     .bottom-navigation {
-      height: ${isBottomSheetOpen ? 'fill-content' : '0px'};
+      height: ${isbottomsheetopen === 'true' ? 'fill-content' : '0px'};
       transition: height 0.3s;
       max-height: calc(100vh - 112px - 60px);
       overflow: auto;

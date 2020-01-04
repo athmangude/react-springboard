@@ -35,12 +35,11 @@ export default class MyBottomNavigation extends Component {
   }
 
   render() {
-    const { configurations } = this.props;
     const { isBottomSheetOpen, path } = this.state;
     const { router } = this.context;
     return (
       <BottomNavigationWrapper
-        isBottomSheetOpen={isBottomSheetOpen}
+        isbottomsheetopen={isBottomSheetOpen.toString()}
         value={path}
         onChange={(event, nextPath) => {
           this.setState({ path: nextPath });
@@ -59,6 +58,7 @@ export default class MyBottomNavigation extends Component {
             return (
               <BottomNavigationAction
                 label={sidebarLink.label}
+                key={sidebarLink.label}
                 icon={<i className="material-icons">{sidebarLink.icon}</i>}
                 value={sidebarLink.paths[0]}
                 onClick={() => this.onBottomNavigationActionClicked(sidebarLink.paths[0])}

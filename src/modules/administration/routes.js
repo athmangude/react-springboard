@@ -16,12 +16,12 @@ import mixpanel from 'mixpanel-browser';
 import 'Modules/main/containers/App/index.css';
 
 // // import run and initialize amplitiude tracker
-import amplitudeTracker from 'Utils/trackers/amplitude';
+// import amplitudeTracker from 'Utils/trackers/amplitude';
+// amplitudeTracker();
+// window.amplitude.getInstance().init('[AMPLITUDE_KEY_GOES_HERE]');
 
 import MainLayout from 'Layouts/main';
 
-amplitudeTracker();
-window.amplitude.getInstance().init('[AMPLITUDE_KEY_GOES_HERE]');
 
 ReactGA.initialize('[GOOGLE_ANALYTICS_KEY_GOES_HERE]');
 mixpanel.init('[MIXPANEL_KEY_GOES_HERE]');
