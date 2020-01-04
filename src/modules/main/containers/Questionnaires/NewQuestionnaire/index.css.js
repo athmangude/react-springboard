@@ -10,9 +10,21 @@ export default ({ theme }) => {
       flex-grow: 2;
       display: flex;
       height: 100%;
+      flex-direction: column;
       .editor {
-        height: 100% !important;
+        height: calc(100% - 50px) !important;
         width: 100% !important;
+      }
+      .editor-controls {
+        height: 50px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        &>.button {
+          margin: 10px;
+        }
       }
     }
 
