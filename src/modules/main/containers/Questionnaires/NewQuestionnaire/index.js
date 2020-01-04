@@ -68,6 +68,11 @@ export default class NewQuestionnaire extends Component {
 
     onValidateAndPreview = () => {
         const onValidateResult = this.onValidate();
+
+        if (onValidateResult) {
+            const { editorValue } = this.state;
+            this.setState({ committedEditorValue: editorValue });
+        }
     }
 
     onCloseSnackbar = () => {
