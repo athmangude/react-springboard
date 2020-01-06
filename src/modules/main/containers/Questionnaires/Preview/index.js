@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import Typography from '@material-ui/core/Typography';
+
 import Questions from './Questions';
 
 import styles from './index.css';
@@ -18,14 +20,23 @@ const Preview = ({ committedEditorValue }) => {
 
   return (
     <PreviewWrapper>
-      <div className="heading">
-        <h4>{questionnaire.title}</h4>
-        <Questions
-          questions={questionnaire.questions}
-          answers={answers}
-          onChange={onChange}
-        />
-      </div>
+      <Typography variant="h4" gutterBottom className="questionnaire-title">
+        {questionnaire.title}
+      </Typography>
+      {
+        questionnaire.sections.map(section => (
+          <div key={section.title} className="section-container">
+            <Typography variant="h6" gutterBottom className="section-title">
+              {section.title}
+            </Typography>
+            <Questions
+              questions={section.questions}
+              answers={answers}
+              onChange={onChange}
+            />
+          </div>
+        ))
+      }
     </PreviewWrapper>
   );
 };

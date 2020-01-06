@@ -4,6 +4,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import Typography from '@material-ui/core/Typography';
 
 import styles from './Question.css';
 import { Text, Number, Radio, Checkbox, Slider, DatePicker } from './input-types';
@@ -13,7 +14,9 @@ const QuestionWrapper = styled.div`${styles}`;
 const Question = ({ question, onChange, answer }) => {
   return (
     <QuestionWrapper>
-      <p>{question.question}</p>
+      <Typography variant="body1" gutterBottom>
+        {question.question}
+      </Typography>
       {
         question.inputType === 'TEXT' ? (
           <Text

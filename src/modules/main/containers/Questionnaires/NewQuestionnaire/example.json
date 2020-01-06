@@ -1,184 +1,154 @@
 {
   "title": "Akiba ya Roho",
-  "questions": [
+  "sections": [
     {
-      "question": "What is the first name of the patient?",
-      "description": "Enter the first name of the patient",
-      "inputType": "TEXT",
-      "tag": "patientFirstName",
-      "label": "Patient First Name",
-      "validationRules": [
+      "title": "Bio Information",
+      "questions": [
         {
-          "required": true,
-          "message": "This field is required"
+          "question": "What is the first name of the patient?",
+          "description": "Enter the first name of the patient",
+          "inputType": "TEXT",
+          "tag": "patientFirstName",
+          "label": "Patient First Name",
+          "validationRules": []
+        },
+        {
+          "question": "What is the surname of the patient?",
+          "description": "Enter the surname of the patient",
+          "inputType": "TEXT",
+          "tag": "patientSurname",
+          "label": "Patient Surname",
+          "validationRules": []
+        },
+        {
+          "question": "What is the age of the patient?",
+          "description": "Enter the age of the patient",
+          "inputType": "NUMBER",
+          "tag": "patientAge",
+          "label": "Patient Age",
+          "validationRules": []
+        },
+        {
+          "question": "What is the gender of the patient?",
+          "description": "Select the gender of the patient",
+          "inputType": "RADIO",
+          "tag": "patientGender",
+          "label": "Patient Gender",
+          "options": [
+            {
+              "label": "Male",
+              "value": "male"
+            },
+            {
+              "label": "Female",
+              "value": "female"
+            },
+            {
+              "label": "Undisclosed",
+              "value": "undisclosed"
+            }
+          ],
+          "validationRules": []
+        },
+        {
+          "question": "What is the patient income group?",
+          "description": "Select the patient income group",
+          "inputType": "RADIO",
+          "tag": "patientIncomeGroup",
+          "label": "Patient Income Group",
+          "options": [
+            {
+              "label": "KES 1,000 - 5,000",
+              "value": "1000 - 5000"
+            },
+            {
+              "label": "KES 6,000 - 10,000",
+              "value": "6000 - 10000"
+            },
+            {
+              "label": "KES. 11,000 - 20,000",
+              "value": "11000 - 20000"
+            }
+          ],
+          "validationRules": []
+        },
+        {
+          "question": "How did the patient learn about AA?",
+          "description": "Select all options about how the patient learnt about AA",
+          "inputType": "CHECKBOX",
+          "tag": "learntAboutAA",
+          "label": "How they learnt about AA",
+          "options": [
+            {
+              "label": "Posters & Flyers",
+              "value": "posters_and_flyers"
+            },
+            {
+              "label": "Radio",
+              "value": "radio"
+            },
+            {
+              "label": "Friend",
+              "value": "friend"
+            }
+          ],
+          "validationRules": []
+        },
+        {
+          "question": "What's the patient's date of birth?",
+          "description": "Select the patient's date of birth",
+          "inputType": "DATE",
+          "tag": "dob",
+          "label": "Date of Birth",
+          "validationRules": []
         }
       ]
     },
     {
-      "question": "What is the surname of the patient?",
-      "description": "Enter the surname of the patient",
-      "inputType": "TEXT",
-      "tag": "patientSurname",
-      "label": "Patient Surname",
-      "validationRules": [
+      "title": "Medical Tests",
+      "questions": [
         {
-          "required": true,
-          "message": "This field is required"
+          "question": "What's the temperature of patient?",
+          "description": "Enter the temperature reading of the baby",
+          "inputType": "SLIDER",
+          "tag": "temperature",
+          "label": "Temperature",
+          "min": 20,
+          "max": 45,
+          "step": 1,
+          "defaultValue": 37,
+          "validationRules": []
         }
       ]
     },
     {
-      "question": "What is the age of the patient?",
-      "description": "Enter the age of the patient",
-      "inputType": "NUMBER",
-      "tag": "patientAge",
-      "label": "Patient Age",
-      "validationRules": [
+      "title": "Location Information",
+      "questions": [
         {
-          "required": true,
-          "message": "This field is required"
-        }
-      ]
-    },
-    {
-      "question": "What is the gender of the patient?",
-      "description": "Select the gender of the patient",
-      "inputType": "RADIO",
-      "tag": "patientGender",
-      "label": "Patient Gender",
-      "options": [
-        {
-          "label": "Male",
-          "value": "male"
-        },
-        {
-          "label": "Female",
-          "value": "female"
-        },
-        {
-          "label": "Undisclosed",
-          "value": "undisclosed"
-        }
-      ],
-      "validationRules": [
-        {
-          "required": true,
-          "message": "This field is required"
-        }
-      ]
-    },
-    {
-      "question": "What is the patient income group?",
-      "description": "Select the patient income group",
-      "inputType": "RADIO",
-      "tag": "patientIncomeGroup",
-      "label": "Patient Income Group",
-      "options": [
-        {
-          "label": "KES 1,000 - 5,000",
-          "value": "1000 - 5000"
-        },
-        {
-          "label": "KES 6,000 - 10,000",
-          "value": "6000 - 10000"
-        },
-        {
-          "label": "KES. 11,000 - 20,000",
-          "value": "11000 - 20000"
-        }
-      ],
-      "validationRules": [
-        {
-          "required": true,
-          "message": "This field is required"
-        }
-      ]
-    },
-    {
-      "question": "How did the patient learn about AA?",
-      "description": "Select all options about how the patient learnt about AA",
-      "inputType": "CHECKBOX",
-      "tag": "learntAboutAA",
-      "label": "How they learnt about AA",
-      "options": [
-        {
-          "label": "Posters & Flyers",
-          "value": "posters_and_flyers"
-        },
-        {
-          "label": "Radio",
-          "value": "radio"
-        },
-        {
-          "label": "Friend",
-          "value": "friend"
-        }
-      ],
-      "validationRules": [
-        {
-          "required": true,
-          "message": "This field is required"
-        }
-      ]
-    },
-    {
-      "question": "What's the temperature of patient?",
-      "description": "Enter the temperature reading of the baby",
-      "inputType": "SLIDER",
-      "tag": "temperature",
-      "label": "Temperature",
-      "min": 20,
-      "max": 45,
-      "step": 1,
-      "defaultValue": 37,
-      "validationRules": [
-        {
-          "required": true,
-          "message": "This field is required"
-        }
-      ]
-    },
-    {
-      "question": "What's the patient's date of birth?",
-      "description": "Select the patient's date of birth",
-      "inputType": "DATE",
-      "tag": "dob",
-      "label": "Date of Birth",
-      "validationRules": [
-        {
-          "required": true,
-          "message": "This field is required"
-        }
-      ]
-    },
-    {
-      "question": "What is closest AA clinic from the patient?",
-      "description": "Select the closest AA clinic from the patient",
-      "inputType": "RADIO",
-      "tag": "closestClinic",
-      "label": "Closest Clinic",
-      "options": [
-        {
-          "label": "Baba Dogo",
-          "value": "baba_dogo"
-        },
-        {
-          "label": "Kiambiu",
-          "value": "Kiambiu"
-        },
-        {
-          "label": "Ruben I",
-          "value": "ruben1"
-        },
-        {
-          "label": "Ruben II",
-          "value": "ruben2"
-        }
-      ],
-      "validationRules": [
-        {
-          "required": true,
-          "message": "This field is required"
+          "question": "What is closest AA clinic from the patient?",
+          "description": "Select the closest AA clinic from the patient",
+          "inputType": "RADIO",
+          "tag": "closestClinic",
+          "label": "Closest Clinic",
+          "options": [
+            {
+              "label": "Baba Dogo",
+              "value": "baba_dogo"
+            },
+            {
+              "label": "Kiambiu",
+              "value": "Kiambiu"
+            },
+            {
+              "label": "Ruben I",
+              "value": "ruben1"
+            },
+            {
+              "label": "Ruben II",
+              "value": "ruben2"
+            }
+          ],
+          "validationRules": []
         }
       ]
     }

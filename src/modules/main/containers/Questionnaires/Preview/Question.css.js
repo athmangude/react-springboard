@@ -1,4 +1,4 @@
-export default ({ theme }) => `
-  border-bottom: solid 1px #d9d9d9;
+export default () => `
   padding: 10px 5px;
+  margin: 10px 0;
 `;
