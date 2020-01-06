@@ -3,6 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { withFormsy } from 'formsy-react';
 
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
@@ -42,4 +43,4 @@ RadioInput.propTypes = {
   options: PropTypes.array.isRequired,
 };
 
-export default RadioInput;
+export default withFormsy(RadioInput);

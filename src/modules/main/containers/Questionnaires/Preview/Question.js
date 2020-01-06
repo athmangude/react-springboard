@@ -12,7 +12,7 @@ import { Text, Number, Radio, Checkbox, Slider, DatePicker } from './input-types
 
 const QuestionWrapper = styled.div`${styles}`;
 
-const Question = ({ question, onChange, response, responses, parent, parentValue }) => {
+const Question = ({ question, onChange, response, parent, parentValue, validation }) => {
   let show = false;
   if (!question.parentTag) {
     show = true;
@@ -71,6 +71,14 @@ const Question = ({ question, onChange, response, responses, parent, parentValue
   }
 
   if (show) {
+    let validationRules;
+    let validationErrors;
+
+    if (validation) {
+      validationRules = validation.rules;
+      validationErrors = validation.errorMessages;
+    }
+
     return (
       <QuestionWrapper>
         <Typography variant="body1" gutterBottom>
@@ -86,8 +94,8 @@ const Question = ({ question, onChange, response, responses, parent, parentValue
               validationRules={question.validationRules}
               name={question.tag}
               value={response}
-              validations="isEmail"
-              validationError="This is not a valid email"
+              validations={validationRules}
+              validationErrors={validationErrors}
             />
           ) : question.inputType === 'NUMBER' ? (
             <Number
@@ -98,7 +106,8 @@ const Question = ({ question, onChange, response, responses, parent, parentValue
               validationRules={question.validationRules}
               name={question.tag}
               value={response}
-
+              validations={validationRules}
+              validationErrors={validationErrors}
             />
           ) : question.inputType === 'RADIO' ? (
             <Radio
@@ -110,6 +119,8 @@ const Question = ({ question, onChange, response, responses, parent, parentValue
               options={question.options}
               name={question.tag}
               value={response}
+              validations={validationRules}
+              validationErrors={validationErrors}
             />
           ) : question.inputType === 'CHECKBOX' ? (
             <Checkbox
@@ -119,8 +130,10 @@ const Question = ({ question, onChange, response, responses, parent, parentValue
               response={response}
               validationRules={question.validationRules}
               options={question.options}
-              name={question.tag} value={response}
+              name={question.tag}
               value={response}
+              validations={validationRules}
+              validationErrors={validationErrors}
             />
           ) : question.inputType === 'SLIDER' ? (
             <Slider
@@ -135,6 +148,8 @@ const Question = ({ question, onChange, response, responses, parent, parentValue
               defaultValue={question.defaultValue}
               name={question.tag}
               value={response}
+              validations={validationRules}
+              validationErrors={validationErrors}
             />
           ) : question.inputType === 'DATE' ? (
             <DatePicker
@@ -145,6 +160,8 @@ const Question = ({ question, onChange, response, responses, parent, parentValue
               validationRules={question.validationRules}
               name={question.tag}
               value={response}
+              validations={validationRules}
+              validationErrors={validationErrors}
             />
           ) : null
         }
@@ -163,6 +180,7 @@ Question.propTypes = {
     PropTypes.object,
     PropTypes.array,
   ]),
+  validation: PropTypes.object,
 };
 
 export default Question;

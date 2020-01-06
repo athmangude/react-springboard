@@ -11,7 +11,16 @@
           "inputType": "TEXT",
           "tag": "patientFirstName",
           "label": "Patient First Name",
-          "validationRules": []
+          "validation": {
+            "rules": {
+              "isAlpha": true,
+              "isRequired": true
+            },
+            "errorMessages": {
+              "isAlpha": "Should only contain letters",
+              "isRequired": "This is field is required"
+            }
+          }
         },
         {
           "question": "What is the surname of the patient?",
@@ -19,7 +28,16 @@
           "inputType": "TEXT",
           "tag": "patientSurname",
           "label": "Patient Surname",
-          "validationRules": []
+          "validation": {
+            "rules": {
+              "isAlpha": true,
+              "isRequired": true
+            },
+            "errorMessages": {
+              "isAlpha": "Should only contain letters",
+              "isRequired": "This is field is required"
+            }
+          }
         },
         {
           "question": "What is the age of the patient?",
@@ -27,7 +45,16 @@
           "inputType": "NUMBER",
           "tag": "patientAge",
           "label": "Patient Age",
-          "validationRules": []
+          "validation": {
+            "rules": {
+              "isNumeric": true,
+              "isRequired": true
+            },
+            "errorMessages": {
+              "isNumeric": "Should only contain numbers",
+              "isRequired": "This is field is required"
+            }
+          }
         },
         {
           "question": "What is the gender of the patient?",
@@ -49,7 +76,14 @@
               "value": "undisclosed"
             }
           ],
-          "validationRules": []
+          "validation": {
+            "rules": {
+              "isRequired": true
+            },
+            "errorMessages": {
+              "isRequired": "This is field is required"
+            }
+          }
         },
         {
           "question": "What is the patient income group?",
@@ -73,7 +107,7 @@
               "value": "11000 - 20000"
             }
           ],
-          "validationRules": []
+          "validation": null
         },
         {
           "question": "How did the patient learn about AA?",
@@ -95,7 +129,7 @@
               "value": "friend"
             }
           ],
-          "validationRules": []
+          "validation": null
         },
         {
           "question": "What's the patient's date of birth?",
@@ -103,7 +137,7 @@
           "inputType": "DATE",
           "tag": "dob",
           "label": "Date of Birth",
-          "validationRules": []
+          "validation": null
         }
       ]
     },
@@ -121,7 +155,7 @@
           "max": 45,
           "step": 1,
           "defaultValue": 37,
-          "validationRules": []
+          "validation": null
         }
       ]
     },
@@ -153,7 +187,7 @@
               "value": "ruben2"
             }
           ],
-          "validationRules": []
+          "validation": null
         }
       ]
     }

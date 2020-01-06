@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable react/require-default-props */
 /* eslint-disable react/forbid-prop-types */
 import React from 'react';
@@ -10,24 +11,25 @@ import styles from './Text.css';
 
 const TextWrapper = styled(TextField)`${styles}`;
 
-const TextInput = ({ tag, label, onChange, response, validationRules, setValue, getValue, getErrorMessage, isValid ...rest }) => {
+const TextInput = ({ tag, label, onChange, response, setValue, getValue, getErrorMessage, isValid, isValidValue, isPristine }) => {
   function changeValue(event) {
+    // if (isValidValue(event.target.value) || event.target.value === '') {
     onChange(tag, event.target.value);
     setValue(event.currentTarget.value);
+    // }
   }
-
-  console.log('[rest]', rest);
 
   return (
     <TextWrapper
-      error={isValid()}
+      error={!isPristine() && !isValid()}
       name={tag}
       type="text"
-      value={getValue() || response}
+      value={response || getValue()}
       label={label}
       variant="outlined"
       onChange={changeValue}
-      helperText={getErrorMessage()}
+      helperText={isPristine() ? null : getErrorMessage()}
+      formNoValidate
     />
   );
 }
@@ -35,8 +37,13 @@ const TextInput = ({ tag, label, onChange, response, validationRules, setValue, 
 TextInput.propTypes = {
   response: PropTypes.string,
   onChange: PropTypes.func.isRequired,
-  validationRules: PropTypes.array.isRequired,
   label: PropTypes.string.isRequired,
+  setValue: PropTypes.func.isRequired,
+  getValue: PropTypes.func.isRequired,
+  getErrorMessage: PropTypes.func.isRequired,
+  isValid: PropTypes.func.isRequired,
+  isValidValue: PropTypes.func.isRequired,
+  isPristine: PropTypes.func.isRequired,
 };
 
 export default withFormsy(TextInput);
