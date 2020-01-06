@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Typography from '@material-ui/core/Typography';
 
-import Questions from './Questions';
+import Section from './Section';
 
 import styles from './index.css';
 
@@ -26,13 +26,12 @@ const Preview = ({ committedEditorValue }) => {
       {
         questionnaire.sections.map(section => (
           <div key={section.title} className="section-container">
-            <Typography variant="h6" gutterBottom className="section-title">
-              {section.title}
-            </Typography>
-            <Questions
+            <Section
               questions={section.questions}
               responses={responses}
               onChange={onChange}
+              title={section.title}
+              tag={section.tag}
             />
           </div>
         ))
