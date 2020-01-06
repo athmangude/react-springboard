@@ -12,11 +12,11 @@ import styles from './Radio.css';
 
 const RadioWrapper = styled(RadioGroup)`${styles}`;
 
-const RadioInput = ({ tag, label, onChange, answer, validationRules, options }) => {
+const RadioInput = ({ tag, label, onChange, response, validationRules, options }) => {
   return (
     <RadioWrapper
       name={tag}
-      value={answer}
+      value={response}
       aria-label={label}
       onChange={event => onChange(tag, event.target.value)}
     >
@@ -35,7 +35,7 @@ const RadioInput = ({ tag, label, onChange, answer, validationRules, options }) 
 }
 
 RadioInput.propTypes = {
-  answer: PropTypes.string,
+  response: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   validationRules: PropTypes.array.isRequired,
   label: PropTypes.string.isRequired,

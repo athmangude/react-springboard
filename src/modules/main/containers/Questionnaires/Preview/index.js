@@ -12,10 +12,10 @@ const PreviewWrapper = styled.div`${styles}`;
 
 const Preview = ({ committedEditorValue }) => {
   const questionnaire = JSON.parse(committedEditorValue);
-  const [answers, setAnswers] = useState({});
+  const [responses, setResponses] = useState({});
 
-  function onChange(tag, answer) {
-    setAnswers({ ...answers, [tag]: answer });
+  function onChange(tag, response) {
+    setResponses({ ...responses, [tag]: response });
   }
 
   return (
@@ -31,7 +31,7 @@ const Preview = ({ committedEditorValue }) => {
             </Typography>
             <Questions
               questions={section.questions}
-              answers={answers}
+              responses={responses}
               onChange={onChange}
             />
           </div>

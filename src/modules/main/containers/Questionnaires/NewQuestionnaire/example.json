@@ -56,6 +56,8 @@
           "inputType": "RADIO",
           "tag": "patientIncomeGroup",
           "label": "Patient Income Group",
+          "parentTag": "patientGender",
+          "showIfParentValueEquals": "female",
           "options": [
             {
               "label": "KES 1,000 - 5,000",

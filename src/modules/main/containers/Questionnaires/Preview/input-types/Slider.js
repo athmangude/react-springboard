@@ -9,12 +9,12 @@ import styles from './Text.css';
 
 const SliderWrapper = styled(Slider)`${styles}`;
 
-const SliderInput = ({ tag, label, onChange, defaultValue, answer, validationRules, min, max, step, marks }) => {
+const SliderInput = ({ tag, label, onChange, defaultValue, response, validationRules, min, max, step, marks }) => {
   return (
     <SliderWrapper
       name={tag}
       type="text"
-      defaultValue={answer || defaultValue}
+      defaultValue={response || defaultValue}
       label={label}
       marks
       min={min}
@@ -22,14 +22,14 @@ const SliderInput = ({ tag, label, onChange, defaultValue, answer, validationRul
       step={step}
       valueLabelDisplay="auto"
       onChange={(event, nextValue) => onChange(tag, nextValue)}
-      value={answer}
+      value={response}
       track={false}
     />
   );
 }
 
 SliderInput.propTypes = {
-  answer: PropTypes.string,
+  response: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   validationRules: PropTypes.array.isRequired,
   label: PropTypes.string.isRequired,

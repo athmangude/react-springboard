@@ -13,22 +13,22 @@ import styles from './Checkbox.css';
 
 const RadioWrapper = styled(FormGroup)`${styles}`;
 
-const CheckboxInput = ({ tag, label, onChange, answer, validationRules, options }) => {
+const CheckboxInput = ({ tag, label, onChange, response, validationRules, options }) => {
   let value;
-  if (!answer) {
+  if (!response) {
     value = {};
     options.forEach(option => value[option.value] = false);
   } else {
-    value = answer;
+    value = response;
   }
 
   return (
     <RadioWrapper
       name={tag}
-      value={answer}
+      value={response}
       aria-label={label}
       onChange={(event) => {
-        const currentValue = answer || options.map(option => ({ [option.value]: false }));
+        const currentValue = response || options.map(option => ({ [option.value]: false }));
         const nextValue = ({ ...currentValue, [tag]: event.target.checked });
         onChange(tag, nextValue);
       }}
@@ -48,7 +48,7 @@ const CheckboxInput = ({ tag, label, onChange, answer, validationRules, options 
 }
 
 CheckboxInput.propTypes = {
-  answer: PropTypes.object,
+  response: PropTypes.object,
   onChange: PropTypes.func.isRequired,
   validationRules: PropTypes.array.isRequired,
   label: PropTypes.string.isRequired,

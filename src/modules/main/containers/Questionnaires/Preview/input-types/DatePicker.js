@@ -10,7 +10,7 @@ import styles from './Text.css';
 
 const KeyboardDatePickerWrapper = styled(KeyboardDatePicker)`${styles}`;
 
-const DatePicker = ({ tag, label, onChange, answer, validationRules }) => {
+const DatePicker = ({ tag, label, onChange, response, validationRules }) => {
   return (
     <MuiPickersUtilsProvider utils={DateFnsUtils}>
       <KeyboardDatePickerWrapper
@@ -20,7 +20,7 @@ const DatePicker = ({ tag, label, onChange, answer, validationRules }) => {
         variant="inline"
         label={label}
         format="dd/MM/yyyy"
-        value={answer}
+        value={response}
         onChange={date => onChange(tag, date)}
         KeyboardButtonProps={{
           'aria-label': 'change date',
@@ -31,7 +31,7 @@ const DatePicker = ({ tag, label, onChange, answer, validationRules }) => {
 };
 
 DatePicker.propTypes = {
-  answer: PropTypes.string,
+  response: PropTypes.string,
   tag: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   validationRules: PropTypes.array.isRequired,

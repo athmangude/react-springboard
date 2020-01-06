@@ -9,12 +9,12 @@ import styles from './Text.css';
 
 const TextWrapper = styled(TextField)`${styles}`;
 
-const TextInput = ({ tag, label, onChange, answer, validationRules }) => {
+const TextInput = ({ tag, label, onChange, response, validationRules }) => {
   return (
     <TextWrapper
       name={tag}
       type="text"
-      value={answer}
+      value={response}
       label={label}
       variant="outlined"
       onChange={event => onChange(tag, event.target.value)}
@@ -23,7 +23,7 @@ const TextInput = ({ tag, label, onChange, answer, validationRules }) => {
 }
 
 TextInput.propTypes = {
-  answer: PropTypes.string,
+  response: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   validationRules: PropTypes.array.isRequired,
   label: PropTypes.string.isRequired,
