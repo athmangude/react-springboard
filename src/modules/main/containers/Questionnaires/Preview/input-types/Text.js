@@ -4,20 +4,30 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import TextField from '@material-ui/core/TextField';
+import { withFormsy } from 'formsy-react';
 
 import styles from './Text.css';
 
 const TextWrapper = styled(TextField)`${styles}`;
 
-const TextInput = ({ tag, label, onChange, response, validationRules }) => {
+const TextInput = ({ tag, label, onChange, response, validationRules, setValue, getValue, getErrorMessage, isValid ...rest }) => {
+  function changeValue(event) {
+    onChange(tag, event.target.value);
+    setValue(event.currentTarget.value);
+  }
+
+  console.log('[rest]', rest);
+
   return (
     <TextWrapper
+      error={isValid()}
       name={tag}
       type="text"
-      value={response}
+      value={getValue() || response}
       label={label}
       variant="outlined"
-      onChange={event => onChange(tag, event.target.value)}
+      onChange={changeValue}
+      helperText={getErrorMessage()}
     />
   );
 }
@@ -29,4 +39,4 @@ TextInput.propTypes = {
   label: PropTypes.string.isRequired,
 };
 
-export default TextInput;
+export default withFormsy(TextInput);

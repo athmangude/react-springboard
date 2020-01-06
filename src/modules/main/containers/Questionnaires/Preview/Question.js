@@ -84,6 +84,10 @@ const Question = ({ question, onChange, response, responses, parent, parentValue
               onChange={onChange}
               response={response}
               validationRules={question.validationRules}
+              name={question.tag}
+              value={response}
+              validations="isEmail"
+              validationError="This is not a valid email"
             />
           ) : question.inputType === 'NUMBER' ? (
             <Number
@@ -92,6 +96,9 @@ const Question = ({ question, onChange, response, responses, parent, parentValue
               onChange={onChange}
               response={response}
               validationRules={question.validationRules}
+              name={question.tag}
+              value={response}
+
             />
           ) : question.inputType === 'RADIO' ? (
             <Radio
@@ -101,6 +108,8 @@ const Question = ({ question, onChange, response, responses, parent, parentValue
               response={response}
               validationRules={question.validationRules}
               options={question.options}
+              name={question.tag}
+              value={response}
             />
           ) : question.inputType === 'CHECKBOX' ? (
             <Checkbox
@@ -110,6 +119,8 @@ const Question = ({ question, onChange, response, responses, parent, parentValue
               response={response}
               validationRules={question.validationRules}
               options={question.options}
+              name={question.tag} value={response}
+              value={response}
             />
           ) : question.inputType === 'SLIDER' ? (
             <Slider
@@ -122,6 +133,8 @@ const Question = ({ question, onChange, response, responses, parent, parentValue
               max={question.max}
               step={question.step}
               defaultValue={question.defaultValue}
+              name={question.tag}
+              value={response}
             />
           ) : question.inputType === 'DATE' ? (
             <DatePicker
@@ -130,6 +143,8 @@ const Question = ({ question, onChange, response, responses, parent, parentValue
               onChange={onChange}
               response={response}
               validationRules={question.validationRules}
+              name={question.tag}
+              value={response}
             />
           ) : null
         }
