@@ -4,16 +4,37 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { withFormsy } from 'formsy-react';
 
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
+import FormHelperText from '@material-ui/core/FormHelperText';
 
 import styles from './Checkbox.css';
 
-const RadioWrapper = styled(FormGroup)`${styles}`;
+const CheckboxWrapper = styled(FormControl)`${styles}`;
 
-const CheckboxInput = ({ tag, label, onChange, response, validationRules, options }) => {
+const CheckboxInput = ({ tag, label, onChange, response, options, setValue, getValue, getErrorMessage, isValid, isValidValue, isPristine }) => {
+  function changeValue(event) {
+    let currentValue;
+
+    if (response) {
+      currentValue = response;
+    } else {
+      currentValue = {};
+      options.forEach(option => currentValue[option.value] = false);
+    }
+    const nextValue = ({ ...currentValue, [tag]: event.target.checked });
+
+    // if (isValidValue(event.target.value) || event.target.value === '') {
+    onChange(tag, nextValue);
+    setValue(nextValue);
+    // }
+  }
+
   let value;
   if (!response) {
     value = {};
@@ -23,36 +44,51 @@ const CheckboxInput = ({ tag, label, onChange, response, validationRules, option
   }
 
   return (
-    <RadioWrapper
-      name={tag}
-      value={response}
-      aria-label={label}
-      onChange={(event) => {
-        const currentValue = response || options.map(option => ({ [option.value]: false }));
-        const nextValue = ({ ...currentValue, [tag]: event.target.checked });
-        onChange(tag, nextValue);
-      }}
+    <CheckboxWrapper
+      error={!isPristine() && !isValid()}
     >
+      <FormLabel component="legend">{label}</FormLabel>
+      <FormGroup
+        name={tag}
+        value={response}
+        aria-label={label}
+        onChange={changeValue}
+      >
+        {
+          options.map(option => (
+            <FormControlLabel
+              key={option.value}
+              value={option.value}
+              control={<Checkbox color="primary" checked={value.value} />}
+              label={option.label}
+            />
+          ))
+        }
+      </FormGroup>
       {
-        options.map(option => (
-          <FormControlLabel
-            key={option.value}
-            value={option.value}
-            control={<Checkbox color="primary" checked={value.value} />}
-            label={option.label}
-          />
-        ))
+        !isPristine() && !isValid() ? (
+          <FormHelperText
+            error={!isPristine() && !isValid()}
+          >
+            {isPristine() ? null : getErrorMessage()}
+          </FormHelperText>
+        ) : null
       }
-    </RadioWrapper>
+    </CheckboxWrapper>
   );
 }
 
 CheckboxInput.propTypes = {
   response: PropTypes.object,
   onChange: PropTypes.func.isRequired,
-  validationRules: PropTypes.array.isRequired,
   label: PropTypes.string.isRequired,
   options: PropTypes.array.isRequired,
+  getValue: PropTypes.func.isRequired,
+  getErrorMessage: PropTypes.func.isRequired,
+  isValid: PropTypes.func.isRequired,
+  isValidValue: PropTypes.func.isRequired,
+  isPristine: PropTypes.func.isRequired,
+  tag: PropTypes.string.isRequired,
 };
 
-export default CheckboxInput;
+export default withFormsy(CheckboxInput);

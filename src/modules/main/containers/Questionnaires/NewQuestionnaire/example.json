@@ -129,7 +129,14 @@
               "value": "friend"
             }
           ],
-          "validation": null
+          "validation": {
+            "rules": {
+              "isRequired": true
+            },
+            "errorMessages": {
+              "isRequired": "This is field is required"
+            }
+          }
         },
         {
           "question": "What's the patient's date of birth?",

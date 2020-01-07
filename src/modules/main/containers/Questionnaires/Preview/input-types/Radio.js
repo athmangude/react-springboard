@@ -56,12 +56,11 @@ const RadioInput = ({ tag, label, onChange, response, options, setValue, getValu
       }
     </RadioWrapper>
   );
-}
+};
 
 RadioInput.propTypes = {
   response: PropTypes.string,
   onChange: PropTypes.func.isRequired,
-  validationRules: PropTypes.array.isRequired,
   label: PropTypes.string.isRequired,
   options: PropTypes.array.isRequired,
   getValue: PropTypes.func.isRequired,
