@@ -23,6 +23,7 @@ const RadioInput = ({ tag, label, onChange, response, options, setValue, getValu
     setValue(event.target.value);
     // }
   }
+
   return (
     <RadioWrapper
       error={!isPristine() && !isValid()}
