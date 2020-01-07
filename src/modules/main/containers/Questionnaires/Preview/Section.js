@@ -16,6 +16,7 @@ const SectionWrapper = styled(Formsy)`${styles}`;
 const form = createRef();
 
 const Section = ({ questions, onChange, responses, title, tag }) => {
+  // eslint-disable-next-line no-unused-vars
   const [canSubmit, setCanSubmit] = useState(true);
 
   function onValidSubmit() {
@@ -112,7 +113,7 @@ const Section = ({ questions, onChange, responses, title, tag }) => {
       <Divider variant="fullWidth" className="divider" />
     </SectionWrapper>
   );
-}
+};
 
 SectionWrapper.propTypes = {
   questions: PropTypes.array.isRequired,
