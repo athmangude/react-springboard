@@ -53,7 +53,12 @@ const Section = ({ questions, onChange, responses, title, tag }) => {
 
     if (typeof value === 'object') {
       // this is a bit complex as a lot of things are objects in JS.
-      if (Object.keys(value).length) {
+
+      if (value === null || value === 'undefined') {
+        return false;
+      }
+
+      if (Object.keys(value) && Object.keys(value).length) {
         let checked = false;
         Object.keys(value).forEach((key) => {
           if (value[key]) {

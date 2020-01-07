@@ -144,7 +144,14 @@
           "inputType": "DATE",
           "tag": "dob",
           "label": "Date of Birth",
-          "validation": null
+          "validation": {
+            "rules": {
+              "isRequired": true
+            },
+            "errorMessages": {
+              "isRequired": "This is field is required"
+            }
+          }
         }
       ]
     },
@@ -194,7 +201,14 @@
               "value": "ruben2"
             }
           ],
-          "validation": null
+          "validation": {
+            "rules": {
+              "isRequired": true
+            },
+            "errorMessages": {
+              "isRequired": "This is field is required"
+            }
+          }
         }
       ]
     }
