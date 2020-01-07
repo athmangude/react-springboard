@@ -15,7 +15,7 @@ const TextInput = ({ tag, label, onChange, response, setValue, getValue, getErro
   function changeValue(event) {
     // if (isValidValue(event.target.value) || event.target.value === '') {
     onChange(tag, event.target.value);
-    setValue(event.currentTarget.value);
+    setValue(event.target.value);
     // }
   }
 
@@ -44,6 +44,7 @@ TextInput.propTypes = {
   isValid: PropTypes.func.isRequired,
   isValidValue: PropTypes.func.isRequired,
   isPristine: PropTypes.func.isRequired,
+  tag: PropTypes.string.isRequired,
 };
 
 export default withFormsy(TextInput);

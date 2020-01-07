@@ -15,7 +15,7 @@ const NumberInput = ({ tag, label, onChange, response, setValue, getValue, getEr
   function changeValue(event) {
     // if (isValidValue(event.target.value) || event.target.value === '') {
     onChange(tag, event.target.value);
-    setValue(event.currentTarget.value);
+    setValue(event.target.value);
   }
   // }
 
