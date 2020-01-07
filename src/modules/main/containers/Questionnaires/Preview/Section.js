@@ -37,7 +37,36 @@ const Section = ({ questions, onChange, responses, title, tag }) => {
   }
 
   addValidationRule('isRequired', (values, value) => {
-    return value && value.length;
+    if (typeof value === 'string') {
+      return value && value.length;
+    }
+
+    if (Array.isArray(value)) {
+      // catch an array value and do nothing. assume it passes
+      return true;
+    }
+
+    if (typeof value === 'number') {
+      // returning true because a number will be valid
+      return true;
+    }
+
+    if (typeof value === 'object') {
+      // this is a bit complex as a lot of things are objects in JS.
+      if (Object.keys(value).length) {
+        let checked = false;
+        Object.keys(value).forEach((key) => {
+          if (value[key]) {
+            checked = true;
+          }
+        });
+
+        return checked;
+      }
+      return true;
+    }
+
+    return false;
   });
 
   return (
