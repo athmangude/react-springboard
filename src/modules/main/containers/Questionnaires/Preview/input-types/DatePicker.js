@@ -10,7 +10,6 @@ import { withFormsy } from 'formsy-react';
 import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
 import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
 
 import { format } from 'date-fns';
@@ -31,7 +30,6 @@ const DatePicker = ({ tag, label, onChange, response, setValue, getValue, getErr
     <DatePickerWrapper
       error={!isPristine() && !isValid()}
     >
-      <FormLabel component="legend">{label}</FormLabel>
       <MuiPickersUtilsProvider utils={DateFnsUtils}>
         <KeyboardDatePicker
           error={!isPristine() && !isValid()}

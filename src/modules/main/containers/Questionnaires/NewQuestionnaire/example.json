@@ -2,8 +2,9 @@
   "title": "Akiba ya Roho",
   "sections": [
     {
-      "title": "Bio Information",
-      "tag": "bioInformation",
+      "title": "Bio Data",
+      "tag": "bio_data",
+      "type": "questionnaire",
       "questions": [
         {
           "question": "What is the first name of the patient?",
@@ -11,6 +12,23 @@
           "inputType": "TEXT",
           "tag": "patientFirstName",
           "label": "Patient First Name",
+          "validation": {
+            "rules": {
+              "isAlpha": true,
+              "isRequired": true
+            },
+            "errorMessages": {
+              "isAlpha": "Should only contain letters",
+              "isRequired": "This is field is required"
+            }
+          }
+        },
+        {
+          "question": "What is the middle name of the patient?",
+          "description": "Enter the middle name of the patient",
+          "inputType": "TEXT",
+          "tag": "patientMiddleName",
+          "label": "Patient Middle Name",
           "validation": {
             "rules": {
               "isAlpha": true,
@@ -35,23 +53,6 @@
             },
             "errorMessages": {
               "isAlpha": "Should only contain letters",
-              "isRequired": "This is field is required"
-            }
-          }
-        },
-        {
-          "question": "What is the age of the patient?",
-          "description": "Enter the age of the patient",
-          "inputType": "NUMBER",
-          "tag": "patientAge",
-          "label": "Patient Age",
-          "validation": {
-            "rules": {
-              "isNumeric": true,
-              "isRequired": true
-            },
-            "errorMessages": {
-              "isNumeric": "Should only contain numbers",
               "isRequired": "This is field is required"
             }
           }
@@ -86,47 +87,88 @@
           }
         },
         {
-          "question": "What is the patient income group?",
-          "description": "Select the patient income group",
-          "inputType": "RADIO",
-          "tag": "patientIncomeGroup",
-          "label": "Patient Income Group",
-          "parentTag": "patientGender",
-          "showIfParentValueEquals": "female",
-          "options": [
-            {
-              "label": "KES 1,000 - 5,000",
-              "value": "1000 - 5000"
+          "question": "What's the patient's date of birth?",
+          "description": "Select the patient's date of birth",
+          "inputType": "DATE",
+          "tag": "dob",
+          "label": "Date of Birth",
+          "validation": {
+            "rules": {
+              "isRequired": true
             },
-            {
-              "label": "KES 6,000 - 10,000",
-              "value": "6000 - 10000"
-            },
-            {
-              "label": "KES. 11,000 - 20,000",
-              "value": "11000 - 20000"
+            "errorMessages": {
+              "isRequired": "This is field is required"
             }
-          ],
-          "validation": null
+          }
         },
         {
-          "question": "How did the patient learn about AA?",
-          "description": "Select all options about how the patient learnt about AA",
-          "inputType": "CHECKBOX",
-          "tag": "learntAboutAA",
-          "label": "How they learnt about AA",
+          "question": "What is the age of the patient?",
+          "description": "Enter the age of the patient",
+          "inputType": "NUMBER",
+          "tag": "patientAge",
+          "label": "Patient Age",
+          "validation": {
+            "rules": {
+              "isNumeric": true,
+              "isRequired": true
+            },
+            "errorMessages": {
+              "isNumeric": "Should only contain numbers",
+              "isRequired": "This is field is required"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Mobile Phone Access",
+      "tag": "mobile_phone_access",
+      "type": "questionnaire",
+      "questions": [
+        {
+          "question": "What is the patient's phone number?",
+          "description": "Enter the patient's phone number. If they do not have one, ask them to provide a number we can reach them.",
+          "inputType": "TEXT",
+          "tag": "patientPhoneNumber",
+          "label": "Patient Phone Number",
+          "validation": {
+            "rules": {
+              "isRequired": true
+            },
+            "errorMessages": {
+              "isRequired": "This is field is required"
+            }
+          }
+        },
+        {
+          "question": "Confirm the patient's phone number.",
+          "description": "Enter the patient's phone number a second time to comfirm correctness.",
+          "inputType": "TEXT",
+          "tag": "patientPhoneNumberConfirmation",
+          "label": "Patient Phone Number Confirmation",
+          "validation": {
+            "rules": {
+              "isRequired": true
+            },
+            "errorMessages": {
+              "isRequired": "This is field is required"
+            }
+          }
+        },
+        {
+          "question": "Does the patient have a mobile phone?",
+          "description": "Ask the patient if they have a mobile phone",
+          "inputType": "RADIO",
+          "tag": "patientHasPhone",
+          "label": "Patient has Phone",
           "options": [
             {
-              "label": "Posters & Flyers",
-              "value": "posters_and_flyers"
+              "label": "YES",
+              "value": "yes"
             },
             {
-              "label": "Radio",
-              "value": "radio"
-            },
-            {
-              "label": "Friend",
-              "value": "friend"
+              "label": "No",
+              "value": "no"
             }
           ],
           "validation": {
@@ -139,11 +181,446 @@
           }
         },
         {
-          "question": "What's the patient's date of birth?",
-          "description": "Select the patient's date of birth",
-          "inputType": "DATE",
-          "tag": "dob",
-          "label": "Date of Birth",
+          "question": "What kind of phone do they have?",
+          "description": "Ask the patient what type of phone they have",
+          "inputType": "RADIO",
+          "tag": "patientPhoneType",
+          "label": "Patient Phone Type",
+          "parentTag": "patientHasPhone",
+          "showIfParentValueEquals": "yes",
+          "options": [
+            {
+              "label": "Basic Phone",
+              "value": "basic_phone"
+            },
+            {
+              "label": "Smart Phone",
+              "value": "smart_phone"
+            }
+          ],
+          "validation": {
+            "rules": {
+              "isRequired": true
+            },
+            "errorMessages": {
+              "isRequired": "This is field is required"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Residence Information",
+      "tag": "residence_information",
+      "type": "questionnaire",
+      "questions": [
+        {
+          "question": "What is patient's general area of residence?",
+          "description": "Ask the patient what their general area of residence is",
+          "inputType": "RADIO",
+          "tag": "generalResidentialArea",
+          "label": "General Residential Area",
+          "options": [
+            {
+              "label": "Kayaba",
+              "value": "kayaba"
+            },
+            {
+              "label": "Sinai",
+              "value": "Sinai"
+            },
+            {
+              "label": "Kiambiu",
+              "value": "kiambiu"
+            },
+            {
+              "label": "Kwa Reuben",
+              "value": "kwa_rueben"
+            },
+            {
+              "label": "Kwa Njenga",
+              "value": "kwa_njenga"
+            },
+            {
+              "label": "Tassia",
+              "value": "tassia"
+            },
+            {
+              "label": "Mathare",
+              "value": "mathare"
+            },
+            {
+              "label": "Baba Dogo",
+              "value": "baba_dodo"
+            },
+            {
+              "label": "Mukuru Nyayo",
+              "value": "mukuru_nyayo"
+            }
+          ],
+          "validation": {
+            "rules": {
+              "isRequired": true
+            },
+            "errorMessages": {
+              "isRequired": "This is field is required"
+            }
+          }
+        },
+        {
+          "question": "What specific village or community in Mukuru Nyayo does the patient live?",
+          "description": "Ask the patient which village or community they live in Mukuru Nyayo",
+          "inputType": "RADIO",
+          "tag": "village_community",
+          "label": "Patient Village or Community",
+          "parentTag": "generalResidentialArea",
+          "showIfParentValueEquals": "mukuru_nyayo",
+          "options": [
+            {
+              "label": "Kisii",
+              "value": "kisii"
+            },
+            {
+              "label": "Fuata Nyayo",
+              "value": "fuata_nyayo"
+            }
+          ],
+          "validation": {
+            "rules": {
+              "isRequired": true
+            },
+            "errorMessages": {
+              "isRequired": "This is field is required"
+            }
+          }
+        },
+        {
+          "question": "What specific village or community in Tassia does the patient live?",
+          "description": "Ask the patient which village or community they live in Tassia",
+          "inputType": "RADIO",
+          "tag": "village_community",
+          "label": "Patient Village or Community",
+          "parentTag": "generalResidentialArea",
+          "showIfParentValueEquals": "tassia",
+          "options": [
+            {
+              "label": "Tassia",
+              "value": "tassia"
+            }
+          ],
+          "validation": {
+            "rules": {
+              "isRequired": true
+            },
+            "errorMessages": {
+              "isRequired": "This is field is required"
+            }
+          }
+        },
+        {
+          "question": "What specific village or community in Njenga does the patient live?",
+          "description": "Ask the patient which village or community they live in Njenga",
+          "inputType": "RADIO",
+          "tag": "village_community",
+          "label": "Patient Village or Community",
+          "parentTag": "generalResidentialArea",
+          "showIfParentValueEquals": "kwa_njenga",
+          "options": [
+            {
+              "label": "Wape Wape",
+              "value": "wape_wape"
+            },
+            {
+              "label": "Moto Moto",
+              "value": "moto moto"
+            },
+            {
+              "label": "Vietnam",
+              "value": "vietnam"
+            },
+            {
+              "label": "Sisal",
+              "value": "sisal"
+            },
+            {
+              "label": "Riara",
+              "value": "riara"
+            },
+            {
+              "label": "48 Village",
+              "value": "48_village"
+            },
+            {
+              "label": "Milimani",
+              "value": "milimani"
+            },
+            {
+              "label": "MCC",
+              "value": "mcc"
+            }
+          ],
+          "validation": {
+            "rules": {
+              "isRequired": true
+            },
+            "errorMessages": {
+              "isRequired": "This is field is required"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Employment Status, Occupation & Income",
+      "tag": "employment_status",
+      "type": "questionnaire",
+      "questions": [
+        {
+          "question": "What is the patient's current employment status?",
+          "description": "Ask the patient about their current employment status",
+          "inputType": "RADIO",
+          "tag": "employmentStatus",
+          "label": "Employment Status",
+          "options": [
+            {
+              "label": "Unemployed",
+              "value": "unemployed"
+            },
+            {
+              "label": "Self-employed",
+              "value": "self_employed"
+            },
+            {
+              "label": "Short Term Contract Work",
+              "value": "short_term_contract_work"
+            },
+            {
+              "label": "Full-time Employment",
+              "value": "full-time employment"
+            }
+          ],
+          "validation": {
+            "rules": {
+              "isRequired": true
+            },
+            "errorMessages": {
+              "isRequired": "This is field is required"
+            }
+          }
+        },
+        {
+          "question": "What is the patient's occupation?",
+          "description": "Ask the patient what they do for a living",
+          "inputType": "TEXT",
+          "tag": "patientOccupation",
+          "label": "Patient Occupation",
+          "validation": {
+            "rules": {
+              "isAlpha": true,
+              "isRequired": true
+            },
+            "errorMessages": {
+              "isAlpha": "Should only contain letters",
+              "isRequired": "This is field is required"
+            }
+          }
+        },
+        {
+          "question": "What is the patient income group?",
+          "description": "Select the patient income group",
+          "inputType": "RADIO",
+          "tag": "patientIncomeGroup",
+          "label": "Patient Income Group",
+          "options": [
+            {
+              "label": "KES 0",
+              "value": "0"
+            },
+            {
+              "label": "KES 1 - 2,000",
+              "value": "1000 - 2000"
+            },
+            {
+              "label": "KES 2,001 - 4,000",
+              "value": "2001 - 4000"
+            },
+            {
+              "label": "KES. 4001 - 6,000",
+              "value": "4001 - 6000"
+            },
+            {
+              "label": "KES. 6001 - 8,000",
+              "value": "6001 - 8000"
+            },
+            {
+              "label": "KES. 8001 - 10,000",
+              "value": "8001 - 10000"
+            },
+            {
+              "label": "Over KES. 10,000",
+              "value": ">10000"
+            }
+          ],
+          "validation": null
+        }
+      ]
+    },
+    {
+      "title": "Access Afya Awareness Evaluation",
+      "tag": "access_afya_awareness",
+      "type": "questionnaire",
+      "questions": [
+        {
+          "question": "Has the patient heard about Access Afya?",
+          "description": "Ask the patient whether they have heard about Accesss Afya",
+          "inputType": "RADIO",
+          "tag": "knowAboutAA",
+          "label": "Whether They Know About AA",
+          "options": [
+            {
+              "label": "YES",
+              "value": "yes"
+            },
+            {
+              "label": "No",
+              "value": "no"
+            }
+          ],
+          "validation": {
+            "rules": {
+              "isRequired": true
+            },
+            "errorMessages": {
+              "isRequired": "This is field is required"
+            }
+          }
+        },
+        {
+          "question": "Has the patient ever been treated at Access Afya?",
+          "description": "Ask the patient whether they have been treated at Access Afya",
+          "inputType": "RADIO",
+          "tag": "knowAboutAA",
+          "label": "Treated at Access Afya?",
+          "parentTag": "knowAboutAA",
+          "showIfParentValueEquals": "yes",
+          "options": [
+            {
+              "label": "YES",
+              "value": "yes"
+            },
+            {
+              "label": "No",
+              "value": "no"
+            }
+          ],
+          "validation": {
+            "rules": {
+              "isRequired": true
+            },
+            "errorMessages": {
+              "isRequired": "This is field is required"
+            }
+          }
+        },
+        {
+          "question": "How did the patient learn about Access Afya?",
+          "description": "Ask the patient how they learnt about Access Afya",
+          "inputType": "CHECKBOX",
+          "tag": "howPatientLearntAboutAA",
+          "parentTag": "knowAboutAA",
+          "showIfParentValueEquals": "yes",
+          "label": "How Patient Learnt About AA",
+          "options": [
+            {
+              "label": "Signage",
+              "value": "signage"
+            },
+            {
+              "label": "Walking by a Clinic (Seeing a clinic)",
+              "value": "walk_by"
+            },
+            {
+              "label": "Word of Mouth (Family & Friends)",
+              "value": "word_of_mouth"
+            },
+            {
+              "label": "Community Health Volunteer",
+              "value": "chv"
+            },
+            {
+              "label": "Popup event",
+              "value": "popup_event"
+            },
+            {
+              "label": "Social Media",
+              "value": "social_media"
+            },
+            {
+              "label": "SMS",
+              "value": "sms"
+            },
+            {
+              "label": "Radio",
+              "value": "radio"
+            }
+          ],
+          "validation": {
+            "rules": {
+              "isRequired": true
+            },
+            "errorMessages": {
+              "isRequired": "This is field is required"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Smoking & Alcohol",
+      "tag": "smoking_and_alcohol",
+      "type": "questionnaire",
+      "questions": [
+        {
+          "question": "Do you smoke?",
+          "description": "Ask the patient whether they smoke",
+          "inputType": "RADIO",
+          "tag": "patient_smokes",
+          "label": "Patient Smokes?",
+          "options": [
+            {
+              "label": "YES",
+              "value": "yes"
+            },
+            {
+              "label": "No",
+              "value": "no"
+            }
+          ],
+          "validation": {
+            "rules": {
+              "isRequired": true
+            },
+            "errorMessages": {
+              "isRequired": "This is field is required"
+            }
+          }
+        },
+        {
+          "question": "Do you drink?",
+          "description": "Ask the patient whether they consume alcohol",
+          "inputType": "RADIO",
+          "tag": "patient_smokes",
+          "label": "Patient Drinks?",
+          "options": [
+            {
+              "label": "YES",
+              "value": "yes"
+            },
+            {
+              "label": "No",
+              "value": "no"
+            }
+          ],
           "validation": {
             "rules": {
               "isRequired": true
@@ -158,6 +635,7 @@
     {
       "title": "Medical Tests",
       "tag": "medical_tests",
+      "type": "questionnaire",
       "questions": [
         {
           "question": "What's the temperature of patient?",
@@ -170,45 +648,6 @@
           "step": 1,
           "defaultValue": 37,
           "validation": null
-        }
-      ]
-    },
-    {
-      "title": "Location Information",
-      "tag": "location_information",
-      "questions": [
-        {
-          "question": "What is closest AA clinic from the patient?",
-          "description": "Select the closest AA clinic from the patient",
-          "inputType": "RADIO",
-          "tag": "closestClinic",
-          "label": "Closest Clinic",
-          "options": [
-            {
-              "label": "Baba Dogo",
-              "value": "baba_dogo"
-            },
-            {
-              "label": "Kiambiu",
-              "value": "Kiambiu"
-            },
-            {
-              "label": "Ruben I",
-              "value": "ruben1"
-            },
-            {
-              "label": "Ruben II",
-              "value": "ruben2"
-            }
-          ],
-          "validation": {
-            "rules": {
-              "isRequired": true
-            },
-            "errorMessages": {
-              "isRequired": "This is field is required"
-            }
-          }
         }
       ]
     }
