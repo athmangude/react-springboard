@@ -27,7 +27,7 @@ const CheckboxInput = ({ tag, label, onChange, response, options, setValue, getV
       currentValue = {};
       options.forEach(option => currentValue[option.value] = false);
     }
-    const nextValue = ({ ...currentValue, [tag]: event.target.checked });
+    const nextValue = ({ ...currentValue, [event.target.name]: event.target.checked });
 
     // if (isValidValue(event.target.value) || event.target.value === '') {
     onChange(tag, nextValue);
@@ -57,6 +57,7 @@ const CheckboxInput = ({ tag, label, onChange, response, options, setValue, getV
         {
           options.map(option => (
             <FormControlLabel
+              name={option.value}
               key={option.value}
               value={option.value}
               control={<Checkbox color="primary" checked={value.value} />}

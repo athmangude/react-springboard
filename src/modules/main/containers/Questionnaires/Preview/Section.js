@@ -109,7 +109,7 @@ const Section = ({ questions, onChange, responses, title, tag }) => {
           )
         })
       }
-      <Button variant="contained" color="primary" type="submit" className="button-primary">Submit Section</Button>
+      <Button variant="contained" color="secondary" type="submit" className="button-primary">Submit Section</Button>
       <Divider variant="fullWidth" className="divider" />
     </SectionWrapper>
   );
