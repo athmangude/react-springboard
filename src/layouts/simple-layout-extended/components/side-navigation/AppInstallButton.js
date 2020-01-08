@@ -8,7 +8,6 @@ import styles from './AppInstallButton.css';
 const AppInstallButtonWrapper = styled.button`${styles}`;
 
 const AppInstallButton = ({ onInstallButtonClicked }) => {
-  console.log(manifest);
   return (
     <AppInstallButtonWrapper
       onClick={onInstallButtonClicked}

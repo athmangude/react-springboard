@@ -1,4 +1,5 @@
 export default ({ theme }) => {
+  console.log(theme);
   return `
     width: 100%;
     height: 100%;
@@ -13,7 +14,7 @@ export default ({ theme }) => {
       align-items: center;
       justify-content: flex-start;
       margin-right: 10px;
-      color: #000000de;
+      color: ${theme.palette.text.primary};
       padding: 10px;
       width: 100%;
       display: flex;
@@ -22,7 +23,9 @@ export default ({ theme }) => {
       justify-content: space-between;
 
       &:hover {
-        background-color: #e8eaed;
+        background-color: ${theme.palette.primary['50']};
+        color: ${theme.palette.primary.dark};
+        font-weight: bold;
         &.wide {
           border-top-right-radius: 24px;
           border-bottom-right-radius: 24px;
@@ -30,8 +33,8 @@ export default ({ theme }) => {
       }
 
       &.active {
-        background-color: ${theme.lightPrimaryColor};
-        color: ${theme.primaryColor};
+        background-color: ${theme.palette.primary['100']};
+        color: ${theme.palette.primary.dark};
         font-weight: bold;
         &.wide {
           border-top-right-radius: 24px;

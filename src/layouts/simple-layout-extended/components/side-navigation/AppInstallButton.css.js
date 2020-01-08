@@ -1,4 +1,4 @@
-export default () => `
+export default ({ theme }) => `
   background: #fff;
   height: 48px;
   display: flex;
@@ -15,13 +15,17 @@ export default () => `
 
 
   &:hover {
-    background-color: #e8eaed;
+    background-color: ${theme.palette.primary['100']};
+    color: ${theme.palette.primary.dark};
+    font-weight: bold;
     border-top-right-radius: 24px;
     border-bottom-right-radius: 24px;
   }
 
   &.active {
-    background-color: #e8eaed;
+    background-color: ${theme.palette.primary['200']};
+    color: ${theme.palette.primary.dark};
+    font-weight: bold;
     border-top-right-radius: 24px;
     border-bottom-right-radius: 24px;
   }
