@@ -1,3 +1,5 @@
+/* eslint-disable arrow-parens */
+/* eslint-disable no-nested-ternary */
 /* eslint-disable react/forbid-prop-types */
 import React, { useState, createRef } from 'react';
 import styled from 'styled-components';
@@ -10,12 +12,15 @@ import Divider from '@material-ui/core/Divider';
 import styles from './Section.css';
 
 import Question from './Question';
+import Message from './Message';
+import ImagePanel from './message-types/ImagePanel';
+import VideoPanel from './message-types/VideoPanel';
 
 const SectionWrapper = styled(Formsy)`${styles}`;
 
 const form = createRef();
 
-const Section = ({ questions, onChange, responses, title, tag }) => {
+const Section = ({ questions, onChange, responses, title, tag, type, messages, media }) => {
   // eslint-disable-next-line no-unused-vars
   const [canSubmit, setCanSubmit] = useState(true);
 
@@ -88,38 +93,78 @@ const Section = ({ questions, onChange, responses, title, tag }) => {
         {title}
       </Typography>
       {
-        questions.map((question) => {
-          let parent;
-          if ('parentTag' in question) {
-            parent = questions.find(aQuestion => aQuestion.tag === question.parentTag);
-          }
-
-          return (
-            <Question
-              question={question}
-              key={question.tag}
-              onChange={onChange}
-              response={responses[question.tag]}
-              parent={parent}
-              parentValue={responses[question.parentTag]}
-              name={question.tag}
-              value={responses[question.tag]}
-              validation={question.validation}
-            />
-          )
-        })
+        (media) ? (
+          <>
+            {
+              media.map((item) => (
+                <>
+                  {
+                    item.type === 'image' ? (
+                      <ImagePanel url={item.url} name={item.name} />
+                    ) : item.type === 'video' ? (
+                      <VideoPanel url={item.url} name={item.name} />
+                    ) : null
+                  }
+                </>
+              ))
+            }
+          </>
+        ) : null
       }
-      <Button variant="contained" color="secondary" type="submit" className="button-primary">Submit Section</Button>
+      {
+        type === 'questionnaire' ? (
+          <>
+            {
+              questions.map((question) => {
+                let parent;
+                if ('parentTag' in question) {
+                  parent = questions.find(aQuestion => aQuestion.tag === question.parentTag);
+                }
+
+                return (
+                  <Question
+                    question={question}
+                    key={question.tag}
+                    onChange={onChange}
+                    response={responses[question.tag]}
+                    parent={parent}
+                    parentValue={responses[question.parentTag]}
+                    name={question.tag}
+                    value={responses[question.tag]}
+                    validation={question.validation}
+                  />
+                )
+              })
+            }
+            <Button variant="contained" color="secondary" type="submit" className="button-primary">Submit Section</Button>
+          </>
+        ) : type === 'instructive' ? (
+          <>
+            {
+              messages.map(message => (
+                <Message
+                  message={message}
+                  type={message.type}
+                />
+              ))
+            }
+            <Button variant="contained" color="secondary" type="submit" className="button-primary">Proceed</Button>
+          </>
+        ) : null
+      }
       <Divider variant="fullWidth" className="divider" />
     </SectionWrapper>
   );
 };
 
 SectionWrapper.propTypes = {
-  questions: PropTypes.array.isRequired,
+  questions: PropTypes.array,
+  messages: PropTypes.array,
   onChange: PropTypes.func.isRequired,
   responses: PropTypes.object.isRequired,
   title: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  media: PropTypes.array,
 };
 
 export default Section;

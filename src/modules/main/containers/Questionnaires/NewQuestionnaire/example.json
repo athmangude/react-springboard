@@ -2,6 +2,40 @@
   "title": "Akiba ya Roho",
   "sections": [
     {
+      "title": "Introduction",
+      "tag": "introduction",
+      "type": "instructive",
+      "media": [
+        {
+          "name": "akiba ya roho logo",
+          "type": "image",
+          "url": "https://magma.co.ke/wp-content/uploads/2019/11/Akiba-ya-Roho-Campaign-Portfolio-logo-2.gif"
+        }
+      ],
+      "messages": [
+        {
+          "type": "heading",
+          "text": "Akiba Ya Roho"
+        },
+        {
+          "type": "body",
+          "text": "Welcome to Akiba ya Roho, the Access Afya chronic illness screening questionnaire. The questionnaire will guide you to record the following:"
+        },
+        {
+          "type": "unorderedList",
+          "items": [
+            "Patient details",
+            "Assess chronic illness risk",
+            "Assess Access Afya and mTiba awareness"
+          ]
+        },
+        {
+          "type": "body",
+          "text": "Step by step guideliness will be provided for each stage of the screening. Be sure to capture all the information in the form."
+        }
+      ]
+    },
+    {
       "title": "Bio Data",
       "tag": "bio_data",
       "type": "questionnaire",

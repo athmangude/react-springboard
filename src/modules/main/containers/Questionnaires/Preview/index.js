@@ -32,6 +32,9 @@ const Preview = ({ committedEditorValue }) => {
               onChange={onChange}
               title={section.title}
               tag={section.tag}
+              type={section.type}
+              messages={section.messages}
+              media={section.media}
             />
           </div>
         ))

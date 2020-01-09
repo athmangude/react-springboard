@@ -1,5 +1,4 @@
 export default ({ theme }) => {
-  console.log(theme);
   return `
     width: 100%;
     height: 100%;
