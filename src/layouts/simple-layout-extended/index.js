@@ -14,8 +14,6 @@ import sidebarLinks from "./components/side-navigation/SideBarLinks";
 import Alerts from "Modules/main/containers/App/Alerts";
 import IconButton from "SharedComponents/icon-button";
 
-import * as adminAuthenticationActions from "Modules/administration/containers/Authentication/flux/actions";
-import * as accountsActions from "Modules/administration/containers/Home/flux/actions";
 import * as appActions from "Modules/main/containers/App/flux/actions";
 import * as authenticationActions from "Modules/main/containers/Authentication/flux/actions";
 
@@ -52,8 +50,6 @@ const SimpleLayoutExtendedWrapper = styled.div`
   authentication: state.authentication,
 }),
   (dispatch) => ({
-    adminAuthenticationActions: bindActionCreators(adminAuthenticationActions, dispatch),
-    accountsActions: bindActionCreators(accountsActions, dispatch),
     appActions: bindActionCreators(appActions, dispatch),
     authenticationActions: bindActionCreators(authenticationActions, dispatch),
     dispatch,
@@ -69,8 +65,6 @@ export default class SimpleLayoutExtended extends Component {
   };
 
   static propTypes = {
-    adminAuthenticationActions: PropTypes.object.isRequired,
-    accountsActions: PropTypes.object.isRequired,
     children: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.node),
       PropTypes.node

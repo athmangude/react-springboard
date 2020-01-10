@@ -6,13 +6,11 @@ import mixpanel from "mixpanel-browser";
 import config from 'Config';
 import configureStore from "Modules/main/flux/configureStore";
 import * as authenticationActions from "Modules/main/containers/Authentication/flux/actions";
-import * as adminAuthenticationActions from "Modules/administration/containers/Authentication/flux/actions";
 
 export function handleException(exception) {
   logExceptionToGoogleAnalytics(exception);
   if (exception.response && exception.response.status === 401) {
     if (window.location.pathname.split("/").includes("administration")) {
-      configureStore().dispatch(adminAuthenticationActions.signOut());
       window.location.href = `${window.location.origin}/administration/sign-in`;
     } else {
       configureStore().dispatch(authenticationActions.signOut());

@@ -1,0 +1,23 @@
+.nps-comment-card .card-action {
+  color: #808285;
+}
+
+.nps-comment-card .card-action:hover {
+  color: #6d6e71;
+  cursor: pointer;
+}
+
+.nps-comment-card .card-action:hover {
+  background-color: #d9d9d9 !important;
+  color: #6d6e71 !important;
+}
+
+.nps-comment-card .card-action.active:hover {
+  background-color: #d9d9d9 !important;
+  color: #6d6e71 !important;
+}
+
+.nps-comment-card:hover {
+  box-shadow: 0 0 20px 3px #d9d9d9 !important;
+  transform: scale(1.01);
+}

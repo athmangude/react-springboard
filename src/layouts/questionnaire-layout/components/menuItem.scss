@@ -1,0 +1,17 @@
+.side-bar {
+  .side-menu {
+    .menu-item {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 15px 10px;
+      border-top-right-radius: 25px;
+      border-bottom-right-radius: 25px;
+
+      &:hover {
+        background-color: #d9d9d9;
+      }
+    }
+  }
+}
