@@ -35,7 +35,8 @@ export default class NewQuestionnaire extends Component {
       adornment: null,
       responses: {},
       activeSection: 0,
-    }
+      maxSection: 0,
+    };
   }
 
   onChange = (editorValue) => {
@@ -98,18 +99,28 @@ export default class NewQuestionnaire extends Component {
   }
 
   onNext = () => {
-    const { activeSection } = this.state;
-    this.setState({ activeSection: activeSection + 1 });
+    const { activeSection, maxSection } = this.state;
+    this.setState({
+      activeSection: activeSection + 1,
+      maxSection: (activeSection + 1) > maxSection ? (activeSection + 1) : maxSection,
+    });
   }
 
   render() {
-    const { editorValue, committedEditorValue, isSnackbarDialogOpen, snackbarDialogMessage, snackbarDialogVariant, snackbarDialogTitle, adornment, activeSection, responses } = this.state;
+    const { editorValue, committedEditorValue, isSnackbarDialogOpen, snackbarDialogMessage, snackbarDialogVariant, snackbarDialogTitle, adornment, activeSection, responses, maxSection } = this.state;
     const questionnaire = JSON.parse(committedEditorValue);
     const section = questionnaire.sections[activeSection];
 
     return (
       <QuestionnaireLayout bottomPanelComponent={(
-        <BottomPanel onGoBack={this.onGoBack} canGoBack={activeSection > 0} />
+        <BottomPanel
+          onGoBack={this.onGoBack}
+          canGoBack={activeSection > 0}
+          activeSection={activeSection}
+          totalSections={questionnaire.sections.length}
+          canGoForward={activeSection < maxSection}
+          onGoForward={this.onNext}
+        />
       )}>
         <NewQuestionnaireWrapper>
           <Section
