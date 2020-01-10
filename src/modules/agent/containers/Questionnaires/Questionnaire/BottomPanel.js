@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
@@ -6,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import BackIcon from '@material-ui/icons/KeyboardArrowLeft';
 import ForwardIcon from '@material-ui/icons/KeyboardArrowRight';
 import LinearProgress from '@material-ui/core/LinearProgress';
+import Typography from '@material-ui/core/Typography';
 
 import styles from './BottomPanel.css';
 
@@ -35,11 +37,11 @@ const BottomPanel = ({ onGoBack, canGoBack, canGoForward, onGoForward, activeSec
         >
           Back
         </Button>
-        <div>
+        <Typography variant="h5" component="h2">
           {activeSection + 1}
           /
           {totalSections}
-        </div>
+        </Typography>
         <Button
           color="primary"
           variant="contained"
