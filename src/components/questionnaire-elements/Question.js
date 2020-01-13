@@ -80,7 +80,7 @@ const Question = ({ question, onChange, response, parent, parentValue, validatio
       if (!isVisible() && response) {
         onChange(question.tag, null);
       }
-    }
+    };
   });
 
   if (isVisible()) {
