@@ -2,6 +2,7 @@ import * as ItemActionTypes from './constants';
 
 const initialState = {
   hasBeforeInstallPromptBeenFired: false,
+  routeTitle: null,
 };
 
 const actionsMap = {
@@ -10,7 +11,13 @@ const actionsMap = {
       ...state,
       hasBeforeInstallPromptBeenFired: payload,
     }
-  }
+  },
+  [ItemsActionTypes.SET_ROUTE_TITLE](state, { payload }) {
+    return {
+      ...state,
+      routeTitle: payload,
+    },
+  },
 }
 
 export default function items(state = initialState, action) {

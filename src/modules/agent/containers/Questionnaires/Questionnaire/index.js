@@ -13,6 +13,7 @@ import Presentation from 'SharedComponents/questionnaire-elements/Presentation';
 import Section from 'SharedComponents/questionnaire-elements/Section';
 import SnackbarDialog from 'SharedComponents/snackbar-dialog';
 import BottomPanel from './BottomPanel';
+import ActionMenu from './ActionMenu';
 
 import styles from './index.css';
 
@@ -106,13 +107,25 @@ export default class NewQuestionnaire extends Component {
     });
   }
 
+  onSave = () => {
+    console.log('[onSave]');
+  }
+
+  onExit = () => {
+    console.log('[onRestart]');
+  }
+
+  onExit = () => {
+    console.log('[onExit]');
+  }
+
   render() {
     const { editorValue, committedEditorValue, isSnackbarDialogOpen, snackbarDialogMessage, snackbarDialogVariant, snackbarDialogTitle, adornment, activeSection, responses, maxSection } = this.state;
     const questionnaire = JSON.parse(committedEditorValue);
     const section = questionnaire.sections[activeSection];
 
     return (
-      <QuestionnaireLayout bottomPanelComponent={(
+      <QuestionnaireLayout questionnaireTitle={questionnaire.title} bottomPanelComponent={(
         <BottomPanel
           onGoBack={this.onGoBack}
           canGoBack={activeSection > 0}
@@ -121,7 +134,11 @@ export default class NewQuestionnaire extends Component {
           canGoForward={activeSection < maxSection}
           onGoForward={this.onNext}
         />
-      )}>
+      )}
+        rightDialogComponent={(
+          <ActionMenu options={[{ label: 'Save', action: this.onSave }, { label: 'Restart', action: this.onRestart }, { label: 'Exit', action: this.onExit }]} />
+        )}
+      >
         <NewQuestionnaireWrapper>
           <Section
             key={section.tag}

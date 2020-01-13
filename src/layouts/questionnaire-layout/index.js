@@ -12,7 +12,9 @@ import AccountDropDown from "./components/account-dropdown";
 import SideNavigation from "./components/side-navigation";
 import sidebarLinks from "./components/side-navigation/SideBarLinks";
 import Alerts from "Modules/main/containers/App/Alerts";
-import IconButton from "SharedComponents/icon-button";
+import IconButton from '@material-ui/core/IconButton';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
+import KeyboardBackSpaceIcon from '@material-ui/icons/KeyboardBackspace';
 
 import * as appActions from "Modules/main/containers/App/flux/actions";
 import * as authenticationActions from "Modules/main/containers/Authentication/flux/actions";
@@ -102,7 +104,9 @@ export default class SimpleLayoutExtended extends Component {
     bottomPanelComponent: PropTypes.node,
     routeTitle: PropTypes.string,
     configurations: PropTypes.object,
-    configurationActions: PropTypes.object
+    configurationActions: PropTypes.object,
+    questionnaireTitle: PropTypes.string,
+    rightDialogComponent: PropTypes.node.isRequired,
   };
 
   constructor(props) {
@@ -169,6 +173,11 @@ export default class SimpleLayoutExtended extends Component {
     });
   }
 
+  componentDidMount() {
+    const { appActions } = this.props;
+    appActions.setRouteTitle('A questionnaire title will come here');
+  }
+
   render() {
     const {
       app,
@@ -183,7 +192,9 @@ export default class SimpleLayoutExtended extends Component {
       tabs,
       sidePanel,
       configurations,
-      authentication
+      authentication,
+      questionnaireTitle,
+      rightDialogComponent
     } = this.props;
 
     const { onPremise } = Config;
@@ -232,72 +243,47 @@ export default class SimpleLayoutExtended extends Component {
               style={{ display: "flex", alignItems: "center", justifyContent: "center", height: 64, borderBottom: "solid 1px #d9d9d9", width: "100%", position: "absolute", top: 0, left: 0, backgroundColor: "#fff", zIndex: 3 }}
             >
               <div
-                style={{ width: windowDimensions.width > 768 ? 200 : 50, height: "100%", display: "flex", alignItems: "center", justifyContent: "flex-start" }}
+                style={{ height: "100%", display: "flex", alignItems: "center", justifyContent: "flex-start" }}
               >
-                <Link
-                  to="/"
-                  style={{ display: "flex", alignItems: "center", justifyContent: "flex-start" }}
-                >
-                  <img
-                    src={
-                      windowDimensions.width > 768
-                        ? logoTextOnly
-                        : logoSymbolOnly
-                    }
-                    height={40}
-                    style={{ margin: 10 }}
-                    alt="logo"
-                  />
-                </Link>
-                {windowDimensions.width > 768 ? (
-                  <span
-                    style={{ fontSize: 20, fontWeight: "500", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", lineHeight: 2.5, textTransform: "capitalize" }}
-                  >
-                    {routeTitle || activeApp.label}
-                  </span>
-                ) : null}
+                {
+                  windowDimensions.width > 768 ? (
+                    <Link
+                      to="/"
+                      style={{ display: "flex", alignItems: "center", justifyContent: "flex-start" }}
+                    >
+                      <img
+                        src={
+                          windowDimensions.width > 768
+                            ? logoTextOnly
+                            : logoSymbolOnly
+                        }
+                        height={40}
+                        style={{ margin: 10 }}
+                        alt="logo"
+                      />
+                    </Link>
+                  ) : (
+                      <Link to="/questionnaires">
+                        <IconButton aria-label="more vert" color="default" style={{ margin: '0 5px' }}>
+                          <KeyboardBackSpaceIcon />
+                        </IconButton>
+                      </Link>
+                    )
+                }
               </div>
               <div
                 style={{ width: "100%", margin: "10px 10px", position: "relative" }}
               >
-                {searchBar}
+                <span
+                  style={{ fontSize: 20, fontWeight: "500", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", lineHeight: 2.5, textTransform: "capitalize" }}
+                >
+                  {questionnaireTitle || routeTitle || activeApp.label}
+                </span>
               </div>
               <div
                 style={{ height: "100%", width: 114, display: "flex", alignItems: "center", justifyContent: "flex-end", padding: "0 10px 0" }}
               >
-                {
-                  windowDimensions.width > 768 ? (
-                    <IconButton
-                      large
-                      icon="settings"
-                      style={{ margin: 10, color: "#000" }}
-                      onClick={() => router.history.push('/settings')}
-                    />
-                  ) : null
-                }
-                {
-                  authentication.user !== null ? (
-                    <AccountDropDown
-                      {...this.props}
-                      windowDimensions={windowDimensions}
-                    />
-                  ) : null
-                }
-                {
-                  windowDimensions.width <= 1024 && rightDrawerComponent ? (
-                    <div
-                      style={{ width: 64, height: 64, display: "flex", alignItems: "center", justifyContent: "center" }}
-                    >
-                      <IconButton
-                        icon={
-                          isRightDrawerDrawn ? "chevron_right" : "chevron_left"
-                        }
-                        style={{ margin: 10, color: "#000" }}
-                        onClick={this.onToggleRightDrawer}
-                      />
-                    </div>
-                  ) : null
-                }
+                {rightDialogComponent}
               </div>
             </div>
             <div
@@ -339,9 +325,10 @@ export default class SimpleLayoutExtended extends Component {
                         </div>
                       ) : null
                     }
-                    <div style={{ height: showActionBar ? 'calc(100vh - 112px)' : '100%', overflow: 'auto' }}>
+                    <div style={{ height: showActionBar ? 'calc(100vh - 112px - 58px)' : 'calc(100% - 58px)', overflow: 'auto' }}>
                       {childrenWithProps}
                     </div>
+                    {bottomPanelComponent}
                   </div>
                 ) : (
                     <div
