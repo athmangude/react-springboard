@@ -292,7 +292,7 @@ export default class SimpleLayoutExtended extends Component {
               {
                 windowDimensions.width > 768 ? (
                   <div style={{ height: '100%', overflow: 'auto', width: windowDimensions.width > 768 && activeApp.fullWidthMenu ? 200 : 50 }}>
-                    <SideNavigation open={isDrawerMenuDrawn} windowWidth={windowDimensions.width} authentication={authentication} action={action} activeApp={activeApp} configurations={configurations} onToggleDemoMode={this.onToggleDemoMode} />
+                    <SideNavigation open={isDrawerMenuDrawn} windowWidth={windowDimensions.width} authentication={authentication} action={action} activeApp={activeApp} configurations={configurations} />
                   </div>
                 ) : null
               }
