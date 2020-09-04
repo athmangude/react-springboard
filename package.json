@@ -95,7 +95,7 @@
     "moment": "^2.24.0",
     "normalize.css": "^8.0.1",
     "numeral": "^2.0.6",
-    "papaparse": "^5.0.0",
+    "papaparse": "^5.2.0",
     "pluralize": "^8.0.0",
     "react": "^16.8.3",
     "react-click-outside": "^3.0.1",
